@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import net.rodor.testfuncooper.asientos.VOAsiento;
 
 public class OPAsociacionLegajoAsiento {
+	
 	private static final String TABLA_ASIENTOS_LEGAJOS_ASOCIADOS = "tablaAsientosLegajosAsociados_wrapper";
 	private static final String CHECKBOX_SELECCION_MASIVA = "checkboxSeleccionMasiva";
 	private static final String TABLA_ASIENTOS_LEGAJOS_NO_ASOCIADOS = "tablaAsientosLegajosNoAsociados";
