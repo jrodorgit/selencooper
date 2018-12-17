@@ -9,7 +9,16 @@ public class VOAsiento {
 	public String asiento;
 	public String notaMarginal;
 	public String fecha;
+	public String procedimiento;
 	
+	public String getProcedimiento() {
+		return procedimiento;
+	}
+
+	public void setProcedimiento(String procedimiento) {
+		this.procedimiento = procedimiento;
+	}
+
 	public String getFecha() {
 		return fecha;
 	}
@@ -63,7 +72,8 @@ public class VOAsiento {
 	}
 	
 	public VOAsiento(String numeroAsiento, String numeroInscripcionCooper, String tomo, 
-			String folio, String asiento, String notaMarginal, String fecha) {
+			String folio, String asiento, String notaMarginal, String fecha,
+			String procedimiento) {
 		super();
 		this.numeroAsiento = numeroAsiento;
 		this.numeroInscripcionCooper = numeroInscripcionCooper;
@@ -72,6 +82,7 @@ public class VOAsiento {
 		this.asiento = asiento;
 		this.notaMarginal = notaMarginal;
 		this.fecha = fecha;
+		this.procedimiento = procedimiento;
 	}
 
 	public String getNumeroAsiento() {
