@@ -27,9 +27,10 @@ public class TestAsientos {
 		//VOAsiento asientoError = new VOAsiento("11013", "001", "1","1", "Estó es un asiento 9 > 4 de 11013@.com", 
 		//		"esto es una nota marginal 11013", "17/12/2018","Constitucion");
 		
-		/***/
+		/***
 		// alta de asiento
 		OPAltaAsiento.alta(driver,asiento);
+		
 		
 		// alta con error por numero de asiento repetido para la cooperativa.
 		OPAltaAsiento.altaConError(driver,asiento);
@@ -40,14 +41,15 @@ public class TestAsientos {
 		
 		// alta de asiento
 		OPAltaAsiento.alta(driver,asiento);
-		/***/
 		
+		***/
 		
 		// buscar asiento para edicion.
 		OPListadoAsiento.buscarAsiento(driver, asiento);
 		
+		
 		// relacionar asiento y asientoB
-		VOAsiento asientoB = new VOAsiento("11001","001");
+		VOAsiento asientoB = new VOAsiento("11021","001");
 		OPRelacionAsientos.addRelacionAsientos(driver, asiento, asientoB,"mi texto relación@<9");
 		
 		
