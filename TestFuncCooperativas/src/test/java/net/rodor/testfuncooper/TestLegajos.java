@@ -9,9 +9,9 @@ import org.openqa.selenium.WebDriver;
 
 import net.rodor.testfuncooper.asientos.VOAsiento;
 import net.rodor.testfuncooper.legajos.OPAltaLegajo;
-import net.rodor.testfuncooper.legajos.OPBusquedaLegajo;
-import net.rodor.testfuncooper.legajos.OPLegajoAsiento;
-import net.rodor.testfuncooper.legajos.OPModificarLegajo;
+import net.rodor.testfuncooper.legajos.OPListadoLegajo;
+import net.rodor.testfuncooper.legajos.OPAsociacionLegajoAsiento;
+import net.rodor.testfuncooper.legajos.OPDetalleLegajo;
 import net.rodor.testfuncooper.legajos.VODocumento;
 import net.rodor.testfuncooper.legajos.VOLegajo;
 
@@ -24,7 +24,7 @@ public class TestLegajos {
 		WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOGIN_PRIV);
 		
 		// preparando legajo con el que trabajaremos.
-		VOLegajo legajo = new VOLegajo("001","A10023","exp-001-1023-023");
+		VOLegajo legajo = new VOLegajo("001","10025","exp-001-1025-025");
 		VODocumento doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
 		VOAsiento asiento = new VOAsiento("010", "001");
 		
@@ -33,25 +33,25 @@ public class TestLegajos {
 		OPAltaLegajo.alta(driver,legajo);
 		
 		//busqueda
-		OPBusquedaLegajo.buscarLegajo(driver,legajo);
+		OPListadoLegajo.buscarLegajo(driver,legajo);
 		
 		//modificacion del expediente de legajo
-		OPModificarLegajo.modificarLegajo(driver,legajo);
+		OPDetalleLegajo.modificarLegajo(driver,legajo);
 		
 		// add documento a legajo
-		OPModificarLegajo.addDocALegajo(driver,legajo, doc);
+		OPDetalleLegajo.addDocALegajo(driver,legajo, doc);
 		
 		// visualizacion del documento
-		OPModificarLegajo.visualizarDocLegajo(driver, legajo, doc);
+		OPDetalleLegajo.visualizarDocLegajo(driver, legajo, doc);
 		
 		// del documento legajo
-		OPModificarLegajo.delDocLegajo(driver,legajo);
+		OPDetalleLegajo.delDocLegajo(driver,legajo);
 		
 		// anadimos relacion con asiento
-		OPLegajoAsiento.addAsientoALegajo(driver, legajo,asiento);
+		OPAsociacionLegajoAsiento.addAsientoALegajo(driver, legajo,asiento);
 		
 		// borramos la relacion legajo-asiento
-		OPModificarLegajo.delAsientoLegajo(driver, legajo);
+		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
 		
 		driver.close();
 		

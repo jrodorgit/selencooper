@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import net.rodor.testfuncooper.OPAccesoBase;
 
-public class OPBusquedaLegajo extends OPLegajosBase {
+public class OPListadoLegajo extends OPLegajosBase {
 
 	private static final String BOTON_BUSCAR = "buscar";
 	private static final String NUMERO_REGISTRO = "numeroRegistro";

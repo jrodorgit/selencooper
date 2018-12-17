@@ -13,15 +13,16 @@ public class OPAltaLegajo extends OPLegajosBase {
 	private static final String BOTON_ACEPTAR = "aceptar";
 	private static final String NUMERO_REGISTRO = "numeroRegistro";
 	private static final String NUMERO_INSCRIPCION = "numeroInscripcion";
-	public static final String URL = "/alta/legajoEditLoad.htm";
+	public static final String URL = "alta/legajoEditLoad.htm";
 	
 	public static void alta(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
 		driver.get(OPAccesoBase.URL_PRIV+OPLegajosBase.URL+URL);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
 		elementoWeb.sendKeys(vo.getNumeroInscripcion());
+		
 		
 		elementoWeb = driver.findElement(By.id(NUMERO_REGISTRO));
 		elementoWeb.sendKeys(vo.getNumeroRegistro());

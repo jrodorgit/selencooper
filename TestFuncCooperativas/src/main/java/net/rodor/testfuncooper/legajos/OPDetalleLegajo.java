@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class OPModificarLegajo extends OPLegajosBase {
+public class OPDetalleLegajo extends OPLegajosBase {
 
 	private static final String BOTON_OK = "botonOK";
 	private static final String DOCUMENTO_LEGAJO = "documentoLegajo";
