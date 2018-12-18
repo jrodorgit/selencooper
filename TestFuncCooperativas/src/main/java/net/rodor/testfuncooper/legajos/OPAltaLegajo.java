@@ -1,10 +1,9 @@
 package net.rodor.testfuncooper.legajos;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import net.rodor.testfuncooper.OPAccesoBase;
+import net.rodor.testfuncooper.UtilDriver;
 
 public class OPAltaLegajo extends OPLegajosBase {
 	
@@ -17,27 +16,51 @@ public class OPAltaLegajo extends OPLegajosBase {
 	
 	public static void alta(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
-		driver.get(OPAccesoBase.URL_PRIV+OPLegajosBase.URL+URL);
-		Thread.sleep(3000);
+		UtilDriver.goURL(driver, OPAccesoBase.URL_PRIV+OPLegajosBase.URL+URL);
 		
-		WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
-		elementoWeb.sendKeys(vo.getNumeroInscripcion());
+		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
+		
+		UtilDriver.setCampoById(driver, NUMERO_REGISTRO, vo.getNumeroRegistro());
+		
+		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
+		
+		UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS);
+		
+		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
 		
 		
-		elementoWeb = driver.findElement(By.id(NUMERO_REGISTRO));
-		elementoWeb.sendKeys(vo.getNumeroRegistro());
-		
-		elementoWeb = driver.findElement(By.name(BOTON_ACEPTAR));
-		elementoWeb.click();
-		Thread.sleep(3000);
-
-		// buscar mensaje de alta correcta
-		driver.findElement(By.id(MSG_ALERT_SUCCESS));
-		
-		//volver.
-		elementoWeb = driver.findElement(By.id(BOTON_ATRAS));
-		elementoWeb.click();
-		System.out.println("Alta de legajo correcta");
+		System.out.println("Alta de legajo correcta!");
 		
 	}
+	/**
+	 * 		//driver.get(OPAccesoBase.URL_PRIV+OPLegajosBase.URL+URL);
+		//Thread.sleep(3000);
+		UtilDriver.goURL(driver, OPAccesoBase.URL_PRIV+OPLegajosBase.URL+URL);
+		
+		//WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
+		//elementoWeb.sendKeys(vo.getNumeroInscripcion());
+		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
+		
+		//WebElement elementoWeb = driver.findElement(By.id(NUMERO_REGISTRO));
+		//elementoWeb.sendKeys(vo.getNumeroRegistro());
+		UtilDriver.setCampoById(driver, NUMERO_REGISTRO, vo.getNumeroRegistro());
+		
+		//WebElement elementoWeb = driver.findElement(By.name(BOTON_ACEPTAR));
+		//elementoWeb.click();
+		//Thread.sleep(3000);
+		//UtilDriver.clickByName(driver, BOTON_ACEPTAR);
+		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
+		
+		// buscar mensaje de alta correcta
+		//driver.findElement(By.id(MSG_ALERT_SUCCESS));
+		UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS);
+		
+		//volver.
+		//WebElement elementoWeb = driver.findElement(By.id(BOTON_ATRAS));
+		//elementoWeb.click();
+		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
+		
+		
+		System.out.println("Alta de legajo correcta");
+	 */
 }

@@ -37,7 +37,7 @@ public class OPAccesoChrome extends OPAccesoBase {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(2000);
 		robot.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		return driver;
 	}

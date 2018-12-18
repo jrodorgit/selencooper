@@ -5,20 +5,30 @@ public class VOLegajo {
 	private String numeroRegistro;
 	private String numeroInscripcion;
 	private String expediente;
+	private String fechaCreacion;
 	
 	public VOLegajo() {
 		super();
 		
 	}
 
-	public VOLegajo (String numeroInscripcion, String numeroRegistro,String expediente) {
+	public VOLegajo (String numeroInscripcion, String numeroRegistro,String expediente,String fechaCreacion) {
 		super();
 		this.numeroRegistro = numeroRegistro;
 		this.numeroInscripcion = numeroInscripcion;
 		this.expediente = expediente;
+		this.fechaCreacion = fechaCreacion;
 	}
 
 	
+
+	public String getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(String fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
 
 	@Override
 	public String toString() {
