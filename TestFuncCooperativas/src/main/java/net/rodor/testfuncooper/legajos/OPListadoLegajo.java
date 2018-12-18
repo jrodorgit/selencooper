@@ -9,7 +9,7 @@ public class OPListadoLegajo extends OPLegajosBase {
 
 	private static final String BOTON_BUSCAR = "buscar";
 	private static final String NUMERO_REGISTRO = "numeroRegistro";
-	private static final String FECHA_DESDE = "fechadDesde";
+	private static final String FECHA_DESDE = "fechaDesde";
 	private static final String NUMERO_INSCRIPCION = "numeroInscripcion";
 	private static final String TABLA_LEGAJOS = "tablaLegajo";
 	public static final String URL = "/busqueda/legajoSearchReload.htm";
@@ -25,9 +25,9 @@ public class OPListadoLegajo extends OPLegajosBase {
 		UtilDriver.clickBoton(driver, null, BOTON_BUSCAR);
 
 		//ir al detalle del legajo si se ha encontrado.
-		if( UtilDriver.exiteRegistroEntabla(driver, TABLA_LEGAJOS, vo.getNumeroRegistro()) ){
+		if( UtilDriver.exiteRegistroEnTabla(driver, TABLA_LEGAJOS, vo.getNumeroRegistro()) ){
 			UtilDriver.clickAnchor(driver, "href", "idLegajo");
-			System.out.println("Busqueda de legajo correcta!");	
+			System.out.println("Busqueda de legajo correcta.");	
 		}else{
 			System.out.println("!!!!!NOOOO  se encuentra el legajo!!!!!");	
 		}

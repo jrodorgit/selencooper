@@ -6,12 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import net.rodor.testfuncooper.UtilDriver;
+
 public class OPDetalleLegajo extends OPLegajosBase {
 
 	private static final String BOTON_OK = "botonOK";
 	private static final String DOCUMENTO_LEGAJO = "documentoLegajo";
 	private static final String ALERT_SUCCESS = "alert-success";
-	private static final String EXPEDIENTE2 = "expediente";
+	private static final String EXPEDIENTE = "expediente";
 	private static final String BOTON_ACEPTAR = "aceptar";
 	private static final String BOTON_ATRAS = "botonAtras";
 	private static final String BOTON_DOCUMENTO = "Documento";
@@ -22,27 +24,23 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	
 
 	/**
-	 * Modifica el expediente de un legajo. Es necesario ejecutar su busqueda primero para situar ahi la prueba.
+	 * Modifica el numero expediente de un legajo. Para que funcione tiene que encontrarse en la pantalla de detalle de legajo.
+	 * @param driver
+	 * @param vo
+	 * @throws InterruptedException
 	 */
 	public static void modificarLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
-		//OPBusquedaLegajo.buscarLegajo(driver,numeroInscripcion,numeroRegistro);
-		WebElement elementoWeb = driver.findElement(By.id(EXPEDIENTE2));
-		elementoWeb.sendKeys(vo.getExpediente());
-		
-		elementoWeb = driver.findElement(By.name(BOTON_ACEPTAR));
-		elementoWeb.click();
-		Thread.sleep(3000);
-		
-		// buscar mensaje de modificacion correcta
-		driver.findElement(By.id(ALERT_SUCCESS));
+		UtilDriver.setCampoById(driver, EXPEDIENTE, vo.getExpediente());
+		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
+		UtilDriver.buscarById(driver, ALERT_SUCCESS);
 		
 		System.out.println("Legajo modificado correcto.");
 	}
 	
 	/**
-	 * anade un documento a un legajo.
-	 *  Es necesario ejecutar su busqueda primero para situar ahi la prueba.
+	 * Anade un documento a un legajo.
+	 * Es necesario ejecutar su busqueda primero para situar ahi la prueba.
 	 * @param driver
 	 * @param numeroInscripcion
 	 * @param numeroRegistro
@@ -51,18 +49,12 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 */
 	public static void addDocALegajo(WebDriver driver,VOLegajo vo, VODocumento doc) throws InterruptedException{
 		
-		WebElement elementoWeb = driver.findElement(By.id(DOCUMENTO_LEGAJO));
-		elementoWeb.sendKeys(doc.getRuta()+doc.getNombreFichero());
-		driver.findElement(By.xpath("//button[@type='submit' and contains(., '"+BOTON_DOCUMENTO+"')]")).click();
-		
-		Thread.sleep(5000);
-		
-		// buscar mensaje de documento dado de alta correctamente
-		System.out.println("Add documento a legajo correcto?");
-		List<WebElement> msgOK = driver.findElements(By.id(ALERT_SUCCESS));
-		for(WebElement we : msgOK){
-			System.out.println(we.getText());
-		}
+		UtilDriver.setCampoById(driver, DOCUMENTO_LEGAJO, doc.getRuta()+doc.getNombreFichero());
+		UtilDriver.clickByTextoBoton(driver, BOTON_DOCUMENTO, BOTON_TIPO_SUBMIT);
+
+		// chequeamos add correcto.
+		UtilDriver.buscarById(driver, ALERT_SUCCESS);
+		System.out.println("Add documento a legajo correcto.");
 		
 	}
 	

@@ -29,7 +29,7 @@ public class OPAltaLegajo extends OPLegajosBase {
 		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
 		
 		
-		System.out.println("Alta de legajo correcta!");
+		System.out.println("Alta de legajo correcta.");
 		
 	}
 	/**

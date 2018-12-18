@@ -53,6 +53,21 @@ public class UtilDriver {
 		
 	}
 	
+	public static void clickByTextoBoton(WebDriver driver,String texto, String typeButton){
+		//driver.findElement(By.xpath("//button[@type='submit' and contains(., '"+BOTON_DOCUMENTO+"')]")).click();
+		WebElement we = null;
+		
+		try{
+			we = driver.findElement(By.xpath("//button[@type='"+typeButton+"' and contains(., '"+texto+"')]"));
+			we.click();
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+	}
+	
 	/**
 	 * Intenta hacer click en enlace anchor que CONTIENE atributo atr cuyo valor contiene "valor"
 	 * @param driver
@@ -80,7 +95,7 @@ public class UtilDriver {
 	 * @param reg
 	 * @return true si la tabla contiene el registro, false en otro caso
 	 */
-	public static boolean exiteRegistroEntabla(WebDriver driver, String idTabla, String reg){
+	public static boolean exiteRegistroEnTabla(WebDriver driver, String idTabla, String reg){
 		boolean resultado = false;
 		
 		try{
@@ -94,6 +109,13 @@ public class UtilDriver {
 		
 		return resultado;
 	}
+	
+	/***
+	 * //List<WebElement> msgOK = driver.findElements(By.id(ALERT_SUCCESS));
+		//for(WebElement we : msgOK){
+		//	System.out.println(we.getText());
+		//}
+	 */
 }
 
 

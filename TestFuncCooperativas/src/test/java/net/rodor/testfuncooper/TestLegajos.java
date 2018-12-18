@@ -24,7 +24,7 @@ public class TestLegajos {
 		WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOGIN_PRIV);
 		
 		// preparando legajo con el que trabajaremos.
-		VOLegajo legajo = new VOLegajo("001","10036","exp-001-1036-036","18/12/2018");
+		VOLegajo legajo = new VOLegajo("001","10043","exp-001-1043-043","18/12/2018");
 		VODocumento doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
 		VOAsiento asiento = new VOAsiento("11022", "001");
 		
@@ -34,13 +34,13 @@ public class TestLegajos {
 		
 		//busqueda
 		OPListadoLegajo.buscarLegajo(driver,legajo);
-		/***
+		
 		//modificacion del expediente de legajo
 		OPDetalleLegajo.modificarLegajo(driver,legajo);
 		
 		// add documento a legajo
 		OPDetalleLegajo.addDocALegajo(driver,legajo, doc);
-		
+		/***
 		// visualizacion del documento
 		OPDetalleLegajo.visualizarDocLegajo(driver, legajo, doc);
 		
