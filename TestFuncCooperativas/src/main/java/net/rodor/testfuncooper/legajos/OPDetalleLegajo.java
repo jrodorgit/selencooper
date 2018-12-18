@@ -75,15 +75,18 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	}
 	
 	/**
-	 * Visualiza un documento de un legajo.Es necesario que le legajo tenga al menos un documento asociado. Tras visualizarlo vuelve al detalle del legajo.
+	 * Visualiza un documento de un legajo.
+	 * Es necesario que le legajo tenga al menos un documento asociado. 
+	 * Tras visualizarlo vuelve al detalle del legajo.
 	 * @param driver
 	 * @param vo
 	 * @throws InterruptedException
 	 */
 	public static void visualizarDocLegajo(WebDriver driver,VOLegajo vo,VODocumento doc) throws InterruptedException{
 		
-		driver.findElement(By.xpath(".//a[contains(@href,'"+ID_FICHEROBD+"')]")).click();
-		Thread.sleep(3000);
+		//driver.findElement(By.xpath(".//a[contains(@href,'"+ID_FICHEROBD+"')]")).click();
+		//Thread.sleep(3000);
+		UtilDriver.clickAnchor(driver,"href", ID_FICHEROBD);
 		
 		// comprobamos que estamos en la pagina.
 		driver.findElement(By.xpath("//input[@value='"+doc.getNombreFichero()+"']"));
@@ -91,7 +94,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		//volvemos a detalle del legajo.
 		driver.findElement(By.id(BOTON_ATRAS)).click();
 		Thread.sleep(2000);
-		System.out.println("Visualizacion documento legajo correcto");				
+		System.out.println("Visualizacion documento legajo correcto.");				
 	}
 	
 	/**

@@ -2,7 +2,6 @@ package net.rodor.testfuncooper.legajos;
 
 import org.openqa.selenium.WebDriver;
 
-import net.rodor.testfuncooper.OPAccesoBase;
 import net.rodor.testfuncooper.UtilDriver;
 
 public class OPListadoLegajo extends OPLegajosBase {
@@ -16,7 +15,7 @@ public class OPListadoLegajo extends OPLegajosBase {
 	
 	public static void buscarLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
-		UtilDriver.goURL(driver, OPAccesoBase.URL_PRIV+OPLegajosBase.URL+URL);
+		UtilDriver.goMenu(driver, OPLegajosBase.MENU,OPLegajosBase.SUB_MENU_LISTADO);
 		
 		//establacemos campos de busqueda.
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());

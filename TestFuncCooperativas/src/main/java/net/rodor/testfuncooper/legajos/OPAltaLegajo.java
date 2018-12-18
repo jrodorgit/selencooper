@@ -2,7 +2,6 @@ package net.rodor.testfuncooper.legajos;
 
 import org.openqa.selenium.WebDriver;
 
-import net.rodor.testfuncooper.OPAccesoBase;
 import net.rodor.testfuncooper.UtilDriver;
 
 public class OPAltaLegajo extends OPLegajosBase {
@@ -12,11 +11,12 @@ public class OPAltaLegajo extends OPLegajosBase {
 	private static final String BOTON_ACEPTAR = "aceptar";
 	private static final String NUMERO_REGISTRO = "numeroRegistro";
 	private static final String NUMERO_INSCRIPCION = "numeroInscripcion";
-	public static final String URL = "alta/legajoEditLoad.htm";
+	
 	
 	public static void alta(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
-		UtilDriver.goURL(driver, OPAccesoBase.URL_PRIV+OPLegajosBase.URL+URL);
+		
+		UtilDriver.goMenu(driver, OPLegajosBase.MENU,OPLegajosBase.SUB_MENU_ALTA);
 		
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
 		

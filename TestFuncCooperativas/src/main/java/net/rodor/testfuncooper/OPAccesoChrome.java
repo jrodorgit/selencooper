@@ -14,6 +14,10 @@ public class OPAccesoChrome extends OPAccesoBase {
 	
 	
 	public static WebDriver autenticacion(String entorno) throws InterruptedException, AWTException {
+		
+		System.out.println("Test Legajos en entorno: " +entorno);
+		
+		
 		// driver navegador
 		System.setProperty("webdriver.chrome.driver", "C:\\Java\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();

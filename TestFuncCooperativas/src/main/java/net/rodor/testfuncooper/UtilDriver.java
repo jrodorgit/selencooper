@@ -88,6 +88,29 @@ public class UtilDriver {
 		
 	}
 	
+	public static void clickAnchorByText(WebDriver driver,String texto){
+		WebElement we = null;
+		try{
+			we = driver.findElement(By.xpath(".//a[contains(.,'"+texto+"')]"));
+			we.click();
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		
+	}
+	
+	public static void goMenu(WebDriver driver,String menu, String submenu){
+		
+		clickAnchorByText(driver,menu);
+		if(submenu != null && !"".equalsIgnoreCase(submenu)){
+			clickAnchorByText(driver,submenu);
+		}
+		
+	}
+	
 	/**
 	 * Busca un tabla por su id y busca entre sus filas un registro que contiene el texto reg.
 	 * @param driver
