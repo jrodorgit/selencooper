@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import net.rodor.testfuncooper.asientos.VOAsiento;
+
 public class UtilDriver {
 	
 
@@ -27,7 +29,7 @@ public class UtilDriver {
 		return driver.findElement(By.id(id));
 	}
 	
-	public static void clickBoton(WebDriver driver,String id,  String name ) throws InterruptedException{
+	public static void clickBoton(WebDriver driver,String id,  String name , String... texto ) throws InterruptedException{
 		
 		WebElement we = null;
 		
@@ -51,6 +53,23 @@ public class UtilDriver {
 			//e.printStackTrace();
 		}
 		
+		try{
+			we = driver.findElement(By.xpath("//button[text()='"+texto[0]+"']"));
+			we.click();
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		
+	}
+	
+	public static void clickSeleccionCombo(WebDriver driver, String seleccion, String nombreCombo, String divNombre) throws InterruptedException {
+		WebElement elementoWebDivProc = driver.findElement(By.xpath("//div[@class='"+divNombre+"']"));
+		elementoWebDivProc.findElement(By.xpath("//button[@data-id='"+nombreCombo+"']")).click();
+		Thread.sleep(3000);
+		elementoWebDivProc.findElement(By.xpath("//a[@data-normalized-text='"+seleccion+"']")).click();
+		Thread.sleep(2000);
 	}
 	
 	public static void clickByTextoBoton(WebDriver driver,String texto, String typeButton){

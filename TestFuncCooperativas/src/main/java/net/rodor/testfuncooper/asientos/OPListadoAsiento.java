@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import net.rodor.testfuncooper.OPAccesoBase;
+import net.rodor.testfuncooper.UtilDriver;
+import net.rodor.testfuncooper.legajos.OPLegajosBase;
 
 public class OPListadoAsiento  extends OPAsientosBase {
 	
@@ -23,8 +25,7 @@ public class OPListadoAsiento  extends OPAsientosBase {
 	 */
 	public static void buscarAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
 		
-		driver.get(OPAccesoBase.URL_PRIV+OPAsientosBase.URL+URL);
-		Thread.sleep(2000);
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		
 		WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
 		elementoWeb.sendKeys(vo.getNumeroInscripcionCooper());
@@ -49,8 +50,9 @@ public class OPListadoAsiento  extends OPAsientosBase {
 	 */
 	public static void buscarAsientoEliminar(WebDriver driver,VOAsiento vo) throws InterruptedException{
 		
-		driver.get(OPAccesoBase.URL_PRIV+OPAsientosBase.URL+URL);
-		Thread.sleep(2000);
+		//driver.get(OPAccesoBase.URL_PRIV+OPAsientosBase.URL+URL);
+		//Thread.sleep(2000);
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		
 		WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
 		elementoWeb.sendKeys(vo.getNumeroInscripcionCooper());
