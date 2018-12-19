@@ -21,14 +21,14 @@ public class TestLegajos {
 	public void test() throws InterruptedException, AWTException {
 		
 
-		WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOGIN_PRIV);
-		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);
-		System.out.println("Test Legajos en entorno: " +OPAccesoBase.URL_LOGIN_PRIV);
+		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOCAL_LOGIN_PRIV);
+		WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);
+		System.out.println("Test Legajos en entorno: " +OPAccesoBase.URL_PRE_LOGIN_PRIV);
 		
 		// preparando legajo con el que trabajaremos.
-		VOLegajo legajo = new VOLegajo("001","10056","exp-001-1056-056","19/12/2018");
+		VOLegajo legajo = new VOLegajo("001","10061","exp-001-1061-061","19/12/2018","2");
 		VODocumento doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
-		VOAsiento asiento = new VOAsiento("11022", "001");
+		VOAsiento asiento = new VOAsiento("1", "001");
 		
 		/***/
 		// alta de legajo

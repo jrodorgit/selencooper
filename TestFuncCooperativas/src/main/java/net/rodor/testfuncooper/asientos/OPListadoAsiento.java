@@ -23,22 +23,39 @@ public class OPListadoAsiento  extends OPAsientosBase {
 	 * @param vo
 	 * @throws InterruptedException
 	 */
-	public static void buscarAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
-		
+	public static void consultarAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
+		/***
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		
-		WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
-		elementoWeb.sendKeys(vo.getNumeroInscripcionCooper());
+		//WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
+		//elementoWeb.sendKeys(vo.getNumeroInscripcionCooper());
+		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION,vo.getNumeroInscripcionCooper());
 		
-		elementoWeb = driver.findElement(By.id(NUMERO_ASIENTO));
-		elementoWeb.sendKeys(vo.getNumeroAsiento());
+		//elementoWeb = driver.findElement(By.id(NUMERO_ASIENTO));
+		//elementoWeb.sendKeys(vo.getNumeroAsiento());
+		UtilDriver.setCampoById(driver, NUMERO_ASIENTO,vo.getNumeroAsiento());
 		
-		driver.findElement(By.name(BOTON_BUSCAR)).click();
-		Thread.sleep(2000);
+		//driver.findElement(By.name(BOTON_BUSCAR)).click();
+		//Thread.sleep(2000);
+		UtilDriver.clickBoton( driver,null,  BOTON_BUSCAR );
+		***/
+		buscarAsiento( driver, vo);
 		
 		String result = driver.findElement(By.xpath(".//*[@id='"+TABLA_ASIENTOS+"']//td[contains(.,'"+vo.getNumeroAsiento()+"')]")).getText();
 		driver.findElement(By.xpath(".//a[contains(@href,'idRegistroAsiento')]")).click();
 		Thread.sleep(2000);
+		
+	}
+	
+	public static void buscarAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
+		
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		
+		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION,vo.getNumeroInscripcionCooper());
+		UtilDriver.setCampoById(driver, NUMERO_ASIENTO,vo.getNumeroAsiento());
+		
+		UtilDriver.clickBoton( driver,null,  BOTON_BUSCAR );
+		
 		
 	}
 	
@@ -50,18 +67,8 @@ public class OPListadoAsiento  extends OPAsientosBase {
 	 */
 	public static void buscarAsientoEliminar(WebDriver driver,VOAsiento vo) throws InterruptedException{
 		
-		//driver.get(OPAccesoBase.URL_PRIV+OPAsientosBase.URL+URL);
-		//Thread.sleep(2000);
-		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		
-		WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
-		elementoWeb.sendKeys(vo.getNumeroInscripcionCooper());
-		
-		elementoWeb = driver.findElement(By.id(NUMERO_ASIENTO));
-		elementoWeb.sendKeys(vo.getNumeroAsiento());
-		
-		driver.findElement(By.name(BOTON_BUSCAR)).click();
-		Thread.sleep(2000);
+		buscarAsiento( driver, vo);
 		
 		String result = driver.findElement(By.xpath(".//*[@id='"+TABLA_ASIENTOS+"']//td[contains(.,'"+vo.getNumeroAsiento()+"')]")).getText();
 		driver.findElement(By.xpath(".//a[contains(@data-href,'RegistroAsientoDelete')]")).click();

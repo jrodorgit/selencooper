@@ -32,7 +32,7 @@ public class OPAsociacionLegajoAsiento {
 		UtilDriver.clickBoton(driver, BOTON_SEARCH, null);
 		
 		// seleccionar asiento deseado del lsitado de no relacionados
-		UtilWE.clickByClassName( UtilDriver.buscarById(driver, TABLA_ASIENTOS_LEGAJOS_NO_ASOCIADOS), CHECKBOX_SELECCION_MASIVA);
+		UtilWE.clickByClassName( UtilDriver.buscarById(driver, TABLA_ASIENTOS_LEGAJOS_NO_ASOCIADOS,null,null), CHECKBOX_SELECCION_MASIVA);
 		
 		//click en agregar asiento
 		UtilDriver.clickByName(driver, BOTON_AGREGAR_RELACION);

@@ -27,8 +27,32 @@ public class UtilDriver {
 		Thread.sleep(3000);
 	}
 	
-	public static WebElement buscarById(WebDriver driver, String id) throws InterruptedException{
-		return driver.findElement(By.id(id));
+	public static WebElement buscarById(WebDriver driver, String id, String name, String className) throws InterruptedException{
+		WebElement we = null;
+		
+		try{
+			we = driver.findElement(By.id(id));
+			Thread.sleep(500);
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		try{
+			we = driver.findElement(By.name(name));
+			Thread.sleep(500);
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		try{
+			we = driver.findElement(By.className(className));
+			Thread.sleep(500);
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		return we;
+		//return driver.findElement(By.id(id));
 	}
 	
 	public static void clickBoton(WebDriver driver,String id,  String name , String... texto ) throws InterruptedException{

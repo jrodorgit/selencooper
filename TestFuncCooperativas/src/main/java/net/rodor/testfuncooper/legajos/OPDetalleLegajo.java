@@ -33,7 +33,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		
 		UtilDriver.setCampoById(driver, EXPEDIENTE, vo.getExpediente());
 		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
-		UtilDriver.buscarById(driver, ALERT_SUCCESS);
+		UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null);
 		
 		System.out.println("Legajo modificado correcto.");
 	}
@@ -53,7 +53,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		UtilDriver.clickByTextoBoton(driver, BOTON_DOCUMENTO, BOTON_TIPO_SUBMIT);
 
 		// chequeamos add correcto.
-		UtilDriver.buscarById(driver, ALERT_SUCCESS);
+		UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null);
 		System.out.println("Add documento a legajo correcto.");
 		
 	}
@@ -113,7 +113,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		UtilDriver.clickAnchor(driver, ATR_DATA_HREF, ID_REL_LEGAJO_ASIENTO);
 		
 		// CONFIRMAR BORRADO RELACION
-		UtilWE.clickAnchor(UtilDriver.buscarById(driver, DIALOG_CONFIRM_DELETE_ASIENTO_LEGAJO),ATR_HREF,ID_REL_LEGAJO_ASIENTO);
+		UtilWE.clickAnchor(UtilDriver.buscarById(driver, DIALOG_CONFIRM_DELETE_ASIENTO_LEGAJO,null,null), ATR_HREF,ID_REL_LEGAJO_ASIENTO);
 		
 		System.out.println("Delete relacion legajo-asiento correcto");
 	}

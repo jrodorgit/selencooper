@@ -23,4 +23,8 @@ public class UtilWE {
 		}
 		
 	}
+	
+	public static void clikByTagAtrText(WebElement weorigen,String tag, String atr, String atrVal, String texto){
+		weorigen.findElement(By.xpath("//"+tag+"[@"+atr+"='"+atrVal+"'  and contains(., '"+texto+"')]")).click();
+	}
 }
