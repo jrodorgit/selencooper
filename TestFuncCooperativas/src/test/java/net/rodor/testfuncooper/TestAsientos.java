@@ -22,8 +22,8 @@ public class TestAsientos {
 		System.out.println("Test Asientos");
 		
 		// preparando Asiento con el que trabajaremos.
-		VOAsiento asiento = new VOAsiento("11064", "001", "1","1", "Estó es un asiento 9 > 4 de 11064@.com \n kdodk", 
-				"esto es una nota marginal 11064", "18/12/2018","Constitucion");
+		VOAsiento asiento = new VOAsiento("11068", "002", "1","1", "Estó es un asiento 9 > 4 de 11068@.com \n kdodk", 
+				"esto es una nota marginal 11068", "19/12/2018","Constitucion");
 		
 		//VOAsiento asientoError = new VOAsiento("11013", "001", "1","1", "Estó es un asiento 9 > 4 de 11013@.com", 
 		//		"esto es una nota marginal 11013", "17/12/2018","Constitucion");
@@ -32,7 +32,7 @@ public class TestAsientos {
 		// alta de asiento
 		OPAltaAsiento.altaAsientoOK(driver,asiento);
 		
-		
+		/***
 		// alta con error por numero de asiento repetido para la cooperativa.
 		OPAltaAsiento.altaAsientoKO(driver,asiento);
 		
@@ -43,7 +43,7 @@ public class TestAsientos {
 		
 		// alta de asiento
 		OPAltaAsiento.altaAsientoOK(driver,asiento);
-		
+		***/
 
 		
 		// buscar asiento para edicion.

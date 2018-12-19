@@ -1,12 +1,14 @@
 package net.rodor.testfuncooper.legajos;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import net.rodor.testfuncooper.UtilDriver;
+import net.rodor.testfuncooper.UtilWE;
 
 public class OPAltaLegajo extends OPLegajosBase {
 	
+	private static final String TIPO_EXPEDIENTE_2 = "2";
+	private static final String ID_TIPO_EXPEDIENTE = "idTipoExpediente";
 	private static final String MSG_ALERT_SUCCESS = "alert-success";
 	private static final String BOTON_ATRAS = "botonAtras";
 	private static final String BOTON_ACEPTAR = "aceptar";
@@ -20,8 +22,8 @@ public class OPAltaLegajo extends OPLegajosBase {
 		UtilDriver.goMenu(driver, OPLegajosBase.MENU,OPLegajosBase.SUB_MENU_ALTA);
 		
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
-		Select sel = new Select(UtilDriver.buscarById(driver, "idTipoExpediente", null, null));
-		sel.selectByValue("1");
+		
+		UtilWE.selectOption(UtilDriver.buscarById(driver, ID_TIPO_EXPEDIENTE, null, null),TIPO_EXPEDIENTE_2);
 		
 		UtilDriver.setCampoById(driver, NUMERO_REGISTRO, vo.getNumeroRegistro());
 		

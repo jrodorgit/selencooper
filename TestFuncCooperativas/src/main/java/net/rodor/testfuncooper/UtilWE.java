@@ -2,6 +2,7 @@ package net.rodor.testfuncooper;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class UtilWE {
 
@@ -26,5 +27,10 @@ public class UtilWE {
 	
 	public static void clikByTagAtrText(WebElement weorigen,String tag, String atr, String atrVal, String texto){
 		weorigen.findElement(By.xpath("//"+tag+"[@"+atr+"='"+atrVal+"'  and contains(., '"+texto+"')]")).click();
+	}
+	
+	public static void selectOption(WebElement we, String value){
+		Select sel = new Select(we);
+		sel.selectByValue(value);
 	}
 }
