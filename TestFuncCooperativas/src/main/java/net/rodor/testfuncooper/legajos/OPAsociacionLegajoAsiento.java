@@ -1,9 +1,9 @@
 package net.rodor.testfuncooper.legajos;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
+import net.rodor.testfuncooper.UtilDriver;
+import net.rodor.testfuncooper.UtilWE;
 import net.rodor.testfuncooper.asientos.VOAsiento;
 
 public class OPAsociacionLegajoAsiento {
@@ -25,33 +25,24 @@ public class OPAsociacionLegajoAsiento {
 	public static void addAsientoALegajo(WebDriver driver,VOLegajo vo, VOAsiento asiento) throws InterruptedException{
 		
 		//clic en +Relacion
-		driver.findElement(By.name(BOTON_AGREGAR_RELACION)).click();
-		Thread.sleep(3000);
+		UtilDriver.clickByName(driver, BOTON_AGREGAR_RELACION);
 		
 		// buscar asiento para asociar.
-		WebElement elementoWeb = driver.findElement(By.id(NUMERO_ASIENTO));
-		elementoWeb.sendKeys(asiento.getNumeroAsiento());
-		
-		driver.findElement(By.id(BOTON_SEARCH)).click();
-		Thread.sleep(3000);
+		UtilDriver.setCampoById(driver, NUMERO_ASIENTO, asiento.getNumeroAsiento());
+		UtilDriver.clickBoton(driver, BOTON_SEARCH, null);
 		
 		// seleccionar asiento deseado del lsitado de no relacionados
-		elementoWeb = driver.findElement(By.id(TABLA_ASIENTOS_LEGAJOS_NO_ASOCIADOS));
-		elementoWeb.findElement(By.className(CHECKBOX_SELECCION_MASIVA)).click();
-
+		UtilWE.clickByClassName( UtilDriver.buscarById(driver, TABLA_ASIENTOS_LEGAJOS_NO_ASOCIADOS), CHECKBOX_SELECCION_MASIVA);
+		
 		//click en agregar asiento
-		driver.findElement(By.name(BOTON_AGREGAR_RELACION)).click();
-		Thread.sleep(2000);
+		UtilDriver.clickByName(driver, BOTON_AGREGAR_RELACION);
 		
 		//comprobamos que esta dadao de alta la asociacion
-		elementoWeb = driver.findElement(By.id(TABLA_ASIENTOS_LEGAJOS_ASOCIADOS));
-		elementoWeb.findElement(By.xpath("//td[contains(.,'"+asiento.getNumeroAsiento()+"')]"));
-		
-		Thread.sleep(1000);
+		UtilDriver.exiteRegistroEnTabla(driver, TABLA_ASIENTOS_LEGAJOS_ASOCIADOS, asiento.getNumeroAsiento());
 		
 		//volvemos a detalle legajo
-		driver.findElement(By.id(BOTON_ATRAS)).click();
-		Thread.sleep(2000);
+		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
+		
 		System.out.println("Relacion asiento-legajo correcto");		
 		
 	}

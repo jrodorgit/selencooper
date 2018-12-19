@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import net.rodor.testfuncooper.asientos.VOAsiento;
-
 public class UtilDriver {
 	
 
@@ -22,6 +20,10 @@ public class UtilDriver {
 	
 	public static void clickByName(WebDriver driver, String name) throws InterruptedException{
 		driver.findElement(By.name(name)).click();
+		Thread.sleep(3000);
+	}
+	public static void clickByClassName(WebDriver driver, String className) throws InterruptedException{
+		driver.findElement(By.className(className)).click();
 		Thread.sleep(3000);
 	}
 	
@@ -56,6 +58,7 @@ public class UtilDriver {
 		try{
 			we = driver.findElement(By.xpath("//button[text()='"+texto[0]+"']"));
 			we.click();
+			Thread.sleep(3000);
 			return;
 		}catch(Exception e){
 			//elemento no encontrado

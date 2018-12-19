@@ -1,15 +1,15 @@
 package net.rodor.testfuncooper.legajos;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import net.rodor.testfuncooper.UtilDriver;
+import net.rodor.testfuncooper.UtilWE;
 
 public class OPDetalleLegajo extends OPLegajosBase {
 
+	private static final String DIALOG_CONFIRM_DELETE_ASIENTO_LEGAJO = "dialogConfirmDeleteAsientoLegajo";
+	private static final String ID_REL_LEGAJO_ASIENTO = "idRelLegajoAsiento";
 	private static final String BOTON_OK = "botonOK";
 	private static final String DOCUMENTO_LEGAJO = "documentoLegajo";
 	private static final String ALERT_SUCCESS = "alert-success";
@@ -59,7 +59,9 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	}
 	
 	/**
-	 *  Desasocia un documento de un legajo. Es necesario que le legajo tenga al menos un documento, que es el que se a a desasociar.
+	 *  Desasocia un documento de un legajo. 
+	 *  Es necesario que le legajo tenga al menos un documento, que es el que se a a desasociar.
+	 *  Es necesario encontrarse en la pantalla de detalle de legajo.
 	 * @param driver
 	 * @param vo
 	 * @param asiento
@@ -67,16 +69,18 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 */
 	public static void delDocLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
-		driver.findElement(By.xpath(".//a[contains(@data-href,'"+ID_RELACION_LEGAJO_FICHEROBD+"')]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.id(BOTON_OK)).click();
-		Thread.sleep(3000);
+		// clic en boton eliminar doc-legajo
+		UtilDriver.clickAnchor( driver,"data-href", ID_RELACION_LEGAJO_FICHEROBD);
+		
+		//clic en boton aceptar eliminacion
+		UtilDriver.clickBoton(driver, BOTON_OK, null);
+		
 		System.out.println("Delete documento legajo correcto");
 	}
 	
 	/**
 	 * Visualiza un documento de un legajo.
-	 * Es necesario que le legajo tenga al menos un documento asociado. 
+	 * Es necesario que le legajo tenga al menos un documento asociado y estar situado en la pantalla de detalla del legajo
 	 * Tras visualizarlo vuelve al detalle del legajo.
 	 * @param driver
 	 * @param vo
@@ -84,35 +88,33 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 */
 	public static void visualizarDocLegajo(WebDriver driver,VOLegajo vo,VODocumento doc) throws InterruptedException{
 		
-		//driver.findElement(By.xpath(".//a[contains(@href,'"+ID_FICHEROBD+"')]")).click();
-		//Thread.sleep(3000);
-		UtilDriver.clickAnchor(driver,"href", ID_FICHEROBD);
+		UtilDriver.clickAnchor(driver,ATR_HREF, ID_FICHEROBD);
 		
 		// comprobamos que estamos en la pagina.
 		driver.findElement(By.xpath("//input[@value='"+doc.getNombreFichero()+"']"));
 		
 		//volvemos a detalle del legajo.
-		driver.findElement(By.id(BOTON_ATRAS)).click();
-		Thread.sleep(2000);
+		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
+		
 		System.out.println("Visualizacion documento legajo correcto.");				
 	}
 	
 	/**
-	 * Desasocia un asiento del legajo. Es necesario que el legajo tenga asociado un asiento.
+	 * Desasocia un asiento del legajo.
+	 * Es necesario que el legajo tenga asociado un asiento.
+	 * Es necesario encontrarse en la pantalla de detalle de legajo.
 	 * @param driver
 	 * @param vo
 	 * @throws InterruptedException
 	 */
 	public static void delAsientoLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
-		driver.findElement(By.xpath(".//a[contains(@data-href,'idRelLegajoAsiento')]")).click();
-		Thread.sleep(3000);
-		WebElement elementoWeb = driver.findElement(By.id("dialogConfirmDeleteAsientoLegajo"));
-		elementoWeb.findElement(By.xpath(".//a[contains(@href,'idRelLegajoAsiento')]")).click();
-		//driver.findElement(By.xpath(".//a[contains(@data-href,'idRelLegajoAsiento')]")).click();
-		//driver.findElement(By.className("btn btn-sm btn-primary btn-ok")).click();
-		//driver.findElement(By.id("botonOK")).click();
-		Thread.sleep(3000);
+		// ELIMINAR ASOCIACION
+		UtilDriver.clickAnchor(driver, ATR_DATA_HREF, ID_REL_LEGAJO_ASIENTO);
+		
+		// CONFIRMAR BORRADO RELACION
+		UtilWE.clickAnchor(UtilDriver.buscarById(driver, DIALOG_CONFIRM_DELETE_ASIENTO_LEGAJO),ATR_HREF,ID_REL_LEGAJO_ASIENTO);
+		
 		System.out.println("Delete relacion legajo-asiento correcto");
 	}
 }

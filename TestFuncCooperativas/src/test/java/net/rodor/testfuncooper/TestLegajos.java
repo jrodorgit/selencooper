@@ -26,17 +26,17 @@ public class TestLegajos {
 		System.out.println("Test Legajos en entorno: " +OPAccesoBase.URL_LOGIN_PRIV);
 		
 		// preparando legajo con el que trabajaremos.
-		VOLegajo legajo = new VOLegajo("001","10053","exp-001-1052-053","18/12/2018");
+		VOLegajo legajo = new VOLegajo("001","10056","exp-001-1056-056","19/12/2018");
 		VODocumento doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
 		VOAsiento asiento = new VOAsiento("11022", "001");
 		
-		
+		/***/
 		// alta de legajo
 		OPAltaLegajo.alta(driver,legajo);
 		
 		//busqueda
 		OPListadoLegajo.buscarLegajo(driver,legajo);
-		/***/
+		
 		//modificacion del expediente de legajo
 		OPDetalleLegajo.modificarLegajo(driver,legajo);
 		
@@ -54,7 +54,7 @@ public class TestLegajos {
 		
 		// borramos la relacion legajo-asiento
 		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
-		/***/
+		
 		
 		driver.close();
 		
