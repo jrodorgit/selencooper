@@ -26,6 +26,9 @@ public class OPRelacionAsientos extends OPAsientosBase {
 	 */
 	public static void addRelacionAsientos(WebDriver driver,VOAsiento asientoA, VOAsiento asientoB, String textoRelacion) throws InterruptedException{
 		
+		System.out.println("Alta de relacion entre asientos A"+ asientoA.toString());
+		System.out.println("y B"+ asientoB.toString());
+		
 		//clic en +Relacion
 		driver.findElement(By.xpath("//button[text()='"+ BOTON_RELACION + "']")).click();
 		Thread.sleep(2000);
@@ -63,6 +66,8 @@ public class OPRelacionAsientos extends OPAsientosBase {
 		driver.findElement(By.xpath("//button[contains(.,'"+BOTON_VOLVER+"')]")).click();
 		
 		Thread.sleep(3000);
+		
+		System.out.println("Alta de relacion entre asientos correcta");
 		
 	}
 	

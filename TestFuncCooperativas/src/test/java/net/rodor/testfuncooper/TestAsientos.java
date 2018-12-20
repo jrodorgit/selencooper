@@ -22,17 +22,18 @@ public class TestAsientos {
 		System.out.println("Test Asientos");
 		
 		// preparando Asiento con el que trabajaremos.
-		VOAsiento asiento = new VOAsiento("11068", "002", "1","1", "Estó es un asiento 9 > 4 de 11068@.com \n kdodk", 
-				"esto es una nota marginal 11068", "19/12/2018","Constitucion");
+		VOAsiento asiento = new VOAsiento("11072", "001", "1","1", "Estó es un asiento 9 > 4 de 11072@.com \n kdodk", 
+				"esto es una nota marginal 11072", "20/12/2018","Otorgamiento de Poderes");
 		
-		//VOAsiento asientoError = new VOAsiento("11013", "001", "1","1", "Estó es un asiento 9 > 4 de 11013@.com", 
-		//		"esto es una nota marginal 11013", "17/12/2018","Constitucion");
+		//Asiento que produce un null pointer al consultarlo tras darlo de alta.
+		//VOAsiento asiento = new VOAsiento("11069", "001", "1","1", "Estó es un asiento 9 > 4 de 11069@.com \n kdodk", 
+		//"esto es una nota marginal 11069", "20/12/2018","Constitucion");
 		
 		
 		// alta de asiento
 		OPAltaAsiento.altaAsientoOK(driver,asiento);
 		
-		/***
+		/***/
 		// alta con error por numero de asiento repetido para la cooperativa.
 		OPAltaAsiento.altaAsientoKO(driver,asiento);
 		
@@ -43,19 +44,19 @@ public class TestAsientos {
 		
 		// alta de asiento
 		OPAltaAsiento.altaAsientoOK(driver,asiento);
-		***/
+		/***/
 
 		
 		// buscar asiento para edicion.
 		OPListadoAsiento.consultarAsiento(driver, asiento);
 		
-		/***
+		/***/
 		// relacionar asiento y asientoB
-		VOAsiento asientoB = new VOAsiento("11022","001");
+		VOAsiento asientoB = new VOAsiento("11010","001");
 		OPRelacionAsientos.addRelacionAsientos(driver, asiento, asientoB,"mi texto relación@<9");
-		***/
+		/***/
 		
-		//driver.close();
+		driver.close();
 		
 		assertTrue(true);
 	}

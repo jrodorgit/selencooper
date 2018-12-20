@@ -21,18 +21,18 @@ public class TestLegajos {
 	public void test() throws InterruptedException, AWTException {
 		
 
-		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOCAL_LOGIN_PRIV);
-		WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);
+		WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOCAL_LOGIN_PRIV);
+		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);
 		System.out.println("Test Legajos.");
 		
 		// preparando legajo con el que trabajaremos.
-		VOLegajo legajo = new VOLegajo("001","10062","exp-001-1062-062","19/12/2018","2");
+		VOLegajo legajo = new VOLegajo("001","10067","exp-001-1067-067","20/12/2018","2");
 		VODocumento doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
-		VOAsiento asiento = new VOAsiento("1", "001");
+		VOAsiento asiento = new VOAsiento("11067", "001");
 		
 		// alta de legajo
 		OPAltaLegajo.alta(driver,legajo);
-		/***
+		/***/
 		//busqueda
 		OPListadoLegajo.buscarLegajo(driver,legajo);
 		
@@ -53,7 +53,7 @@ public class TestLegajos {
 		
 		// borramos la relacion legajo-asiento
 		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
-		***/
+		/***/
 		
 		driver.close();
 		
