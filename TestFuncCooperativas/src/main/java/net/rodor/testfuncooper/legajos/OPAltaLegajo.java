@@ -18,6 +18,7 @@ public class OPAltaLegajo extends OPLegajosBase {
 	
 	public static void alta(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
+		System.out.println("Alta de legajo-"+vo.toString());
 		
 		UtilDriver.goMenu(driver, OPLegajosBase.MENU,OPLegajosBase.SUB_MENU_ALTA);
 		
@@ -34,7 +35,7 @@ public class OPAltaLegajo extends OPLegajosBase {
 		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
 		
 		
-		System.out.println("Alta de legajo correcta.");
+		System.out.println("Correcto.\n");
 		
 	}
 	/**

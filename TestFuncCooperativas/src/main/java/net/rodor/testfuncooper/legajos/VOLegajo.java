@@ -40,12 +40,7 @@ public class VOLegajo {
 		this.fechaCreacion = fechaCreacion;
 	}
 
-	@Override
-	public String toString() {
-		return "VOLegajo [numeroRegistro=" + numeroRegistro + ", numeroInscripcion=" + numeroInscripcion
-				+ ", expediente=" + expediente + "]";
-	}
-
+	
 	public String getNumeroRegistro() {
 		return numeroRegistro;
 	}
@@ -68,6 +63,13 @@ public class VOLegajo {
 
 	public void setExpediente(String expediente) {
 		this.expediente = expediente;
+	}
+
+	@Override
+	public String toString() {
+		return "VOLegajo [numeroRegistro=" + numeroRegistro + ", numeroInscripcion=" + numeroInscripcion
+				+ ", expediente=" + expediente + ", fechaCreacion=" + fechaCreacion + ", tipoExpediente="
+				+ tipoExpediente + "]";
 	}
 	
 	

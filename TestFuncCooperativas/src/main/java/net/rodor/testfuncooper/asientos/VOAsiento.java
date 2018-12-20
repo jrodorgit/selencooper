@@ -97,10 +97,12 @@ public class VOAsiento {
 	public void setNumeroInscripcionCooper(String numeroInscripcionCooper) {
 		this.numeroInscripcionCooper = numeroInscripcionCooper;
 	}
+
 	@Override
 	public String toString() {
 		return "VOAsiento [numeroAsiento=" + numeroAsiento + ", numeroInscripcionCooper=" + numeroInscripcionCooper
-				+ "]";
+				+ ", tomo=" + tomo + ", folio=" + folio + ", asiento=" + asiento + ", notaMarginal=" + notaMarginal
+				+ ", fecha=" + fecha + ", procedimiento=" + procedimiento + "]";
 	}
 	
 	

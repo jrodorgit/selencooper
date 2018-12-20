@@ -31,11 +31,13 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 */
 	public static void modificarLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
+		System.out.println("Legajo modificado-"+vo.toString());
+		
 		UtilDriver.setCampoById(driver, EXPEDIENTE, vo.getExpediente());
 		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
 		UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null);
 		
-		System.out.println("Legajo modificado correcto.");
+		System.out.println("Correcto.\n");
 	}
 	
 	/**
@@ -49,12 +51,15 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 */
 	public static void addDocALegajo(WebDriver driver,VOLegajo vo, VODocumento doc) throws InterruptedException{
 		
+		System.out.println("Add documento a legajo-"+vo.toString()+doc.toString());
+		
 		UtilDriver.setCampoById(driver, DOCUMENTO_LEGAJO, doc.getRuta()+doc.getNombreFichero());
 		UtilDriver.clickByTextoBoton(driver, BOTON_DOCUMENTO, BOTON_TIPO_SUBMIT);
 
 		// chequeamos add correcto.
 		UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null);
-		System.out.println("Add documento a legajo correcto.");
+
+		System.out.println("Correcto.\n");
 		
 	}
 	
@@ -68,14 +73,16 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 * @throws InterruptedException 
 	 */
 	public static void delDocLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
-		
+
+		System.out.println("Delete documento legajo"+vo.toString());
 		// clic en boton eliminar doc-legajo
 		UtilDriver.clickAnchor( driver,"data-href", ID_RELACION_LEGAJO_FICHEROBD);
 		
 		//clic en boton aceptar eliminacion
 		UtilDriver.clickBoton(driver, BOTON_OK, null);
 		
-		System.out.println("Delete documento legajo correcto");
+		System.out.println("Correcto.\n");
+
 	}
 	
 	/**
@@ -88,6 +95,8 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 */
 	public static void visualizarDocLegajo(WebDriver driver,VOLegajo vo,VODocumento doc) throws InterruptedException{
 		
+		System.out.println("Visualizacion documento legajo."+vo.toString()+doc.toString());		
+		
 		UtilDriver.clickAnchor(driver,ATR_HREF, ID_FICHEROBD);
 		
 		// comprobamos que estamos en la pagina.
@@ -96,7 +105,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		//volvemos a detalle del legajo.
 		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
 		
-		System.out.println("Visualizacion documento legajo correcto.");				
+		System.out.println("Correcto\n");				
 	}
 	
 	/**
@@ -109,12 +118,14 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 */
 	public static void delAsientoLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
+		System.out.println("Delete relacion legajo-asiento-"+vo.toString());
+		
 		// ELIMINAR ASOCIACION
 		UtilDriver.clickAnchor(driver, ATR_DATA_HREF, ID_REL_LEGAJO_ASIENTO);
 		
 		// CONFIRMAR BORRADO RELACION
 		UtilWE.clickAnchor(UtilDriver.buscarById(driver, DIALOG_CONFIRM_DELETE_ASIENTO_LEGAJO,null,null), ATR_HREF,ID_REL_LEGAJO_ASIENTO);
 		
-		System.out.println("Delete relacion legajo-asiento correcto");
+		System.out.println("Correcto.\n");
 	}
 }

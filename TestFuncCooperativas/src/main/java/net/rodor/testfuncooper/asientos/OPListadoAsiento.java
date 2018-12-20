@@ -39,11 +39,16 @@ public class OPListadoAsiento  extends OPAsientosBase {
 		//Thread.sleep(2000);
 		UtilDriver.clickBoton( driver,null,  BOTON_BUSCAR );
 		***/
+		System.out.println("Consulta de asiento-"+vo.toString());
+		
 		buscarAsiento( driver, vo);
 		
 		String result = driver.findElement(By.xpath(".//*[@id='"+TABLA_ASIENTOS+"']//td[contains(.,'"+vo.getNumeroAsiento()+"')]")).getText();
 		driver.findElement(By.xpath(".//a[contains(@href,'idRegistroAsiento')]")).click();
 		Thread.sleep(2000);
+		
+		System.out.println("Correcto.\n");
+		
 		
 	}
 	

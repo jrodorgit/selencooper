@@ -23,10 +23,10 @@ public class TestLegajos {
 
 		WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOCAL_LOGIN_PRIV);
 		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);
-		System.out.println("Test Legajos.");
+		System.out.println("Test Legajos.\n");
 		
 		// preparando legajo con el que trabajaremos.
-		VOLegajo legajo = new VOLegajo("001","10067","exp-001-1067-067","20/12/2018","2");
+		VOLegajo legajo = new VOLegajo("001","10069","exp-001-1069-069","20/12/2018","2");
 		VODocumento doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
 		VOAsiento asiento = new VOAsiento("11067", "001");
 		

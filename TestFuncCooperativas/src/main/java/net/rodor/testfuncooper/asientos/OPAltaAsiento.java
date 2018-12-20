@@ -18,15 +18,14 @@ public class OPAltaAsiento extends OPAsientosBase {
 	private static final String NUMERO_FOLIO = "folio";
 	private static final String NUMERO_INSCRIPCION = "numeroInscripcion";
 	private static final String NUMERO_ASIENTO = "numeroAsiento";
-	private static final String ASIENTO = "asiento";
-	private static final String NOTA_MARGINAL = "notaMarginal";
+	
 	private static final String DATA_ID_PROCEDIMIENTO = "subtipoTramite";
 	private static final String FECHA_ASIENTO = "fecha";
 	
 //	private static final String MSG_ALERT_SUCCESS = "alert-success";
 	private static final String MSG_ALERT_ERROR = "alert-danger-global";
 	//private static final String BOTON_ATRAS = "botonAtras";
-	private static final String BOTON_ACEPTAR = "aceptar";
+	
 	
 	/**
 	 * Da de alta un asiento para una cooperativa.
@@ -36,6 +35,8 @@ public class OPAltaAsiento extends OPAsientosBase {
 	 */
 	public static void altaAsientoOK(WebDriver driver,VOAsiento vo) throws InterruptedException{
 
+		System.out.println("Alta de asiento OK-"+vo.toString());
+		
 		// alta de asiento OK
 		altaAsiento( driver, vo);
 		
@@ -45,7 +46,7 @@ public class OPAltaAsiento extends OPAsientosBase {
 		//volver.
 		UtilDriver.clickBoton(driver, null, null,BOTON_VOLVER);
 		
-		System.out.println("Alta de asiento OK correcta");
+		System.out.println("Correcto.\n");
 		
 	}
 

@@ -24,6 +24,8 @@ public class OPAsociacionLegajoAsiento {
 	 */
 	public static void addAsientoALegajo(WebDriver driver,VOLegajo vo, VOAsiento asiento) throws InterruptedException{
 		
+		System.out.println("Relacion asiento-legajo-"+vo.toString()+asiento.toString());	
+		
 		//clic en +Relacion
 		UtilDriver.clickByName(driver, BOTON_AGREGAR_RELACION);
 		
@@ -43,7 +45,7 @@ public class OPAsociacionLegajoAsiento {
 		//volvemos a detalle legajo
 		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
 		
-		System.out.println("Relacion asiento-legajo correcto");		
+		System.out.println("Correcto.\n");		
 		
 	}
 }

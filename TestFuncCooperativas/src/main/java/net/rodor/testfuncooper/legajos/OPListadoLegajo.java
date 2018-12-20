@@ -15,6 +15,8 @@ public class OPListadoLegajo extends OPLegajosBase {
 	
 	public static void buscarLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
+		System.out.println("Busqueda de legajo-"+vo.toString());
+		
 		UtilDriver.goMenu(driver, OPLegajosBase.MENU,OPLegajosBase.SUB_MENU_LISTADO);
 		
 		//establacemos campos de busqueda.
@@ -26,7 +28,8 @@ public class OPListadoLegajo extends OPLegajosBase {
 		//ir al detalle del legajo si se ha encontrado.
 		if( UtilDriver.exiteRegistroEnTabla(driver, TABLA_LEGAJOS, vo.getNumeroRegistro()) ){
 			UtilDriver.clickAnchor(driver, "href", "idLegajo");
-			System.out.println("Busqueda de legajo correcta.");	
+			System.out.println("Correcto.\n");
+			
 		}else{
 			System.out.println("!!!!!NOOOO  se encuentra el legajo!!!!!");	
 		}
