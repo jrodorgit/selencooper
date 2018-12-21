@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.UtilWE;
 import net.rodor.testfuncooper.asientos.VOAsiento;
+import static org.junit.Assert.*;
 
 public class OPAsociacionLegajoAsiento {
 	
@@ -40,7 +41,7 @@ public class OPAsociacionLegajoAsiento {
 		UtilDriver.clickByName(driver, BOTON_AGREGAR_RELACION);
 		
 		//comprobamos que esta dadao de alta la asociacion
-		UtilDriver.exiteRegistroEnTabla(driver, TABLA_ASIENTOS_LEGAJOS_ASOCIADOS, asiento.getNumeroAsiento());
+		assertTrue(UtilDriver.exiteRegistroEnTabla(driver, TABLA_ASIENTOS_LEGAJOS_ASOCIADOS, asiento.getNumeroAsiento()));
 		
 		//volvemos a detalle legajo
 		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);

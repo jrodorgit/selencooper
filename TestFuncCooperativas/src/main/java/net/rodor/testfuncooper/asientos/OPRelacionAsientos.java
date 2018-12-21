@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.UtilWE;
+import static org.junit.Assert.*;
 
 public class OPRelacionAsientos extends OPAsientosBase {
 

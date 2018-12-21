@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import net.rodor.testfuncooper.UtilDriver;
+import static org.junit.Assert.*;
 
 public class OPDetalleAsiento extends OPAsientosBase {
 
@@ -26,12 +27,9 @@ public class OPDetalleAsiento extends OPAsientosBase {
 		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
 		
 		// buscar mensaje de modificacio correcta
-		WebElement auxWE  = UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null);
-		if(auxWE == null){
-			System.out.println("---------->!!!! Error al modificar asiento !!!!<--------");
-		}else{
-			System.out.println("Correcto.\n");
-		}
+		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
+		
+		
 		
 	}
 }

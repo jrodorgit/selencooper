@@ -3,6 +3,7 @@ package net.rodor.testfuncooper.asientos;
 import org.openqa.selenium.WebDriver;
 
 import net.rodor.testfuncooper.UtilDriver;
+import static org.junit.Assert.*;
 
 public class OPListadoAsiento  extends OPAsientosBase {
 	
@@ -74,7 +75,7 @@ public class OPListadoAsiento  extends OPAsientosBase {
 		UtilDriver.clickBoton(driver, BOTON_OK, null);
 		
 		// comprobar mensaje de borrado correcto
-		UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null);		
+		assertNotNull(UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));		
 				
 		System.out.println("Delete asiento correcto");
 	}

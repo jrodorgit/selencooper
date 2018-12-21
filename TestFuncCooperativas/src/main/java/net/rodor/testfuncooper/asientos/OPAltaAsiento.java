@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.UtilWE;
+import static org.junit.Assert.*;
 
 public class OPAltaAsiento extends OPAsientosBase {
 
@@ -39,7 +40,7 @@ public class OPAltaAsiento extends OPAsientosBase {
 		altaAsiento( driver, vo);
 		
 		// buscar mensaje de alta correcta
-		UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null);
+		assertNotNull(UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
 		
 		//volver.
 		UtilDriver.clickBoton(driver, null, null,BOTON_VOLVER);
@@ -95,7 +96,7 @@ public class OPAltaAsiento extends OPAsientosBase {
 		altaAsiento( driver, vo);
 		
 		// buscar mensaje de alta no correcta
-		UtilDriver.buscarById(driver, MSG_ALERT_ERROR,null,null);
+		assertNotNull(UtilDriver.buscarById(driver, MSG_ALERT_ERROR,null,null));
 		
 		System.out.println("Alta de asiento KO correcta");
 		

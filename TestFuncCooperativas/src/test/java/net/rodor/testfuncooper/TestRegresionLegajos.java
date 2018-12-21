@@ -55,7 +55,7 @@ public class TestRegresionLegajos {
 		
 	}
 	@After
-	public void finalice(){
+	public void finaliza(){
 		driver.close();
 	}
 	/***
