@@ -5,7 +5,8 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	TestRegresionLegajos.class
+	TestRegresionLegajos.class,
+	TestRegresionAsientos.class
 })
 
 public class SuiteTestRegresion {

@@ -23,8 +23,8 @@ public class TestRegresionAsientos {
 	public void inicializaTest() throws InterruptedException, AWTException{
 		
 		System.out.println("Inicializando Test Asientos....\n");
-		asiento =   new VOAsiento("11086", "001", "1","1", "Estó es un asiento 9 > 4 de 11086@.com \n kdodk", 
-		"esto es una nota marginal 11086", "21/12/2018","Otorgamiento de Poderes");
+		asiento =   new VOAsiento("11087", "001", "1","1", "Estó es un asiento 9 > 4 de 11087@.com \n kdodk", 
+		"esto es una nota marginal 11087", "21/12/2018","Otorgamiento de Poderes");
 		//Asiento que produce un null pointer al consultarlo tras darlo de alta.
 				//VOAsiento asiento = new VOAsiento("11074", "001", "1","1", "Estó es un asiento 9 > 4 de 11074@.com \n kdodk", 
 				//"esto es una nota marginal 11074", "20/12/2018","Constitucion");

@@ -25,7 +25,7 @@ public class TestRegresionLegajos {
 	public void inicializaTest() throws InterruptedException, AWTException{
 		
 		System.out.println("Inicializando Test Legajos....\n");
-		legajo = new VOLegajo("001","10088","exp-001-1088-088","21/12/2018","2");
+		legajo = new VOLegajo("001","10089","exp-001-1089-089","21/12/2018","2");
 		doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
 		asiento = new VOAsiento("11067", "001");
 		
