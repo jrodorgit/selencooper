@@ -1,20 +1,18 @@
 package net.rodor.testfuncooper.asientos;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import net.rodor.testfuncooper.OPAccesoBase;
 import net.rodor.testfuncooper.UtilDriver;
-import net.rodor.testfuncooper.legajos.OPLegajosBase;
 
 public class OPListadoAsiento  extends OPAsientosBase {
 	
+	private static final String ENLACE_CONSULTAR_ASIENTO = "idRegistroAsiento";
+	private static final String ENLACE_BORRAR_ASIENTO = "RegistroAsientoDelete";
 	public static final String URL = "asientoSearchLoad.htm";
 	private static final String NUMERO_INSCRIPCION = "numeroInscripcion";
 	private static final String NUMERO_ASIENTO = "numeroAsiento";
 	private static final String BOTON_BUSCAR = "buscar";
-	private static final String TABLA_ASIENTOS = "tablaAsientoSearch";
+	//private static final String TABLA_ASIENTOS = "tablaAsientoSearch";
 	private static final String BOTON_OK = "botonOK";
 	
 	/**
@@ -24,34 +22,26 @@ public class OPListadoAsiento  extends OPAsientosBase {
 	 * @throws InterruptedException
 	 */
 	public static void consultarAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
-		/***
-		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
-		
-		//WebElement elementoWeb = driver.findElement(By.id(NUMERO_INSCRIPCION));
-		//elementoWeb.sendKeys(vo.getNumeroInscripcionCooper());
-		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION,vo.getNumeroInscripcionCooper());
-		
-		//elementoWeb = driver.findElement(By.id(NUMERO_ASIENTO));
-		//elementoWeb.sendKeys(vo.getNumeroAsiento());
-		UtilDriver.setCampoById(driver, NUMERO_ASIENTO,vo.getNumeroAsiento());
-		
-		//driver.findElement(By.name(BOTON_BUSCAR)).click();
-		//Thread.sleep(2000);
-		UtilDriver.clickBoton( driver,null,  BOTON_BUSCAR );
-		***/
+
 		System.out.println("Consulta de asiento-"+vo.toString());
 		
+		// buscamos asiento
 		buscarAsiento( driver, vo);
 		
-		String result = driver.findElement(By.xpath(".//*[@id='"+TABLA_ASIENTOS+"']//td[contains(.,'"+vo.getNumeroAsiento()+"')]")).getText();
-		driver.findElement(By.xpath(".//a[contains(@href,'idRegistroAsiento')]")).click();
-		Thread.sleep(2000);
+		// click en ir a detale
+		UtilDriver.clickAnchor(driver, ATR_HREF, ENLACE_CONSULTAR_ASIENTO);
 		
 		System.out.println("Correcto.\n");
 		
 		
 	}
 	
+	/**
+	 * Busca un asiento por numero de inscripcion de cooperativa y por numero de asiento y accede a su detalle.
+	 * @param driver
+	 * @param vo
+	 * @throws InterruptedException
+	 */
 	public static void buscarAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
 		
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
@@ -65,26 +55,26 @@ public class OPListadoAsiento  extends OPAsientosBase {
 	}
 	
 	/**
-	 * Elimina un asiento de una cooperativa
+	 * Elimina un asiento de una cooperativa.
 	 * @param driver
 	 * @param vo
 	 * @throws InterruptedException
 	 */
-	public static void buscarAsientoEliminar(WebDriver driver,VOAsiento vo) throws InterruptedException{
+	public static void eliminarAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
 		
+		System.out.println("Delete asiento - "+vo.toString());
 		
+		// ir a detalle de asiento
 		buscarAsiento( driver, vo);
 		
-		String result = driver.findElement(By.xpath(".//*[@id='"+TABLA_ASIENTOS+"']//td[contains(.,'"+vo.getNumeroAsiento()+"')]")).getText();
-		driver.findElement(By.xpath(".//a[contains(@data-href,'RegistroAsientoDelete')]")).click();
-		Thread.sleep(2000);
+		// clic en borrar asiento
+		UtilDriver.clickAnchor(driver, ATR_DATA_HREF, ENLACE_BORRAR_ASIENTO);
 		
-		driver.findElement(By.id(BOTON_OK)).click();
-		Thread.sleep(3000);
+		//confirmar borrado
+		UtilDriver.clickBoton(driver, BOTON_OK, null);
 		
-		// buscar mensaje de borrado correcto
-		driver.findElement(By.id(MSG_ALERT_SUCCESS));
-				
+		// comprobar mensaje de borrado correcto
+		UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null);		
 				
 		System.out.println("Delete asiento correcto");
 	}

@@ -88,6 +88,24 @@ public class UtilDriver {
 			//elemento no encontrado
 			//e.printStackTrace();
 		}
+		try{
+			we = driver.findElement(By.xpath("//button[@class='"+texto[0]+"']"));
+			we.click();
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		try{
+			we = driver.findElement(By.xpath("//button[contains(.,'"+texto[0]+"')]"));
+			we.click();
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
 		
 	}
 	
@@ -112,6 +130,16 @@ public class UtilDriver {
 			//elemento no encontrado
 			//e.printStackTrace();
 		}
+		try{
+			we = driver.findElement(By.xpath("//button[text()='"+ texto + "']"));
+			we.click();
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		
 	}
 	
 	/**

@@ -23,46 +23,46 @@ public class TestAsientos {
 		System.out.println("Test Asientos.\n");
 		
 		// preparando Asiento con el que trabajaremos.
-		VOAsiento asiento = new VOAsiento("11080", "001", "1","1", "Estó es un asiento 9 > 4 de 11080@.com \n kdodk", 
-				"esto es una nota marginal 11080", "20/12/2018","Otorgamiento de Poderes");
+		VOAsiento asiento = new VOAsiento("11084", "001", "1","1", "Estó es un asiento 9 > 4 de 11084@.com \n kdodk", 
+				"esto es una nota marginal 11084", "21/12/2018","Otorgamiento de Poderes");
 		
 		//Asiento que produce un null pointer al consultarlo tras darlo de alta.
 		//VOAsiento asiento = new VOAsiento("11074", "001", "1","1", "Estó es un asiento 9 > 4 de 11074@.com \n kdodk", 
 		//"esto es una nota marginal 11074", "20/12/2018","Constitucion");
 		
-		
+		/***/
 		// alta de asiento
 		OPAltaAsiento.altaAsientoOK(driver,asiento);
-		
-		/***
+		/***/
+		/***/
 		// alta con error por numero de asiento repetido para la cooperativa.
 		OPAltaAsiento.altaAsientoKO(driver,asiento);
-		
-		
+		/***/
+		/***/
 		// busqueda de asiento para eliminarlo
-		OPListadoAsiento.buscarAsientoEliminar(driver, asiento);
-		
-		
+		OPListadoAsiento.eliminarAsiento(driver, asiento);
+		/***/
+		/***/
 		// alta de asiento
 		OPAltaAsiento.altaAsientoOK(driver,asiento);
-		***/
-
-		
-		// buscar asiento para edicion.
+		/***/
+		/**/
+		// ir detalle de asiento
 		OPListadoAsiento.consultarAsiento(driver, asiento);
-		
+		/***/
+		/***/
 		// modificar asiento
-		asiento.setAsiento("Nuevo texto del asiento tras modificarlo");
-		asiento.setNotaMarginal("nueva nota marginal");
+		asiento.setAsiento("Anadimos nuevo texto del asiento tras modificarlo");
+		asiento.setNotaMarginal("Anadimos texto a nota marginal");
 		OPDetalleAsiento.modificaAsiento(driver, asiento);
-		
-		/***
-		// relacionar asiento y asientoB
+		/***/
+		/***/
+		// relacionar asiento  y asiento B
 		VOAsiento asientoB = new VOAsiento("11010","001");
-		OPRelacionAsientos.addRelacionAsientos(driver, asiento, asientoB,"mi texto relación@<9");
-		***/
+		OPRelacionAsientos.addRelacionAsientos(driver, asiento, asientoB, "mi texto relación@<9");
+		/***/
 		
-		//driver.close();
+		driver.close();
 		
 		assertTrue(true);
 	}

@@ -11,6 +11,11 @@ public class UtilWE {
 		Thread.sleep(3000);
 	}
 	
+	public static void clickById(WebElement we, String id) throws InterruptedException{
+		we.findElement(By.id(id)).click();
+		Thread.sleep(3000);
+	}
+	
 	public static void clickAnchor(WebElement weorigen,String atr, String valor){
 		WebElement we = null;
 		try{

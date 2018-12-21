@@ -1,8 +1,6 @@
 package net.rodor.testfuncooper.asientos;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.UtilWE;
@@ -90,6 +88,8 @@ public class OPAltaAsiento extends OPAsientosBase {
 	 * @throws InterruptedException
 	 */
 	public static void altaAsientoKO(WebDriver driver,VOAsiento vo) throws InterruptedException{
+		
+		System.out.println("Alta de asiento KO - " + vo.toString());
 		
 		// alta de asiento que debe de fallar
 		altaAsiento( driver, vo);

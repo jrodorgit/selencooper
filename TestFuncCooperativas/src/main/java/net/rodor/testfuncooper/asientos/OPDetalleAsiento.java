@@ -1,6 +1,7 @@
 package net.rodor.testfuncooper.asientos;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import net.rodor.testfuncooper.UtilDriver;
 
@@ -8,7 +9,6 @@ public class OPDetalleAsiento extends OPAsientosBase {
 
 	/**
 	 * Modificar el texto y la nota marginal del asiento
-	 * Es necesario estar situado en la pantalla de detalle del asiento.
 	 * @param driver
 	 * @param vo
 	 * @throws InterruptedException
@@ -17,6 +17,7 @@ public class OPDetalleAsiento extends OPAsientosBase {
 
 		System.out.println("Modificacion de asiento"+vo.toString());
 		
+		OPListadoAsiento.consultarAsiento( driver, vo);
 
 		UtilDriver.setCampoById(driver, ASIENTO,vo.getAsiento());
 		UtilDriver.setCampoById(driver, NOTA_MARGINAL,vo.getNotaMarginal());
@@ -25,9 +26,12 @@ public class OPDetalleAsiento extends OPAsientosBase {
 		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
 		
 		// buscar mensaje de modificacio correcta
-		UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null);
-		
-		System.out.println("Correcto.\n");
+		WebElement auxWE  = UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null);
+		if(auxWE == null){
+			System.out.println("---------->!!!! Error al modificar asiento !!!!<--------");
+		}else{
+			System.out.println("Correcto.\n");
+		}
 		
 	}
 }
