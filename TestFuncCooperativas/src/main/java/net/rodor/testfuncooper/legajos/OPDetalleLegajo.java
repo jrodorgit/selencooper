@@ -1,5 +1,8 @@
 package net.rodor.testfuncooper.legajos;
 
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -29,13 +32,17 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 * @param vo
 	 * @throws InterruptedException
 	 */
+	@Test
 	public static void modificarLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
-		System.out.println("Legajo modificado-"+vo.toString());
+		System.out.println("Modificar Legajo -"+vo.toString());
+		
+		OPListadoLegajo.consultarLegajo(driver, vo);
 		
 		UtilDriver.setCampoById(driver, EXPEDIENTE, vo.getExpediente());
 		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
-		UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null);
+		
+		assertNotNull(UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null));
 		
 		System.out.println("Correcto.\n");
 	}
@@ -57,7 +64,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		UtilDriver.clickByTextoBoton(driver, BOTON_DOCUMENTO, BOTON_TIPO_SUBMIT);
 
 		// chequeamos add correcto.
-		UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null);
+		assertNotNull(UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null));
 
 		System.out.println("Correcto.\n");
 		
@@ -100,7 +107,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		UtilDriver.clickAnchor(driver,ATR_HREF, ID_FICHEROBD);
 		
 		// comprobamos que estamos en la pagina.
-		driver.findElement(By.xpath("//input[@value='"+doc.getNombreFichero()+"']"));
+		assertNotNull(driver.findElement(By.xpath("//input[@value='"+doc.getNombreFichero()+"']")));
 		
 		//volvemos a detalle del legajo.
 		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);

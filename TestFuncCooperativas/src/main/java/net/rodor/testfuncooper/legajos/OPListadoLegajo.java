@@ -13,7 +13,7 @@ public class OPListadoLegajo extends OPLegajosBase {
 	private static final String TABLA_LEGAJOS = "tablaLegajo";
 	public static final String URL = "/busqueda/legajoSearchReload.htm";
 	
-	public static void buscarLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
+	public static void consultarLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
 		
 		System.out.println("Busqueda de legajo-"+vo.toString());
 		
