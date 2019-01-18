@@ -28,7 +28,7 @@ public class OPAltaLegajo extends OPLegajosBase {
 		
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
 		
-		UtilWE.selectOption(UtilDriver.buscarById(driver, ID_TIPO_EXPEDIENTE, null, null),TIPO_EXPEDIENTE_2);
+		//UtilWE.selectOption(UtilDriver.buscarById(driver, ID_TIPO_EXPEDIENTE, null, null),TIPO_EXPEDIENTE_2);
 		
 		UtilDriver.setCampoById(driver, NUMERO_REGISTRO, vo.getNumeroRegistro());
 		

@@ -39,7 +39,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		
 		OPListadoLegajo.consultarLegajo(driver, vo);
 		
-		UtilDriver.setCampoById(driver, EXPEDIENTE, vo.getExpediente());
+		//UtilDriver.setCampoById(driver, EXPEDIENTE, vo.getExpediente());
 		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
 		
 		assertNotNull(UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null));
