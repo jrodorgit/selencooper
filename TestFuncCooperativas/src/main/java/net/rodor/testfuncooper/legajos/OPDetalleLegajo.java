@@ -22,6 +22,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	private static final String BOTON_DOCUMENTO = "Documento";
 	private static final String ID_RELACION_LEGAJO_FICHEROBD = "idRelacionLegajoFicheroBD";
 	private static final String ID_FICHEROBD = "idFicheBD";
+	private static final String ASIENTOS_RELACIONADOS = "asientosRelacionados";
 	
 	
 	
@@ -40,6 +41,7 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		OPListadoLegajo.consultarLegajo(driver, vo);
 		
 		//UtilDriver.setCampoById(driver, EXPEDIENTE, vo.getExpediente());
+		UtilDriver.setCampoById(driver, ASIENTOS_RELACIONADOS, vo.getAsientosRel());
 		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
 		
 		assertNotNull(UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null));

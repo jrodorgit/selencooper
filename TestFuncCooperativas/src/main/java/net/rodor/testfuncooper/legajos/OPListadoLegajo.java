@@ -9,7 +9,8 @@ public class OPListadoLegajo extends OPLegajosBase {
 	private static final String BOTON_BUSCAR = "buscar";
 	private static final String NUMERO_REGISTRO = "numeroRegistro";
 	private static final String FECHA_DESDE = "fechaDesde";
-	private static final String NUMERO_INSCRIPCION = "numeroInscripcion";
+	private static final String NUMERO_INSCRIPCION = "numeroInscripcionFiltro";
+	//private static final String NUMERO_INSCRIPCION = "numeroInscripcion";
 	private static final String TABLA_LEGAJOS = "tablaLegajo";
 	public static final String URL = "/busqueda/legajoSearchReload.htm";
 	

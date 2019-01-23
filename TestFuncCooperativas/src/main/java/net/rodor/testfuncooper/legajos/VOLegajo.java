@@ -7,7 +7,16 @@ public class VOLegajo {
 	//private String expediente;
 	private String fechaCreacion;
 	//private String tipoExpediente;
+	private String asientosRel;
 	
+	public String getAsientosRel() {
+		return asientosRel;
+	}
+
+	public void setAsientosRel(String asientosRel) {
+		this.asientosRel = asientosRel;
+	}
+
 	public VOLegajo() {
 		super();
 		
@@ -21,13 +30,14 @@ public class VOLegajo {
 		this.fechaCreacion = fechaCreacion;
 		//this.tipoExpediente = tipoExpediente;
 	}*/
-	public VOLegajo (String numeroInscripcion, String numeroRegistro,String fechaCreacion) {
+	public VOLegajo (String numeroInscripcion, String numeroRegistro,String fechaCreacion, String asientosRel) {
 		super();
 		this.numeroRegistro = numeroRegistro;
 		this.numeroInscripcion = numeroInscripcion;
 		//this.expediente = expediente;
 		this.fechaCreacion = fechaCreacion;
 		//this.tipoExpediente = tipoExpediente;
+		this.asientosRel = asientosRel;
 	}
 
 	

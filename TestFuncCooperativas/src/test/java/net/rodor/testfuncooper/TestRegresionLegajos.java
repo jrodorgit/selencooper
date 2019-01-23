@@ -26,9 +26,9 @@ public class TestRegresionLegajos {
 		
 		System.out.println("Inicializando Test Legajos....\n");
 		//legajo = new VOLegajo("001","10100","exp-001-10101-090","18/01/2019","2");
-		legajo = new VOLegajo("001","10101","18/01/2019");
+		legajo = new VOLegajo("001","10205","23/01/2019","11067");
 		doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
-		asiento = new VOAsiento("11067", "001");
+		asiento = new VOAsiento("r", "001");
 		
 		driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOCAL_LOGIN_PRIV);
 		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);
