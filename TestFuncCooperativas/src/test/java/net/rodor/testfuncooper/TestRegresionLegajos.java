@@ -35,9 +35,14 @@ public class TestRegresionLegajos {
 		legajo = (VOLegajo) context.getBean("legajo");
 		doc = (VODocumento) context.getBean("documento");
 		asiento = (VOAsiento) context.getBean("asiento");
+
 		
-		driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOCAL_LOGIN_PRIV);
-		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);
+		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
+				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
+		
+		Env env = (Env) contextEnv.getBean("env");
+		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
+		
 	}
 	
 	@Test

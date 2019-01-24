@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import net.rodor.testfuncooper.asientos.OPAltaAsiento;
 import net.rodor.testfuncooper.asientos.OPDetalleAsiento;
@@ -25,18 +27,21 @@ public class TestRegresionAsientos {
 	public void inicializaTest() throws InterruptedException, AWTException{
 		
 		System.out.println("Inicializando Test Asientos....\n");
-		asiento =   new VOAsiento("11100", "001", "IX","1", "Estó es un asiento 9 > 4 de 11100@.com \n kdodk", 
-				"esto es una nota marginal 11100", "24/01/2019","Otorgamiento de Poderes");
 		
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"net/rodor/testfuncooper/data_set_asientos_sp_config.xml");
 		
-		asientoAnotacion=   new VOAsiento("AD", "001", "IX","1", "Estó es un asiento de tipo anotacion", 
-				"esto es una nota marginal AD", "24/01/2019","Actas del Consejo Rector");
+		asiento = (VOAsiento) context.getBean("asiento");
+		asientoAnotacion = (VOAsiento) context.getBean("asientoAnotacion");
+		asientoB = (VOAsiento) context.getBean("asientoB");
 		
+		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
+				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
 		
-		asientoB = new VOAsiento("11010","001");
+		Env env = (Env) contextEnv.getBean("env");
+		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
 		
-		driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOCAL_LOGIN_PRIV);
-		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);
+	
 	}
 	
 	@Test

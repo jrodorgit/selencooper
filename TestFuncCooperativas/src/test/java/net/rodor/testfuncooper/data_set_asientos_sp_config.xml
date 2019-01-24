@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	
+		
+	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
+		name="asiento" p:numeroAsiento="11201" p:numeroInscripcionCooper="001" p:tomo="IX"  
+		p:folio="666"  
+		p:asiento=" Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
+		p:notaMarginal="rehenderit in voluptate velit esse cillum dolore eu fugiat nulla "  
+		p:fecha="24/01/2019" 
+		p:procedimiento="Otorgamiento de Poderes" />
+
+	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
+		name="asientoAnotacion" p:numeroAsiento="AF" p:numeroInscripcionCooper="001" p:tomo="IX"  
+		p:folio="666"  
+		p:asiento=" Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
+		p:notaMarginal="rehenderit in voluptate velit esse cillum dolore eu fugiat nulla "  
+		p:fecha="24/01/2019" 
+		p:procedimiento="Actas del Consejo Rector" />
+		
+	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
+		name="asientoB" p:numeroAsiento="11010" p:numeroInscripcionCooper="001" />
+		
+		
+</beans>
