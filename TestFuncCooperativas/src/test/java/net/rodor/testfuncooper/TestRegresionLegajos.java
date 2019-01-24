@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import net.rodor.testfuncooper.asientos.VOAsiento;
 import net.rodor.testfuncooper.legajos.OPAltaLegajo;
@@ -21,14 +23,18 @@ public class TestRegresionLegajos {
 	VODocumento doc = null;
 	VOAsiento asiento = null;
 	
+	
 	@Before
 	public void inicializaTest() throws InterruptedException, AWTException{
-		
+
 		System.out.println("Inicializando Test Legajos....\n");
-		//legajo = new VOLegajo("001","10100","exp-001-10101-090","18/01/2019","2");
-		legajo = new VOLegajo("001","10206","24/01/2019","11067");
-		doc = new VODocumento("C:\\Java\\","AngularJSCheatSheet.pdf");
-		asiento = new VOAsiento("r", "001");
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"net/rodor/testfuncooper/data_set_legajos_sp_config.xml");
+		
+		legajo = (VOLegajo) context.getBean("legajo");
+		doc = (VODocumento) context.getBean("documento");
+		asiento = (VOAsiento) context.getBean("asiento");
 		
 		driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_LOCAL_LOGIN_PRIV);
 		//WebDriver driver = OPAccesoChrome.autenticacion(OPAccesoBase.URL_PRE_LOGIN_PRIV);

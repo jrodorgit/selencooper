@@ -16,20 +16,20 @@ public class VOLegajo {
 	public void setAsientosRel(String asientosRel) {
 		this.asientosRel = asientosRel;
 	}
-
+	/*
 	public VOLegajo() {
 		super();
 		
 	}
 
-	/*public VOLegajo (String numeroInscripcion, String numeroRegistro,String expediente,String fechaCreacion, String tipoExpediente) {
+	public VOLegajo (String numeroInscripcion, String numeroRegistro,String expediente,String fechaCreacion, String tipoExpediente) {
 		super();
 		this.numeroRegistro = numeroRegistro;
 		this.numeroInscripcion = numeroInscripcion;
 		//this.expediente = expediente;
 		this.fechaCreacion = fechaCreacion;
 		//this.tipoExpediente = tipoExpediente;
-	}*/
+	}
 	public VOLegajo (String numeroInscripcion, String numeroRegistro,String fechaCreacion, String asientosRel) {
 		super();
 		this.numeroRegistro = numeroRegistro;
@@ -40,7 +40,7 @@ public class VOLegajo {
 		this.asientosRel = asientosRel;
 	}
 
-	
+	*/
 
 	/*public String getTipoExpediente() {
 		return tipoExpediente;
@@ -93,3 +93,8 @@ public class VOLegajo {
 	
 	
 }
+
+/***
+ 
+ 
+ ***/
