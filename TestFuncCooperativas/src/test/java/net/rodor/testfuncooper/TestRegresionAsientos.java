@@ -18,16 +18,20 @@ public class TestRegresionAsientos {
 	WebDriver driver = null;
 	VOAsiento asiento = null;
 	VOAsiento asientoB = null;
+	VOAsiento asientoAnotacion = null;
+	
 	
 	@Before
 	public void inicializaTest() throws InterruptedException, AWTException{
 		
 		System.out.println("Inicializando Test Asientos....\n");
-		asiento =   new VOAsiento("11087", "001", "1","1", "Estó es un asiento 9 > 4 de 11087@.com \n kdodk", 
-		"esto es una nota marginal 11087", "21/12/2018","Otorgamiento de Poderes");
-		//Asiento que produce un null pointer al consultarlo tras darlo de alta.
-				//VOAsiento asiento = new VOAsiento("11074", "001", "1","1", "Estó es un asiento 9 > 4 de 11074@.com \n kdodk", 
-				//"esto es una nota marginal 11074", "20/12/2018","Constitucion");
+		asiento =   new VOAsiento("11100", "001", "IX","1", "Estó es un asiento 9 > 4 de 11100@.com \n kdodk", 
+				"esto es una nota marginal 11100", "24/01/2019","Otorgamiento de Poderes");
+		
+		
+		asientoAnotacion=   new VOAsiento("AD", "001", "IX","1", "Estó es un asiento de tipo anotacion", 
+				"esto es una nota marginal AD", "24/01/2019","Actas del Consejo Rector");
+		
 		
 		asientoB = new VOAsiento("11010","001");
 		
@@ -39,6 +43,8 @@ public class TestRegresionAsientos {
 	public void testRegresion() throws InterruptedException{
 		
 		System.out.println("Lanzando Test Regresion Asientos....\n");
+		
+		OPAltaAsiento.altaAsientoOK(driver,asientoAnotacion);
 		
 		OPAltaAsiento.altaAsientoOK(driver,asiento);
 		
@@ -58,7 +64,7 @@ public class TestRegresionAsientos {
 	
 	@After
 	public void finaliza(){
-		driver.close();
+		//driver.close();
 	}
 	
 	/***

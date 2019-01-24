@@ -70,8 +70,8 @@ public class OPAltaAsiento extends OPAsientosBase {
 		UtilDriver.clickSeleccionCombo(driver, vo.getProcedimiento(),DATA_ID_PROCEDIMIENTO,"form-group form-group-sm");
 		
 		// seleccion de tipo de asiento		
-		UtilWE.clikByTagAtrText(UtilDriver.buscarById(driver, null, null, CHECKBOX_TIPO_ASIENTO), 
-				TAG_SPAN, ATR_CLASS, SEPARATOR_CHECKBOX_LABEL, TIPO_ASIENTO_INSCRIPCION);
+		//UtilWE.clikByTagAtrText(UtilDriver.buscarById(driver, null, null, CHECKBOX_TIPO_ASIENTO), 
+		//		TAG_SPAN, ATR_CLASS, SEPARATOR_CHECKBOX_LABEL, TIPO_ASIENTO_INSCRIPCION);
 
 		UtilDriver.setCampoById(driver, FECHA_ASIENTO,vo.getFecha());
 		
