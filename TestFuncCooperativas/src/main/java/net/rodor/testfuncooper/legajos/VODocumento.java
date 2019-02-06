@@ -4,6 +4,15 @@ public class VODocumento {
 
 	private String ruta;
 	private String nombreFichero;
+	private String descFichero;
+
+	public String getDescFichero() {
+		return descFichero;
+	}
+
+	public void setDescFichero(String descFichero) {
+		this.descFichero = descFichero;
+	}
 
 	public VODocumento() {
 		super();
@@ -26,9 +35,11 @@ public class VODocumento {
 
 	
 
+	
+
 	@Override
 	public String toString() {
-		return "VODocumento [ruta=" + ruta + ", nombreFichero=" + nombreFichero + "]";
+		return "VODocumento [ruta=" + ruta + ", nombreFichero=" + nombreFichero + ", descFichero=" + descFichero + "]";
 	}
 
 	public String getNombreFichero() {

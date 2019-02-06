@@ -11,15 +11,20 @@ import net.rodor.testfuncooper.UtilWE;
 
 public class OPDetalleLegajo extends OPLegajosBase {
 
+	private static final String BOTON_CERRAR_VENTANA_MODADL = "Cancelar";
+	private static final String PULSE_PARA_VER_EL_LEGAJO = "Pulse para ver el Legajo";
+	private static final String TITLE = "title";
 	private static final String DIALOG_CONFIRM_DELETE_ASIENTO_LEGAJO = "dialogConfirmDeleteAsientoLegajo";
 	private static final String ID_REL_LEGAJO_ASIENTO = "idRelLegajoAsiento";
 	private static final String BOTON_OK = "botonOK";
 	private static final String DOCUMENTO_LEGAJO = "documentoLegajo";
+	//private static final String DOCUMENTO_LEGAJO = "documentoLegajoValue";
 	private static final String ALERT_SUCCESS = "alert-success";
 	private static final String EXPEDIENTE = "expediente";
 	private static final String BOTON_ACEPTAR = "aceptar";
 	private static final String BOTON_ATRAS = "botonAtras";
 	private static final String BOTON_DOCUMENTO = "Documento";
+	private static final String BOTON_ADJUNTAR = "Adjuntar";
 	private static final String ID_RELACION_LEGAJO_FICHEROBD = "idRelacionLegajoFicheroBD";
 	private static final String ID_FICHEROBD = "idFicheBD";
 	private static final String ASIENTOS_RELACIONADOS = "asientosRelacionados";
@@ -62,11 +67,15 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		
 		System.out.println("Add documento a legajo-"+vo.toString()+doc.toString());
 		
+		UtilDriver.clickBoton(driver, null, "anadirDocumento");
+		
 		UtilDriver.setCampoById(driver, DOCUMENTO_LEGAJO, doc.getRuta()+doc.getNombreFichero());
-		UtilDriver.clickByTextoBoton(driver, BOTON_DOCUMENTO, BOTON_TIPO_SUBMIT);
+		UtilDriver.setCampoById(driver, "descripcionFicheroBD", doc.getDescFichero());
+		
+		UtilDriver.clickByTextoBoton(driver, BOTON_ADJUNTAR, BOTON_TIPO_SUBMIT);
 
-		// chequeamos add correcto.
-		assertNotNull(UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null));
+		// chequeamos add correcto. SE HA QUITADO ALERT
+		//assertNotNull(UtilDriver.buscarById(driver, ALERT_SUCCESS,null,null));
 
 		System.out.println("Correcto.\n");
 		
@@ -106,10 +115,12 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		
 		System.out.println("Visualizacion documento legajo."+vo.toString()+doc.toString());		
 		
-		UtilDriver.clickAnchor(driver,ATR_HREF, ID_FICHEROBD);
+		//UtilDriver.clickAnchor(driver,ATR_HREF, ID_FICHEROBD);
+		UtilDriver.clickAnchor(driver,TITLE, PULSE_PARA_VER_EL_LEGAJO);
 		
 		// comprobamos que estamos en la pagina.
-		assertNotNull(driver.findElement(By.xpath("//input[@value='"+doc.getNombreFichero()+"']")));
+		//assertNotNull(driver.findElement(By.xpath("//input[@value='"+doc.getNombreFichero()+"']")));
+		UtilDriver.clickByTextoBoton(driver, BOTON_CERRAR_VENTANA_MODADL, "button");
 		
 		//volvemos a detalle del legajo.
 		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);

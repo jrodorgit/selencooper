@@ -4,8 +4,9 @@ public class VOLegajo {
 
 	private String numeroRegistro;
 	private String numeroInscripcion;
+	private String descripcion;
 	//private String expediente;
-	private String fechaCreacion;
+	//private String fechaCreacion;
 	//private String tipoExpediente;
 	private String asientosRel;
 	
@@ -50,14 +51,14 @@ public class VOLegajo {
 		this.tipoExpediente = tipoExpediente;
 	}*/
 
-	public String getFechaCreacion() {
+	/*public String getFechaCreacion() {
 		return fechaCreacion;
 	}
 
 	public void setFechaCreacion(String fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-
+*/
 	
 	public String getNumeroRegistro() {
 		return numeroRegistro;
@@ -75,10 +76,20 @@ public class VOLegajo {
 		this.numeroInscripcion = numeroInscripcion;
 	}
 
+	
+
 	@Override
 	public String toString() {
 		return "VOLegajo [numeroRegistro=" + numeroRegistro + ", numeroInscripcion=" + numeroInscripcion
-				+ ", fechaCreacion=" + fechaCreacion + "]";
+				+ ", descripcion=" + descripcion + ", asientosRel=" + asientosRel + "]";
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	/*public String getExpediente() {

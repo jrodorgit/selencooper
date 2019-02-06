@@ -8,8 +8,9 @@ public class OPListadoLegajo extends OPLegajosBase {
 
 	private static final String BOTON_BUSCAR = "buscar";
 	private static final String NUMERO_REGISTRO = "numeroRegistro";
-	private static final String FECHA_DESDE = "fechaDesde";
+	//private static final String FECHA_DESDE = "fechaDesde";
 	private static final String NUMERO_INSCRIPCION = "numeroInscripcionFiltro";
+	private static final String DESCRIPCION = "descripcion";
 	//private static final String NUMERO_INSCRIPCION = "numeroInscripcion";
 	private static final String TABLA_LEGAJOS = "tablaLegajo";
 	public static final String URL = "/busqueda/legajoSearchReload.htm";
@@ -23,7 +24,8 @@ public class OPListadoLegajo extends OPLegajosBase {
 		//establacemos campos de busqueda.
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
 		UtilDriver.setCampoById(driver, NUMERO_REGISTRO, vo.getNumeroRegistro());
-		UtilDriver.setCampoById(driver, FECHA_DESDE, vo.getFechaCreacion());
+		//UtilDriver.setCampoById(driver, FECHA_DESDE, vo.getFechaCreacion());
+		//UtilDriver.setCampoById(driver, DESCRIPCION, vo.getDescripcion());
 		UtilDriver.clickBoton(driver, null, BOTON_BUSCAR);
 
 		//ir al detalle del legajo si se ha encontrado.

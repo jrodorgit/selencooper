@@ -69,7 +69,7 @@ public class TestRegresionLegajos {
 	
 	@After
 	public void finaliza(){
-		driver.close();
+		//driver.close();
 	}
 	/***
 	public void testAltaLegajo()  {
