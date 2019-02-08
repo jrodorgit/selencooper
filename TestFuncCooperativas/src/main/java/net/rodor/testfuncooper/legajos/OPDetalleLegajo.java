@@ -11,7 +11,7 @@ import net.rodor.testfuncooper.UtilWE;
 
 public class OPDetalleLegajo extends OPLegajosBase {
 
-	private static final String BOTON_CERRAR_VENTANA_MODADL = "Cancelar";
+	private static final String BOTON_CERRAR_VENTANA_MODADL = "idBotonCerrar";
 	private static final String PULSE_PARA_VER_EL_LEGAJO = "Pulse para ver el Legajo";
 	private static final String TITLE = "title";
 	private static final String DIALOG_CONFIRM_DELETE_ASIENTO_LEGAJO = "dialogConfirmDeleteAsientoLegajo";
@@ -120,10 +120,10 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		
 		// comprobamos que estamos en la pagina.
 		//assertNotNull(driver.findElement(By.xpath("//input[@value='"+doc.getNombreFichero()+"']")));
-		UtilDriver.clickByTextoBoton(driver, BOTON_CERRAR_VENTANA_MODADL, "button");
+		UtilDriver.clickBoton(driver, BOTON_CERRAR_VENTANA_MODADL, null);
 		
 		//volvemos a detalle del legajo.
-		UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
+		//UtilDriver.clickBoton(driver, BOTON_ATRAS, null);
 		
 		System.out.println("Correcto\n");				
 	}

@@ -11,7 +11,7 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean class="net.rodor.testfuncooper.legajos.VOLegajo"
-		name="legajo" p:numeroRegistro="22104" p:numeroInscripcion="001" p:asientosRel="11067,r"
+		name="legajo" p:numeroRegistro="22107" p:numeroInscripcion="001" p:asientosRel="11067,r"
 		p:descripcion="Actas Cooperativa"/>
 	
 	<bean class="net.rodor.testfuncooper.legajos.VODocumento"
