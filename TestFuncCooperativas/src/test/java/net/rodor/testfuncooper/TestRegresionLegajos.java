@@ -53,7 +53,7 @@ public class TestRegresionLegajos {
 		OPAltaLegajo.alta(driver,legajo);
 		
 		OPDetalleLegajo.modificarLegajo(driver,legajo);
-		/***/
+		
 		OPDetalleLegajo.addDocALegajo(driver,legajo, doc);
 		
 		OPDetalleLegajo.visualizarDocLegajo(driver,legajo, doc);

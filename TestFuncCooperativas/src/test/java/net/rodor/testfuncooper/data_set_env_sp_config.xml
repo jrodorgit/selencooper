@@ -15,6 +15,7 @@
 		<property name="props">
 			<map>
 				<entry key="URL_PRIV" value="https://localhost/cooperativas/priv/login.htm" />
+				<entry key="URL_PUB" value="https://localhost/cooperativas/pub/home.htm" />
 				<!--  <entry key="URL_PRIV" value="https://preinterweb.empleo.gob.es/cooperativas/priv/login.htm" /> -->
 				
 			</map>

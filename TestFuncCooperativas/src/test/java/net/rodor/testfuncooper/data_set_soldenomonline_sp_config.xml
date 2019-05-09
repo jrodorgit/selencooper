@@ -10,13 +10,10 @@
      http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<bean class="net.rodor.testfuncooper.legajos.VOLegajo"
-		name="legajo" p:numeroInscripcion="001" p:asientosRel="10"
-		p:descripcion="ddd COOPERATIVAS II"/>
-	
-	<bean class="net.rodor.testfuncooper.legajos.VODocumento"
-		name="documento" p:ruta="C:\Java\" p:nombreFichero="AngularJSCheatSheet.pdf" p:descFichero="acta reunion consejo administracion 28/02/2010"/>
-		
-	<bean class="net.rodor.testfuncooper.asientos.VOAsiento"
-		name="asiento" p:numeroAsiento="16" p:numeroInscripcionCooper="001"/>
+	<bean class="net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline" 
+		name="soldenomonline" p:provincia="ALAVA" p:localidad="Vitoria" 
+		p:tipoVia="calle" p:nombreVia="Y coma senora" p:numeroVia="34" 
+		p:codPostal="01001" p:telefonoMovil="666999888"/>
+
+
 </beans>

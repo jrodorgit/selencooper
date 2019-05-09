@@ -4,6 +4,7 @@ package net.rodor.testfuncooper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class UtilDriver {
 	
@@ -175,15 +176,45 @@ public class UtilDriver {
 		}
 		
 	}
-	
+
+	public static void passByText(WebDriver driver,String texto){
+		WebElement we = null;
+		try{
+			Actions action = new Actions(driver);
+			we = driver.findElement(By.xpath(".//a[contains(.,'"+texto+"')]"));
+			action.moveToElement(we).build().perform();
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		
+	}
+
 	public static void goMenu(WebDriver driver,String menu, String submenu){
 		
 		clickAnchorByText(driver,menu);
 		if(submenu != null && !"".equalsIgnoreCase(submenu)){
 			clickAnchorByText(driver,submenu);
+			
 		}
 		
 	}
+	
+	public static void goMenuBis(WebDriver driver,String menu, String submenu,String... subsubmenu ){
+		
+		clickAnchorByText(driver,menu);
+		if(submenu != null && !"".equalsIgnoreCase(submenu)){
+			passByText(driver,submenu);
+			if(subsubmenu[0] != null && !"".equalsIgnoreCase(subsubmenu[0])){
+				clickAnchorByText(driver,subsubmenu[0]);
+				
+			}
+		}
+		
+	}
+	
 	
 	/**
 	 * Busca un tabla por su id y busca entre sus filas un registro que contiene el texto reg.

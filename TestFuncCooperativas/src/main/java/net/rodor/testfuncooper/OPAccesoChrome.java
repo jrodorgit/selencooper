@@ -45,4 +45,20 @@ public class OPAccesoChrome extends OPAccesoBase {
 		
 		return driver;
 	}
+public static WebDriver accesoPublico(String entorno) throws InterruptedException, AWTException {
+		
+		System.out.println("Test en entorno: " +entorno);
+		
+		
+		// driver navegador
+		System.setProperty("webdriver.chrome.driver", "C:\\Java\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		// url cooperativas
+		driver.get(entorno);
+		Thread.sleep(3000);
+		driver.manage().window().maximize();
+		Thread.sleep(1000);
+		
+		return driver;
+	}
 }
