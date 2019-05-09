@@ -10,6 +10,10 @@ import net.rodor.testfuncooper.UtilWE;
 
 public class OPDetalleLegajo extends OPLegajosBase {
 
+	private static final String BOTON_CONFIRMACION = "idBotonOKLegajo";
+	private static final String BOTON_ELIMINAR_LEGAJO = "idBotonEliminarLegajo";
+	private static final String FIELD_DESCRIPCION_FICHERO_BD = "idDescripcionFicheroBD";
+	private static final String BOTON_GUARDAR_EDIT = "idBotonGuardarEdit";
 	private static final String BOTON_CERRAR_VENTANA_MODADL = "idBotonCerrar";
 	private static final String PULSE_PARA_VER_EL_LEGAJO = "Pulse para ver el Legajo";
 	private static final String PULSE_PARA_EDITAR_EL_LEGAJO = "Pulse para editar el Documento asociado al Legajo";
@@ -131,9 +135,9 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		// UtilDriver.clickAnchor(driver,ATR_HREF, ID_FICHEROBD);
 		UtilDriver.clickAnchor(driver, TITLE, PULSE_PARA_EDITAR_EL_LEGAJO);
 
-		UtilDriver.setCampoById(driver, "idDescripcionFicheroBD", " - ACTUALIZADO");
+		UtilDriver.setCampoById(driver, FIELD_DESCRIPCION_FICHERO_BD, " - ACTUALIZADO");
 
-		UtilDriver.clickBoton(driver, "idBotonGuardarEdit", null);
+		UtilDriver.clickBoton(driver, BOTON_GUARDAR_EDIT, null);
 
 		System.out.println("Correcto\n");
 	}
@@ -157,6 +161,17 @@ public class OPDetalleLegajo extends OPLegajosBase {
 		// CONFIRMAR BORRADO RELACION
 		UtilWE.clickAnchor(UtilDriver.buscarById(driver, DIALOG_CONFIRM_DELETE_ASIENTO_LEGAJO, null, null), ATR_HREF,
 				ID_REL_LEGAJO_ASIENTO);
+
+		System.out.println("Correcto.\n");
+	}
+	
+	public static void deleteLegajo(WebDriver driver, VOLegajo vo) throws InterruptedException {
+
+		System.out.println("Delete Legajo -" + vo.toString());
+		
+		UtilDriver.clickBoton(driver, BOTON_ELIMINAR_LEGAJO, null);
+		UtilDriver.clickBoton(driver, BOTON_CONFIRMACION, null);
+		assertNotNull(UtilDriver.buscarById(driver, ALERT_SUCCESS, null, null));
 
 		System.out.println("Correcto.\n");
 	}

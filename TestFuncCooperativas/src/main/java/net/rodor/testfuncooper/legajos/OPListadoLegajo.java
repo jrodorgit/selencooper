@@ -6,6 +6,7 @@ import net.rodor.testfuncooper.UtilDriver;
 
 public class OPListadoLegajo extends OPLegajosBase {
 
+	private static final String TEXTO_ASIENTO = "textoAsiento";
 	private static final String BOTON_BUSCAR = "buscar";
 	private static final String NUMERO_INSCRIPCION = "numeroInscripcionFiltro";
 	private static final String TABLA_LEGAJOS = "tablaLegajo";
@@ -21,7 +22,7 @@ public class OPListadoLegajo extends OPLegajosBase {
 		//establacemos campos de busqueda.
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
 		UtilDriver.setCampoById(driver, DESCRIPCION, vo.getDescripcion());
-		UtilDriver.setCampoById(driver, "textoAsiento", "Lorem");
+		UtilDriver.setCampoById(driver, TEXTO_ASIENTO, "Lorem");
 		
 		UtilDriver.clickBoton(driver, null, BOTON_BUSCAR);
 

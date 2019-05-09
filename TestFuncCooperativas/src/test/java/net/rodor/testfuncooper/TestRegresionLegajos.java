@@ -53,7 +53,7 @@ public class TestRegresionLegajos {
 		OPAltaLegajo.alta(driver,legajo);
 		
 		OPDetalleLegajo.modificarLegajo(driver,legajo);
-		
+		/***/
 		OPDetalleLegajo.addDocALegajo(driver,legajo, doc);
 		
 		OPDetalleLegajo.visualizarDocLegajo(driver,legajo, doc);
@@ -61,17 +61,21 @@ public class TestRegresionLegajos {
 		OPDetalleLegajo.modificaDescripcionDocLegajo(driver,legajo, doc);
 		
 		OPDetalleLegajo.delDocLegajo(driver,legajo);
-		
+		/**/
 		OPAsociacionLegajoAsiento.addAsientoALegajo(driver, legajo,asiento);
 		
 		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
+		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
+		
+		OPDetalleLegajo.deleteLegajo(driver, legajo);
+		
 		
 		
 	}
 	
 	@After
 	public void finaliza(){
-		//driver.close();
+		driver.close();
 	}
 	
 	

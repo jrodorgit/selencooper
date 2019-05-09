@@ -12,7 +12,7 @@
 
 	<bean class="net.rodor.testfuncooper.legajos.VOLegajo"
 		name="legajo" p:numeroInscripcion="001" p:asientosRel="10"
-		p:descripcion="AAA COOPERATIVAS I"/>
+		p:descripcion="ccc COOPERATIVAS II"/>
 	
 	<bean class="net.rodor.testfuncooper.legajos.VODocumento"
 		name="documento" p:ruta="C:\Java\" p:nombreFichero="AngularJSCheatSheet.pdf" p:descFichero="acta reunion consejo administracion 28/02/2010"/>
