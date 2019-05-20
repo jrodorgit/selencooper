@@ -18,15 +18,42 @@ public class OPDetalleAsiento extends OPAsientosBase {
 
 		System.out.println("Modificacion de asiento"+vo.toString());
 		
-		OPListadoAsiento.consultarAsiento( driver, vo);
+		//OPListadoAsiento.consultarAsiento( driver, vo);
 
-		UtilDriver.setCampoById(driver, ASIENTO,vo.getAsiento());
-		UtilDriver.setCampoById(driver, NOTA_MARGINAL,vo.getNotaMarginal());
+		UtilDriver.setCampoById(driver, ASIENTO,"-updated bis");
+		UtilDriver.setCampoById(driver, NOTA_MARGINAL,"-updated bis");
 		
 		// guardar
 		UtilDriver.clickBoton(driver, null, BOTON_ACEPTAR);
 		
 		// buscar mensaje de modificacio correcta
+		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
+		
+		
+		
+	}
+	
+	public static void enviarRevision(WebDriver driver,VOAsiento vo) throws InterruptedException{
+
+		System.out.println("Enviar  Asiento a Revision"+vo.toString());
+		
+		// enviar revision
+		UtilDriver.clickBoton(driver, null, BOTON_ENVIAR_REVISION);
+		
+		// buscar mensaje de envio  correcto
+		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
+		
+		
+		
+	}
+	public static void recuperar(WebDriver driver,VOAsiento vo) throws InterruptedException{
+
+		System.out.println("Recuperar Asiento"+vo.toString());
+		
+		// enviar revision
+		UtilDriver.clickBoton(driver, null, BOTON_RECUPERAR);
+		
+		// buscar mensaje de envio  correcto
 		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
 		
 		

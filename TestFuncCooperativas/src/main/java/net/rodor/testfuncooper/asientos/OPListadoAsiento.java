@@ -45,7 +45,7 @@ public class OPListadoAsiento  extends OPAsientosBase {
 	 */
 	public static void buscarAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
 		
-		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		//UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION,vo.getNumeroInscripcionCooper());
 		UtilDriver.setCampoById(driver, NUMERO_ASIENTO,vo.getNumeroAsiento());

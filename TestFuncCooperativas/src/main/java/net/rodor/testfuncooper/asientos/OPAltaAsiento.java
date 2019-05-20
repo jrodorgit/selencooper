@@ -43,7 +43,7 @@ public class OPAltaAsiento extends OPAsientosBase {
 		assertNotNull(UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
 		
 		//volver.
-		UtilDriver.clickBoton(driver, null, null,BOTON_VOLVER);
+		//UtilDriver.clickBoton(driver, null, null,BOTON_VOLVER);
 		
 		System.out.println("Correcto.\n");
 		
@@ -57,7 +57,7 @@ public class OPAltaAsiento extends OPAsientosBase {
 	 */
 	public static void altaAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
 		
-		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
+		
 		
 		UtilDriver.setCampoById(driver, NUMERO_TOMO,vo.getTomo());
 		UtilDriver.setCampoById(driver, NUMERO_FOLIO,vo.getFolio());
