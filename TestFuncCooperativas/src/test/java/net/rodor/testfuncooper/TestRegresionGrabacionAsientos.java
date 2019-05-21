@@ -47,7 +47,7 @@ public class TestRegresionGrabacionAsientos {
 	
 	@Test
 	public void testRegresion() throws InterruptedException{
-		
+		/***/
 		System.out.println("Lanzando Test Regresion Grabacion Asientos....\n");
 		
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
@@ -76,13 +76,34 @@ public class TestRegresionGrabacionAsientos {
 		OPDetalleAsiento.modificaAsiento(driver, asiento);
 		
 		OPDetalleAsiento.enviarRevision(driver, asiento);
+		/***/
+		
+		// el revisor lo consulta y lo rechaza.
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		
+		OPListadoAsiento.consultarAsiento(driver, asiento);
+		
+		OPDetalleAsiento.rechazar(driver, asiento);
 		
 		
+		// Lel grabador le actualiza y le manda de nuevo a revision
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		
+		OPListadoAsiento.consultarAsiento(driver, asiento);
+		
+		OPDetalleAsiento.enviarRevisionTrasModificar(driver, asiento);
+		
+		// el revisor lo da por bueno
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		
+		OPListadoAsiento.consultarAsiento(driver, asiento);
+		
+		OPDetalleAsiento.marcarRevisado(driver, asiento);
 		
 		
 	}
 	@After
 	public void finaliza(){
-		driver.close();
+		//driver.close();
 	}
 }

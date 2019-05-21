@@ -33,6 +33,23 @@ public class OPDetalleAsiento extends OPAsientosBase {
 		
 	}
 	
+	public static void enviarRevisionTrasModificar(WebDriver driver,VOAsiento vo) throws InterruptedException{
+
+		System.out.println("enviarRevisionTrasModificar  Asiento "+vo.toString());
+		
+		UtilDriver.setCampoById(driver, ASIENTO,"-updated tris");
+		UtilDriver.setCampoById(driver, NOTA_MARGINAL,"-updated tris");
+		
+		// enviar revision
+		UtilDriver.clickBoton(driver, null, BOTON_ENVIAR_REVISION);
+		
+		// buscar mensaje de envio  correcto
+		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
+		
+		
+		
+	}
+	
 	public static void enviarRevision(WebDriver driver,VOAsiento vo) throws InterruptedException{
 
 		System.out.println("Enviar  Asiento a Revision"+vo.toString());
@@ -58,5 +75,38 @@ public class OPDetalleAsiento extends OPAsientosBase {
 		
 		
 		
+	}
+	public static void rechazar(WebDriver driver,VOAsiento vo) throws InterruptedException{
+
+		System.out.println("Rechazar Asiento"+vo.toString());
+		
+		// rechazar
+		UtilDriver.clickBoton(driver, null, BOTON_RECHAZAR);
+		
+		// introducir motivo de rechazo
+		UtilDriver.setCampoById(driver, MOTIVO_RECHAZO,"Este asiento no esta bien por bla bla");
+		
+		UtilDriver.clickBoton(driver, BOTON_OK_MOTIVO,null);
+		
+		// buscar mensaje de rechazo  correcto
+		//assertNotNull( UtilDriver.buscarById(driver, null,null,"panel panel-danger"));
+		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
+		
+		
+		System.out.println("Asiento rechazado Correcto");
+	}
+	public static void marcarRevisado(WebDriver driver,VOAsiento vo) throws InterruptedException{
+
+		System.out.println("Marcar Asiento como Revisado"+vo.toString());
+		
+		// rechazar
+		UtilDriver.clickBoton(driver, null, BOTON_MARCAR_REVISADO);
+		
+		
+		// buscar mensaje de rechazo  correcto
+		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
+		
+		
+		System.out.println("Asiento marcado como revisado Correcto");
 	}
 }
