@@ -45,7 +45,7 @@ public class OPAccesoChrome extends OPAccesoBase {
 		
 		return driver;
 	}
-public static WebDriver accesoPublico(String entorno) throws InterruptedException, AWTException {
+	public static WebDriver accesoPublico(String entorno) throws InterruptedException, AWTException {
 		
 		System.out.println("Test en entorno: " +entorno);
 		
@@ -59,6 +59,44 @@ public static WebDriver accesoPublico(String entorno) throws InterruptedExceptio
 		driver.manage().window().maximize();
 		Thread.sleep(1000);
 		
+		
 		return driver;
 	}
+	public static void autenticacionPublica(WebDriver driver) throws InterruptedException, AWTException {
+	
+	WebElement searchBox = driver.findElement(By.id("botonEntrarCertificado"));
+	searchBox.click();
+	Thread.sleep(5000);
+			
+	Robot robot = new Robot();
+	robot.keyPress(KeyEvent.VK_TAB);
+	robot.delay(1000);
+	robot.keyPress(KeyEvent.VK_TAB);
+	robot.delay(1000);
+	robot.keyPress(KeyEvent.VK_ENTER);
+	Thread.sleep(4000);
+	robot.keyPress(KeyEvent.VK_ENTER);
+	Thread.sleep(2000);
+	robot.keyPress(KeyEvent.VK_ENTER);
+	Thread.sleep(3000);
+		
+	}
+	public static void firmarConCertificado(WebDriver driver) throws InterruptedException, AWTException {
+		
+		
+				
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.delay(1000);
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.delay(1000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(4000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(2000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(3000);
+			
+		}
+	
 }

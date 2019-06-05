@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+
+
 public class UtilWE {
 
 	public static void clickByClassName(WebElement we, String className) throws InterruptedException{

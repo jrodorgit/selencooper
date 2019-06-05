@@ -44,13 +44,13 @@ public class TestRegresionSolDenomOnline {
 		//driver.close();
 	}
 	@Test
-	public void testRegresion() throws InterruptedException{
+	public void testRegresion() throws InterruptedException, AWTException{
 		
 		System.out.println("Lanzando Test Regresion Solicitud Denominacion On-Line....\n");
 		
 		OPAltaSolicitud.alta(driver,soldenom);
 		
-		
+		System.out.println("Fin Solicitud Denominacion On-Line....\n");
 	}
 	
 }

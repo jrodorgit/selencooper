@@ -16,11 +16,15 @@ public class UtilDriver {
 	
 	public static void setCampoById(WebDriver driver, String id, String valor) throws InterruptedException{
 		driver.findElement(By.id(id)).sendKeys(valor);
-		Thread.sleep(200);
+		Thread.sleep(100);
 	}
 	
 	public static void clickByName(WebDriver driver, String name) throws InterruptedException{
 		driver.findElement(By.name(name)).click();
+		Thread.sleep(3000);
+	}
+	public static void clickById(WebDriver driver, String id) throws InterruptedException{
+		driver.findElement(By.id(id)).click();
 		Thread.sleep(3000);
 	}
 	public static void clickByClassName(WebDriver driver, String className) throws InterruptedException{
@@ -115,6 +119,12 @@ public class UtilDriver {
 		elementoWebDivProc.findElement(By.xpath("//button[@data-id='"+nombreCombo+"']")).click();
 		Thread.sleep(3000);
 		elementoWebDivProc.findElement(By.xpath("//a[@data-normalized-text='"+seleccion+"']")).click();
+		Thread.sleep(2000);
+	}
+	public static void clickSeleccionCombo(WebDriver driver, String seleccion, String id) throws InterruptedException {
+		WebElement elementoCombo = driver.findElement(By.id(id));
+		elementoCombo.findElement(By.xpath("//option[@value='"+seleccion+"']")).click();
+		
 		Thread.sleep(2000);
 	}
 	
