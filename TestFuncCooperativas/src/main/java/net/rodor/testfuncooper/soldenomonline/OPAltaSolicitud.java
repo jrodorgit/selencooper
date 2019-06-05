@@ -3,6 +3,7 @@ package net.rodor.testfuncooper.soldenomonline;
 import java.awt.AWTException;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -27,7 +28,8 @@ public class OPAltaSolicitud extends OPBase{
 		OPAccesoChrome.autenticacionPublica(driver);
 		
 		//Datos Solicitante.
-		//UtilDriver.buscarById(driver, "activateDatosNotificacion",null,null).sendKeys(Keys.SPACE);;
+		UtilDriver.clickByClassName(driver,"checkbox-meyss-item-icon glyphicon glyphicon-ok");
+		/***/
 		// provincia
 		UtilDriver.clickSeleccionCombo(driver, "1","solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteProvincia");
 		//localidad
@@ -49,6 +51,21 @@ public class OPAltaSolicitud extends OPBase{
 		// siguiente
 		UtilDriver.clickBoton(driver, null, null, " Siguiente");
 		
+		// destinatario
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionDestinatario", "MENGANITO PEREZ");
+		UtilWE.selectOption(UtilDriver.buscarById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionTipoVia", null, null),"4");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionNombreVia", "esto es otra calle");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionNumero", "34");
+		UtilWE.selectOption(UtilDriver.buscarById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionProvincia", null, null),"1");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionLocalidad", "Vitoria");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionCodigoPostal", "01002");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionTelefono", "777888444");
+		
+		// siguiente
+		UtilDriver.clickBoton(driver, null, null, " Siguiente");
+		
+		
+		/***/
 		// denominaciones
 		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosDenominacionCommand.datosDenominacionDenominaciones0", "DENOMINACION AUTOMATICA 1");
 		UtilDriver.clickBoton(driver, null, null, "");
@@ -62,7 +79,71 @@ public class OPAltaSolicitud extends OPBase{
 		OPAccesoChrome.firmarConCertificado(driver);
 		UtilDriver.clickBoton(driver, "descargarJustificanteGEISER", null, null);
 		UtilDriver.clickBoton(driver, "descargarSolicitud", null, null);
+		/***/
 		
+		
+	}
+	
+	@Test
+	public static void altaProrroga(WebDriver driver, VOSolDenomOnline vo) throws InterruptedException, AWTException {
+		
+		System.out.println("Alta de Solicitud Prorroga Denominacion on Line-" + vo.toString());
+		UtilDriver.goMenuBis(driver, OPAltaSolicitud.MENU, OPAltaSolicitud.SUB_MENU_CERTIFICACION_DENOMINACION, OPAltaSolicitud.SUB_MENU_CERTIFICACION_DENOMINACION_ALTA);
+		OPAccesoChrome.autenticacionPublica(driver);
+		
+		//Datos Solicitante.
+		UtilDriver.clickByClassName(driver,"checkbox-meyss-item-icon glyphicon glyphicon-ok");
+		/***/
+		// provincia
+		UtilDriver.clickSeleccionCombo(driver, "1","solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteProvincia");
+		//localidad
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteLocalidad", "Gasteiz");
+		// tipo via
+		//UtilDriver.clickSeleccionCombo(driver, "5","solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteTipoVia");
+		UtilWE.selectOption(UtilDriver.buscarById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteTipoVia", null, null),"5");
+		// nombre
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteNombreVia", "del puerto");
+		//numero
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteNumero", "89");
+		//codigo postal
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteCodigoPostal", "01001");
+		// telefono
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteTelefono", "666888999");
+		//email
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosSolicitanteCommand.datosSolicitanteEmail", "fulanito@gmail.com");
+		
+		// siguiente
+		UtilDriver.clickBoton(driver, null, null, " Siguiente");
+		
+		// destinatario
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionDestinatario", "MENGANITO PEREZ");
+		UtilWE.selectOption(UtilDriver.buscarById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionTipoVia", null, null),"4");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionNombreVia", "esto es otra calle");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionNumero", "34");
+		UtilWE.selectOption(UtilDriver.buscarById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionProvincia", null, null),"1");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionLocalidad", "Vitoria");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionCodigoPostal", "01002");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosNotificacionSolicitudCommand.notificacionTelefono", "777888444");
+		
+		// siguiente
+		UtilDriver.clickBoton(driver, null, null, " Siguiente");
+		
+		
+		/***/
+		// prorroga
+		UtilDriver.clickByText(driver,"Prórroga");
+		UtilDriver.setCampoById(driver, "datosDenominacionNumLocalizadorProrroga", "200028");
+		UtilDriver.setCampoById(driver, "datosDenominacionTextoLocalizadorProrroga", "DENOMINAICON A SER NEGATIVA");
+		
+		// finalizar
+		UtilDriver.clickBoton(driver, null, null, " Finalizar");
+		
+		// firmar solicitud
+		UtilDriver.clickBoton(driver, "botonSignDocumento", null, null);
+		OPAccesoChrome.firmarConCertificado(driver);
+		UtilDriver.clickBoton(driver, "descargarJustificanteGEISER", null, null);
+		UtilDriver.clickBoton(driver, "descargarSolicitud", null, null);
+		/***/
 		
 		
 	}

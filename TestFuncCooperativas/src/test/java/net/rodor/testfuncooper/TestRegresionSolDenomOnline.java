@@ -9,9 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import net.rodor.testfuncooper.legajos.OPAltaLegajo;
-import net.rodor.testfuncooper.legajos.OPLegajosBase;
-import net.rodor.testfuncooper.legajos.VOLegajo;
 import net.rodor.testfuncooper.soldenomonline.OPAltaSolicitud;
 import net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline;
 
@@ -26,7 +23,7 @@ public class TestRegresionSolDenomOnline {
 	public void inicializaTest() throws InterruptedException, AWTException{
 
 		System.out.println("Inicializando Test Solicitud Denominacion On-Line....\n");
-		
+		/***/
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"net/rodor/testfuncooper/data_set_soldenomonline_sp_config.xml");
 		soldenom = (VOSolDenomOnline) context.getBean("soldenomonline");
@@ -36,21 +33,29 @@ public class TestRegresionSolDenomOnline {
 		
 		Env env = (Env) contextEnv.getBean("env");
 		driver = OPAccesoChrome.accesoPublico(env.getProps().get("URL_PUB"));
-		
+		/***/
 	}
 	
 	@After
 	public void finaliza(){
-		//driver.close();
+		System.out.println("finaliza \n");
+		driver.close();
 	}
 	@Test
 	public void testRegresion() throws InterruptedException, AWTException{
 		
 		System.out.println("Lanzando Test Regresion Solicitud Denominacion On-Line....\n");
-		
 		OPAltaSolicitud.alta(driver,soldenom);
-		
 		System.out.println("Fin Solicitud Denominacion On-Line....\n");
+	}
+	@Test
+	public void testRegresionProrroga() throws InterruptedException, AWTException{
+		
+		System.out.println("Lanzando Test Regresion Solicitud Prorroga de Denominacion On-Line....\n");
+		
+		OPAltaSolicitud.altaProrroga(driver,soldenom);
+		
+		System.out.println("Fin Solicitud Prorroga de Denominacion On-Line....\n");
 	}
 	
 }

@@ -28,8 +28,32 @@ public class UtilDriver {
 		Thread.sleep(3000);
 	}
 	public static void clickByClassName(WebDriver driver, String className) throws InterruptedException{
-		driver.findElement(By.className(className)).click();
-		Thread.sleep(3000);
+		try{
+			driver.findElement(By.className(className)).click();
+			Thread.sleep(3000);
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		try{
+			driver.findElement(By.xpath(".//*[@class='"+className+"']")).click();
+			Thread.sleep(3000);
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		
+	}
+	public static void clickByText(WebDriver driver, String text) throws InterruptedException{
+		
+		try{
+			driver.findElement(By.xpath(".//*[text()='"+ text + "']")).click();
+			Thread.sleep(3000);
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		
 	}
 	
 	public static WebElement buscarById(WebDriver driver, String id, String name, String className) throws InterruptedException{
