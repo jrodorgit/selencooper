@@ -3,15 +3,12 @@ package net.rodor.testfuncooper.soldenomonline;
 import java.awt.AWTException;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.OPBase;
 import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.UtilWE;
-import net.rodor.testfuncooper.legajos.OPLegajosBase;
 
 
 public class OPAltaSolicitud extends OPBase{
@@ -67,9 +64,9 @@ public class OPAltaSolicitud extends OPBase{
 		
 		/***/
 		// denominaciones
-		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosDenominacionCommand.datosDenominacionDenominaciones0", "DENOMINACION AUTOMATICA 1");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosDenominacionCommand.datosDenominacionDenominaciones0", vo.getDenominacionUno());
 		UtilDriver.clickBoton(driver, null, null, "");
-		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosDenominacionCommand.datosDenominacionDenominaciones1", "DENOMINACION AUTOMATICA 2");
+		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosDenominacionCommand.datosDenominacionDenominaciones1", vo.getDenominacionDos());
 		
 		// finalizar
 		UtilDriver.clickBoton(driver, null, null, " Finalizar");
@@ -132,8 +129,8 @@ public class OPAltaSolicitud extends OPBase{
 		/***/
 		// prorroga
 		UtilDriver.clickByText(driver,"Prórroga");
-		UtilDriver.setCampoById(driver, "datosDenominacionNumLocalizadorProrroga", "200028");
-		UtilDriver.setCampoById(driver, "datosDenominacionTextoLocalizadorProrroga", "DENOMINAICON A SER NEGATIVA");
+		UtilDriver.setCampoById(driver, "datosDenominacionNumLocalizadorProrroga", vo.getNumLocalizador());
+		UtilDriver.setCampoById(driver, "datosDenominacionTextoLocalizadorProrroga", vo.getDescLocalizador());
 		
 		// finalizar
 		UtilDriver.clickBoton(driver, null, null, " Finalizar");

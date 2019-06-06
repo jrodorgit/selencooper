@@ -2,61 +2,40 @@ package net.rodor.testfuncooper.soldenomonline;
 
 public class VOSolDenomOnline {
 
-	private String provincia;
-	private String localidad;
-	private String tipoVia;
-	private String nombreVia;
-	private String numeroVia;
-	private String codPostal;
-	private String telefonoMovil;
-	public String getProvincia() {
-		return provincia;
+	private String denominacionUno;
+	private String denominacionDos;
+	private String numLocalizador;
+	private String descLocalizador;
+	public String getDenominacionUno() {
+		return denominacionUno;
 	}
-	public void setProvincia(String provincia) {
-		this.provincia = provincia;
+	public void setDenominacionUno(String denominacionUno) {
+		this.denominacionUno = denominacionUno;
 	}
-	public String getLocalidad() {
-		return localidad;
+	public String getDenominacionDos() {
+		return denominacionDos;
 	}
-	public void setLocalidad(String localidad) {
-		this.localidad = localidad;
+	public void setDenominacionDos(String denominacionDos) {
+		this.denominacionDos = denominacionDos;
 	}
-	public String getTipoVia() {
-		return tipoVia;
+	public String getNumLocalizador() {
+		return numLocalizador;
 	}
-	public void setTipoVia(String tipoVia) {
-		this.tipoVia = tipoVia;
+	public void setNumLocalizador(String numLocalizador) {
+		this.numLocalizador = numLocalizador;
 	}
-	public String getNombreVia() {
-		return nombreVia;
+	public String getDescLocalizador() {
+		return descLocalizador;
 	}
-	public void setNombreVia(String nombreVia) {
-		this.nombreVia = nombreVia;
-	}
-	public String getNumeroVia() {
-		return numeroVia;
-	}
-	public void setNumeroVia(String numeroVia) {
-		this.numeroVia = numeroVia;
-	}
-	public String getCodPostal() {
-		return codPostal;
-	}
-	public void setCodPostal(String codPostal) {
-		this.codPostal = codPostal;
-	}
-	public String getTelefonoMovil() {
-		return telefonoMovil;
-	}
-	public void setTelefonoMovil(String telefonoMovil) {
-		this.telefonoMovil = telefonoMovil;
+	public void setDescLocalizador(String descLocalizador) {
+		this.descLocalizador = descLocalizador;
 	}
 	@Override
 	public String toString() {
-		return "VOSolDenomOnline [provincia=" + provincia + ", localidad=" + localidad + ", tipoVia=" + tipoVia
-				+ ", nombreVia=" + nombreVia + ", numeroVia=" + numeroVia + ", codPostal=" + codPostal
-				+ ", telefonoMovil=" + telefonoMovil + "]";
+		return "VOSolDenomOnline [denominacionUno=" + denominacionUno + ", denominacionDos=" + denominacionDos
+				+ ", numLocalizador=" + numLocalizador + ", descLocalizador=" + descLocalizador + "]";
 	}
+	
 	
 	
 }

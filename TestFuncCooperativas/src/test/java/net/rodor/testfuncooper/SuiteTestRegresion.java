@@ -6,8 +6,9 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	TestRegresionLegajos.class,
-	TestRegresionSolDenomOnline.class
-	//TestRegresionAsientos.class
+	TestRegresionSolDenomOnline.class,
+	TestRegresionSolProrrogaDenomOnline.class,
+	TestRegresionAsientos.class
 })
 
 public class SuiteTestRegresion {

@@ -11,9 +11,8 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean class="net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline" 
-		name="soldenomonline" p:provincia="ALAVA" p:localidad="Vitoria" 
-		p:tipoVia="calle" p:nombreVia="Y coma senora" p:numeroVia="34" 
-		p:codPostal="01001" p:telefonoMovil="666999888"/>
+		name="soldenomonline" p:denominacionUno="DENOMINACIÓN AUTOMATICA ON LINE 11" p:denominacionDos="DENOMINACIÓN AUTOMATICA ON LINE 12" 
+		p:numLocalizador="200028" p:descLocalizador="DENOMINAICON A SER NEGATIVA" />
 
 
 </beans>
