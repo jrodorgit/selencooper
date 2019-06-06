@@ -8,6 +8,7 @@ import org.junit.runners.Suite;
 	TestRegresionLegajos.class,
 	TestRegresionSolDenomOnline.class,
 	TestRegresionSolProrrogaDenomOnline.class,
+	TestRegresionSolDenomManual.class,
 	TestRegresionAsientos.class
 })
 
