@@ -11,8 +11,8 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean class="net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline" 
-		name="soldenomonline" p:denominacionUno="DENOMINACIÓN AUTOMATICA ON LINE 11" p:denominacionDos="DENOMINACIÓN AUTOMATICA ON LINE 12" 
-		p:numLocalizador="200028" p:descLocalizador="DENOMINAICON A SER NEGATIVA" />
+		name="soldenomonline" p:denominacionUno="DENOMINACIÓN AUTOMATICA ON LINE 31" p:denominacionDos="DENOMINACIÓN AUTOMATICA ON LINE 32" 
+		p:numLocalizador="200030" p:descLocalizador="DENOMINACION NEGATIVA" />
 
 
 </beans>

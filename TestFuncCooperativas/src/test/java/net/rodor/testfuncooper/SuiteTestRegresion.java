@@ -9,7 +9,8 @@ import org.junit.runners.Suite;
 	TestRegresionSolDenomOnline.class,
 	TestRegresionSolProrrogaDenomOnline.class,
 	TestRegresionSolDenomManual.class,
-	TestRegresionAsientos.class
+	TestRegresionAsientos.class,
+	TestRegresionSolProrrogaDenomOnline.class
 })
 
 public class SuiteTestRegresion {

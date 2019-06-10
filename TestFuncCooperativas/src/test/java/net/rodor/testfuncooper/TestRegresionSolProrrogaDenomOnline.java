@@ -4,6 +4,7 @@ import java.awt.AWTException;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -39,6 +40,7 @@ public class TestRegresionSolProrrogaDenomOnline {
 		driver.close();
 	}
 	
+	@Test
 	public void testRegresion() throws InterruptedException, AWTException{
 		
 		System.out.println("Lanzando Test Regresion Solicitud Prorroga de Denominacion On-Line....\n");
