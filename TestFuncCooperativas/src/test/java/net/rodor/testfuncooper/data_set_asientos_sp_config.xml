@@ -10,27 +10,20 @@
      http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-
-	
-		
 	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
-		name="asiento" p:numeroAsiento="14001" p:numeroInscripcionCooper="001" p:tomo="IX"  
-		p:folio="666"  
+		name="asiento" p:numeroAsiento="1" p:numeroInscripcionCooper="2614-SMT" p:tomo="I"  
+		p:folio="1"  
 		p:asiento=" Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
 		p:notaMarginal="rehenderit in voluptate velit esse cillum dolore eu fugiat nulla "  
-		p:fecha="24/01/2019" 
+		p:fecha="10/06/2019" 
 		p:procedimiento="Otorgamiento de Poderes" />
 
 	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
-		name="asientoOtro" p:numeroAsiento="DDG" p:numeroInscripcionCooper="" p:tomo=""  
+		name="asientoOtro" p:numeroAsiento="A" p:numeroInscripcionCooper="" p:tomo=""  
 		p:folio=""  
 		p:asiento=" Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
-		p:notaMarginal="rehenderit in voluptate velit esse cillum dolore eu fugiat nulla "  
-		p:fecha="25/01/2019" 
+		p:notaMarginal="rehenderit in vÓluptate velit esse cillum dolore eu fugiat nulla "  
+		p:fecha="10/06/2019" 
 		p:procedimiento="Actas del Consejo Rector" />
-	<!-- 	
-	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
-		name="asientoB" p:numeroAsiento="11010" p:numeroInscripcionCooper="001" /> -->
-		
 		
 </beans>

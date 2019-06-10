@@ -58,14 +58,13 @@ public class OPAltaAsiento extends OPAsientosBase {
 	public static void altaAsiento(WebDriver driver,VOAsiento vo) throws InterruptedException{
 		
 		
-		
-		UtilDriver.setCampoById(driver, NUMERO_TOMO,vo.getTomo());
-		UtilDriver.setCampoById(driver, NUMERO_FOLIO,vo.getFolio());
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION,vo.getNumeroInscripcionCooper());
 		UtilDriver.setCampoById(driver, NUMERO_ASIENTO,vo.getNumeroAsiento());
 		UtilDriver.setCampoById(driver, ASIENTO,vo.getAsiento());
 		UtilDriver.setCampoById(driver, NOTA_MARGINAL,vo.getNotaMarginal());
-		
+		UtilDriver.setCampoById(driver, NUMERO_TOMO,vo.getTomo());
+		UtilDriver.setCampoById(driver, NUMERO_FOLIO,vo.getFolio());
+
 		// SELECCION DE PROCEDIMIENTO
 		UtilDriver.clickSeleccionCombo(driver, vo.getProcedimiento(),DATA_ID_PROCEDIMIENTO,"form-group form-group-sm");
 		
