@@ -75,6 +75,7 @@ public class TestRegresionLegajos {
 	
 	@After
 	public void finaliza(){
+		System.out.println("Fin Test Regresion Legajos");
 		driver.close();
 	}
 	

@@ -39,7 +39,7 @@ public class OPAccesoChrome extends OPAccesoBase {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(4000);
 		robot.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(3000);
 		
@@ -76,7 +76,7 @@ public class OPAccesoChrome extends OPAccesoBase {
 	robot.keyPress(KeyEvent.VK_ENTER);
 	Thread.sleep(4000);
 	robot.keyPress(KeyEvent.VK_ENTER);
-	Thread.sleep(2000);
+	Thread.sleep(4000);
 	robot.keyPress(KeyEvent.VK_ENTER);
 	Thread.sleep(3000);
 		

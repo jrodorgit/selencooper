@@ -11,13 +11,13 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean class="net.rodor.testfuncooper.legajos.VOLegajo"
-		name="legajo" p:numeroInscripcion="2614-SMT" p:asientosRel="1"
-		p:descripcion="2614-SMT-II"/>
+		name="legajo" p:numeroInscripcion="AND-MA-1845" p:asientosRel="1"
+		p:descripcion="AND-MA-1845-I"/>
 	
 	<bean class="net.rodor.testfuncooper.legajos.VODocumento"
 		name="documento" p:ruta="C:\Java\" p:nombreFichero="AngularJSCheatSheet.pdf" p:descFichero="acta reunion consejo administracion 28/02/2010"/>
 		
 	<bean class="net.rodor.testfuncooper.asientos.VOAsiento"
-		name="asiento" p:numeroAsiento="A" p:numeroInscripcionCooper="2614-SMT"/>
+		name="asiento" p:numeroAsiento="A" p:numeroInscripcionCooper="AND-MA-1845"/>
 		
 </beans>

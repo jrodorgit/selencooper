@@ -36,7 +36,7 @@ public class TestRegresionSolProrrogaDenomOnline {
 	
 	@After
 	public void finaliza(){
-		System.out.println("finaliza \n");
+		System.out.println("Fin Alta Prorroga On line. \n");
 		driver.close();
 	}
 	

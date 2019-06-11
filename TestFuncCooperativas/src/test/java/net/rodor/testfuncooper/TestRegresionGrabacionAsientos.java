@@ -104,6 +104,7 @@ public class TestRegresionGrabacionAsientos {
 	}
 	@After
 	public void finaliza(){
+		System.out.println("Fin Test Regresion Grabacion Asientos");
 		driver.close();
 	}
 }
