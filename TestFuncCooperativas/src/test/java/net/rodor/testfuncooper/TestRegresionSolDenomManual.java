@@ -24,7 +24,7 @@ public class TestRegresionSolDenomManual {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"net/rodor/testfuncooper/data_set_soldenomonline_sp_config.xml");
-		soldenom = (VOSolDenomOnline) context.getBean("soldenomonline");
+		soldenom = (VOSolDenomOnline) context.getBean("soldenommanual");
 		
 		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
 				"net/rodor/testfuncooper/data_set_env_sp_config.xml");

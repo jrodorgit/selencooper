@@ -6,6 +6,8 @@ public class VOSolDenomOnline {
 	private String denominacionDos;
 	private String numLocalizador;
 	private String descLocalizador;
+	private String idexpediente;
+	
 	public String getDenominacionUno() {
 		return denominacionUno;
 	}
@@ -30,10 +32,18 @@ public class VOSolDenomOnline {
 	public void setDescLocalizador(String descLocalizador) {
 		this.descLocalizador = descLocalizador;
 	}
+	
+	public String getIdexpediente() {
+		return idexpediente;
+	}
+	public void setIdexpediente(String idexpediente) {
+		this.idexpediente = idexpediente;
+	}
 	@Override
 	public String toString() {
 		return "VOSolDenomOnline [denominacionUno=" + denominacionUno + ", denominacionDos=" + denominacionDos
-				+ ", numLocalizador=" + numLocalizador + ", descLocalizador=" + descLocalizador + "]";
+				+ ", numLocalizador=" + numLocalizador + ", descLocalizador=" + descLocalizador + ", idexpediente="
+				+ idexpediente + "]";
 	}
 	
 	

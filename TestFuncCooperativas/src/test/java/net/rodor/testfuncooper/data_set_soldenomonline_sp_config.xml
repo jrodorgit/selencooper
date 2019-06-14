@@ -11,8 +11,11 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean class="net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline" 
-		name="soldenomonline" p:denominacionUno="DENOMINACIÓN AUTOMATICA ON LINE 31" p:denominacionDos="DENOMINACIÓN AUTOMATICA ON LINE 32" 
-		p:numLocalizador="200030" p:descLocalizador="DENOMINACION NEGATIVA" />
+		name="soldenomonline" p:denominacionUno="DENOMINACIÓN SELENIUM ONLINE 61" p:denominacionDos="DENOMINACIÓN AUTOMATICA ONLINE 62" 
+		p:numLocalizador="300001" p:descLocalizador="DENOMINACIÓN AUTOMATICA ONLINE 61" />
 
-
+	<bean class="net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline" 
+		name="soldenommanual" p:denominacionUno="DENOMINACIÓN SELENIUM MANUAL 61" p:denominacionDos="DENOMINACIÓN SELENIUM MANUAL 62" 
+		p:numLocalizador="300001" p:descLocalizador="DENOMINACIÓN AUTOMATICA ONLINE 61" />
+		
 </beans>
