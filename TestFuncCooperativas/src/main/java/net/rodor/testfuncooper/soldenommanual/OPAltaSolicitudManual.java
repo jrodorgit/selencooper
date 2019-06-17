@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import net.rodor.testfuncooper.OPBase;
 import net.rodor.testfuncooper.UtilDriver;
-import net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline;
+import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
 
 public class OPAltaSolicitudManual extends OPBase{
 	

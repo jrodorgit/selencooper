@@ -9,8 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
 import net.rodor.testfuncooper.soldenomonline.OPAltaSolicitud;
-import net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline;
 
 public class TestRegresionSolProrrogaDenomOnline {
 

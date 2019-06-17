@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper.soldenomonline;
+package net.rodor.testfuncooper.soldeno;
 
 public class VOSolDenomOnline {
 
@@ -7,6 +7,7 @@ public class VOSolDenomOnline {
 	private String numLocalizador;
 	private String descLocalizador;
 	private String idexpediente;
+	private String numexpediente;
 	
 	public String getDenominacionUno() {
 		return denominacionUno;
@@ -39,11 +40,18 @@ public class VOSolDenomOnline {
 	public void setIdexpediente(String idexpediente) {
 		this.idexpediente = idexpediente;
 	}
+	
+	public String getNumexpediente() {
+		return numexpediente;
+	}
+	public void setNumexpediente(String numexpediente) {
+		this.numexpediente = numexpediente;
+	}
 	@Override
 	public String toString() {
 		return "VOSolDenomOnline [denominacionUno=" + denominacionUno + ", denominacionDos=" + denominacionDos
 				+ ", numLocalizador=" + numLocalizador + ", descLocalizador=" + descLocalizador + ", idexpediente="
-				+ idexpediente + "]";
+				+ idexpediente + ", numexpediente=" + numexpediente + "]";
 	}
 	
 	

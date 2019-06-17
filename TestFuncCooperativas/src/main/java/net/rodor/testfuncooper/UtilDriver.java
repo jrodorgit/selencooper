@@ -18,6 +18,10 @@ public class UtilDriver {
 		driver.findElement(By.id(id)).sendKeys(valor);
 		Thread.sleep(100);
 	}
+	public static void clearCampoById(WebDriver driver, String id) throws InterruptedException{
+		driver.findElement(By.id(id)).clear();
+		Thread.sleep(100);
+	}
 	
 	public static void clickByName(WebDriver driver, String name) throws InterruptedException{
 		driver.findElement(By.name(name)).click();
@@ -151,7 +155,19 @@ public class UtilDriver {
 		
 		Thread.sleep(2000);
 	}
-	
+	public static void clickByTextoClassBoton(WebDriver driver,String texto, String classButton){
+		WebElement we = null;
+		
+		try{
+			we = driver.findElement(By.xpath("//button[@class='"+classButton+"' and contains(., '"+texto+"')]"));
+			we.click();
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+	}
 	public static void clickByTextoBoton(WebDriver driver,String texto, String typeButton){
 		//driver.findElement(By.xpath("//button[@type='submit' and contains(., '"+BOTON_DOCUMENTO+"')]")).click();
 		WebElement we = null;

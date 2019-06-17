@@ -10,11 +10,11 @@
      http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<bean class="net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline" 
+	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
 		name="soldenomonline" p:denominacionUno="DENOMINACIÓN SELENIUM ONLINE 61" p:denominacionDos="DENOMINACIÓN AUTOMATICA ONLINE 62" 
 		p:numLocalizador="300001" p:descLocalizador="DENOMINACIÓN AUTOMATICA ONLINE 61" />
 
-	<bean class="net.rodor.testfuncooper.soldenomonline.VOSolDenomOnline" 
+	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
 		name="soldenommanual" p:denominacionUno="DENOMINACIÓN SELENIUM MANUAL 61" p:denominacionDos="DENOMINACIÓN SELENIUM MANUAL 62" 
 		p:numLocalizador="300001" p:descLocalizador="DENOMINACIÓN AUTOMATICA ONLINE 61" />
 		
