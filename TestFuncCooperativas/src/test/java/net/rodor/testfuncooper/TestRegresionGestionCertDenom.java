@@ -83,6 +83,9 @@ public class TestRegresionGestionCertDenom {
 		UtilDriver.clickByTextoBoton(driver,"Negativo","button");
 		UtilDriver.clickByTextoBoton(driver,"Aceptar","button");
 		
+		// consultar el certficado generado y volver
+		UtilDriver.clickAnchor(driver, "href", "idCertificado");
+		UtilDriver.clickBoton(driver, "botonAtras", null, null);
 		
 		
 		
