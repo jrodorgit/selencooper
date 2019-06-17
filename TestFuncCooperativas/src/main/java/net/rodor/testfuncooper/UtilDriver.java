@@ -1,7 +1,10 @@
 package net.rodor.testfuncooper;
 
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,6 +23,28 @@ public class UtilDriver {
 	}
 	public static void clearCampoById(WebDriver driver, String id) throws InterruptedException{
 		driver.findElement(By.id(id)).clear();
+		
+		Thread.sleep(100);
+	}
+	public static void clickCheckBox(WebDriver driver, String tipo, String texto) throws InterruptedException{
+		WebElement weInput = null;
+		List<WebElement> weDivs = null;
+		WebElement weDiv = null;
+		weDivs = driver.findElements(By.xpath("//div[@class='checkbox']"));
+		// cogemos el div que tiene el input que queremos.
+		for(int i = 0; i< weDivs.size(); i++ ){
+			weDiv = weDivs.get(i);
+			System.out.println(weDiv.toString());
+			/***
+			weInput = weDivs.get(i).findElement(By.xpath("//input[@value='6']"));
+			if( weInput != null){
+				weDiv =  weDivs.get(i);
+				break;
+			}
+			***/
+		}
+		weDiv.click();
+		
 		Thread.sleep(100);
 	}
 	

@@ -15,7 +15,7 @@
 		p:numLocalizador="300001" p:descLocalizador="DENOMINACIÓN AUTOMATICA ONLINE 61" />
 
 	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
-		name="soldenommanual" p:denominacionUno="DENOMINACIÓN SELENIUM MANUAL 91" p:denominacionDos="DENOMINACIÓN SELENIUM MANUAL 92" 
+		name="soldenommanual" p:denominacionUno="DENOMINACIÓN SELENIUM MANUAL 101" p:denominacionDos="DENOMINACIÓN SELENIUM MANUAL 102" 
 		p:numLocalizador="300001" p:descLocalizador="DENOMINACIÓN AUTOMATICA ONLINE 61" />
 		
 </beans>
