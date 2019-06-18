@@ -30,18 +30,16 @@ public class UtilDriver {
 		WebElement weInput = null;
 		List<WebElement> weDivs = null;
 		WebElement weDiv = null;
-		weDivs = driver.findElements(By.xpath("//div[@class='checkbox']"));
+		weDivs = driver.findElements(By.xpath("//div[@class='"+tipo+"']"));
 		// cogemos el div que tiene el input que queremos.
 		for(int i = 0; i< weDivs.size(); i++ ){
 			weDiv = weDivs.get(i);
-			System.out.println(weDiv.toString());
-			/***
-			weInput = weDivs.get(i).findElement(By.xpath("//input[@value='6']"));
+			weInput = weDiv.findElement(By.xpath("//input[@value='"+texto+"']"));
 			if( weInput != null){
 				weDiv =  weDivs.get(i);
 				break;
 			}
-			***/
+			
 		}
 		weDiv.click();
 		

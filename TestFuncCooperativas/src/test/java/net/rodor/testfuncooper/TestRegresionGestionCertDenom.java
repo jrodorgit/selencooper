@@ -38,10 +38,11 @@ public class TestRegresionGestionCertDenom {
 		Env env = (Env) contextEnvBis.getBean("env");
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
 		
-		System.out.println("----------------------------\n");
+
 	}
 	@After
 	public void finaliza(){
+		driver.close();
 		System.out.println("Finalizacion \n");
 	}
 	

@@ -41,6 +41,7 @@ public class TestRegresionFirmarExpediente {
 	}
 	@After
 	public void finaliza(){
+		driver.close();
 		System.out.println("Finalizacion \n");
 	}
 	
@@ -61,13 +62,11 @@ public class TestRegresionFirmarExpediente {
 		UtilDriver.clickBoton(driver, "botonSearch", null, null);
 		
 		//seleccionar expediente a firma
-		UtilDriver.clickCheckBox(driver, "checkboxFirmaMasiva","6");
+		UtilDriver.clickCheckBox(driver, "checkbox",expediente.getNumeroExpediente());
 		
 		// firmar
-		
-		
-		
-		
+		UtilDriver.clickBoton(driver, "botonFirmarSeleccionados", null, null);
+		OPAccesoChrome.firmarConCertificado(driver);
 		
 		
 		System.out.println("Fin TestRegresionFirmarExpediente\n");

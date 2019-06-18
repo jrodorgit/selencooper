@@ -41,6 +41,7 @@ public class TestRegresionEnviarExpedFirma {
 	}
 	@After
 	public void finaliza(){
+		driver.close();
 		System.out.println("Finalizacion \n");
 	}
 	
@@ -65,11 +66,7 @@ public class TestRegresionEnviarExpedFirma {
 		
 		// enviar firma
 		UtilDriver.clickBoton(driver, "idBotonEnviarAFirma", null, null);
-		
-		
-		
-		
-		
+			
 		System.out.println("Fin TestRegresionEnviarExpedFirma\n");
 	}
 	

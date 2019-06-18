@@ -5,15 +5,14 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
+	
 	TestRegresionAsientos.class,
 	TestRegresionLegajos.class,
 	TestRegresionSolDenomOnline.class,
 	TestRegresionSolDenomManual.class,
-	// gestion de certificados uno negativo
-	
-	// envios a firma
-	
-	// firmar cert
+	TestRegresionGestionCertDenom.class,
+	TestRegresionEnviarExpedFirma.class,
+	TestRegresionFirmarExpediente.class,
 	
 	// pedir prorroga
 	TestRegresionSolProrrogaDenomOnline.class
