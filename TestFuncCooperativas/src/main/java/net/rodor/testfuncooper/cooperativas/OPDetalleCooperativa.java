@@ -11,8 +11,8 @@ public class OPDetalleCooperativa extends OPBasica {
 	}
 
 	
-	public static final String EVT_VOLVER = "botonAtras";
-	public static final String EVT_FINALIZA_GRABACION = "finalizar";
+	public static final String EVT_VOLVER = "idBotonVolver";
+	public static final String EVT_FINALIZA_GRABACION = "idBotonFinalizarGrabacion";
 	
 	
 	
