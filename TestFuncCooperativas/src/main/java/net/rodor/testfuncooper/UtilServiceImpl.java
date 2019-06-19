@@ -12,9 +12,9 @@ public class UtilServiceImpl {
 	@Autowired
 	private  UtilDaoImpl dao;
 
-	public VOSolDenomOnline getUltimaSolDenominacion() {
+	public VOSolDenomOnline getExpeDeno(String denominacion) {
 		
-		return dao.getUltimaSolDenominacion();
+		return dao.getExpeDeno(denominacion);
 	}
 	
 	public VOExpediente getGrupoFirmaExpediente(String numExpediente) {

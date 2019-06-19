@@ -30,11 +30,12 @@ public class TestRegresionEnviarExpedFirma {
 				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
 
 		serv = contextEnv.getBean(UtilServiceImpl.class);
+		Env env = (Env) contextEnv.getBean("env");
 		
-		ApplicationContext contextEnvBis = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"net/rodor/testfuncooper/data_set_soldenomonline_sp_config.xml");
+		soldenom = (VOSolDenomOnline) context.getBean("soldenom");
 		
-		Env env = (Env) contextEnvBis.getBean("env");
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
 		
 		
@@ -51,7 +52,7 @@ public class TestRegresionEnviarExpedFirma {
 		System.out.println("Lanzando TestRegresionEnviarExpedFirma....\n");
 
 		// obtenemos la solicitud de denominacion para la que vamos a generar certificado negativo.
-		soldenom = serv.getUltimaSolDenominacion();
+		soldenom = serv.getExpeDeno(soldenom.getDenominacionUno());
 		expediente = serv.getGrupoFirmaExpediente(soldenom.getNumexpediente());
 		
 		// acceso a intranet - menu busqueda expedientes

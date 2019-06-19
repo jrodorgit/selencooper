@@ -1,19 +1,16 @@
 package net.rodor.testfuncooper;
 
 import java.awt.AWTException;
-import java.util.Map;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import net.rodor.testfuncooper.menu.OPMenu;
 import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
-import net.rodor.testfuncooper.soldenommanual.OPAltaSolicitudManual;
 
 public class TestRegresionGestionCertDenom {
 
@@ -31,28 +28,30 @@ public class TestRegresionGestionCertDenom {
 				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
 
 		serv = contextEnv.getBean(UtilServiceImpl.class);
+		Env env = (Env) contextEnv.getBean("env");
 		
-		ApplicationContext contextEnvBis = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"net/rodor/testfuncooper/data_set_soldenomonline_sp_config.xml");
+		soldenom = (VOSolDenomOnline) context.getBean("soldenom");
 		
-		Env env = (Env) contextEnvBis.getBean("env");
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
+
 		
 
 	}
 	@After
 	public void finaliza(){
 		driver.close();
-		System.out.println("Finalizacion \n");
+		System.out.println("finaliza \n");
 	}
 	
 	@Test
 	public void testRegresion() throws InterruptedException, AWTException{
 		
-		System.out.println("Lanzando Test Regresion Gestion Certificado Denominacion....\n");
+		System.out.println("Lanzando TestRegresionGestionCertDenom....\n");
 
 		// obtenemos la solicitud de denominacion para la que vamos a generar certificado negativo.
-		soldenom = serv.getUltimaSolDenominacion();
+		soldenom = serv.getExpeDeno(soldenom.getDenominacionUno());
 		
 		// acceso a intranet - menu busqueda expedientes
 		UtilDriver.goMenu(driver, OPMenu.MENU_DENOMINACION, OPMenu.MENU_DENOMINACION_BUSQ_EXPEDIENTES);
@@ -90,7 +89,7 @@ public class TestRegresionGestionCertDenom {
 		
 		
 		
-		System.out.println("Fin Test Regresion Gestion Certificado Denominacion\n"+ soldenom.toString());
+		System.out.println("Fin TestRegresionGestionCertDenom\n");
 	}
 	
 }

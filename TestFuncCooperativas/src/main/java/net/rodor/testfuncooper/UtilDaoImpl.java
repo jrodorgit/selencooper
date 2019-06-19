@@ -18,8 +18,9 @@ public class UtilDaoImpl {
 	private JdbcTemplate jdbcTemplate;
 
 	
-	public VOSolDenomOnline getUltimaSolDenominacion() {
-		String sql = "select id_expediente, exp_numero from EXPEDIENTE order by id_expediente desc";
+	public VOSolDenomOnline getExpeDeno(String deno) {
+		//String sql = "select id_expediente, exp_numero from EXPEDIENTE order by id_expediente desc";
+		String sql = "select exp.ID_EXPEDIENTE, exp.EXP_NUMERO from denom_solicitud deno, expediente exp where deno.denominacion = '"+deno+"' and deno.ID_SOLICITUD = exp.ID_SOLICITUD";
 		SolicitudDenoRowMapper rowmapper = new SolicitudDenoRowMapper();
 		Object[] args=null;
 		List<VOSolDenomOnline> listado =jdbcTemplate.query(sql, args, rowmapper);

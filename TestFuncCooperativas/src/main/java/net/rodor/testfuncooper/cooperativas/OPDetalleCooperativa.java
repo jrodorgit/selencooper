@@ -1,14 +1,20 @@
 package net.rodor.testfuncooper.cooperativas;
 
-public class OPDetalleCooperativa {
+import org.openqa.selenium.WebDriver;
 
-	public static final String CAMPO_NUMERO_INSCRIPCION = "idNumeroInscripcion";
-	public static final String CAMPO_NUMERO_INFORMATICO = "idNumeroInformatico";
-	public static final String CAMPO_RAZON_SOCIAL = "idRazonSocial";
+import net.rodor.testfuncooper.OPBasica;
+
+public class OPDetalleCooperativa extends OPBasica {
+
+	public OPDetalleCooperativa(WebDriver driver) {
+		super(driver);
+	}
+
 	
-	public static final String EVT_LIMPIAR_FILTRO = "idBotonLimpiarFiltro";
-	public static final String EVT_BUSCAR = "idBotonBuscar";
-	public static final String EVT_CONSULTAR = "XXXXXXXXXXX";
+	public static final String EVT_VOLVER = "botonAtras";
+	public static final String EVT_FINALIZA_GRABACION = "finalizar";
+	
+	
 	
 	
 }

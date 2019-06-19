@@ -24,7 +24,7 @@ public class TestRegresionSolDenomManual {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"net/rodor/testfuncooper/data_set_soldenomonline_sp_config.xml");
-		soldenom = (VOSolDenomOnline) context.getBean("soldenommanual");
+		soldenom = (VOSolDenomOnline) context.getBean("soldenom");
 		
 		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
 				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
@@ -38,18 +38,19 @@ public class TestRegresionSolDenomManual {
 	@Test
 	public void testRegresion() throws InterruptedException, AWTException{
 		
-		System.out.println("Lanzando testRegresion....\n");
+		System.out.println("Lanzando TestRegresionSolDenomManual....\n");
 		
 		OPAltaSolicitudManual.alta(driver, soldenom);
 		
-		System.out.println("Fin Solicitud Denominacion Manual....\n");
+		
+		System.out.println("Fin TestRegresionSolDenomManual....\n");
 		
 		
 	}
 	
 	@After
 	public void finaliza(){
-		System.out.println("Finalizado Correctamente\n");
+		System.out.println("finaliza\n");
 		driver.close();
 	}
 	
