@@ -311,12 +311,18 @@ public class UtilDriver {
 		return resultado;
 	}
 	
-	/***
-	 * //List<WebElement> msgOK = driver.findElements(By.id(ALERT_SUCCESS));
-		//for(WebElement we : msgOK){
-		//	System.out.println(we.getText());
-		//}
-	 */
+	public static WebElement buscarTexto(WebDriver driver, String tagName, String texto) throws InterruptedException{
+		WebElement we = null;
+		
+		try{
+			we =  driver.findElement(By.xpath(".//"+tagName+"[contains(.,'"+texto+"')]"));
+		}catch(Exception e){
+			//elemento no encontrado
+		}
+		
+		return we;
+	}
+	
 }
 
 

@@ -11,8 +11,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import net.rodor.testfuncooper.cooperativas.OPListadoCooperativas;
 import net.rodor.testfuncooper.menu.OPMenu;
-import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
-import net.rodor.testfuncooper.soldenommanual.OPAltaSolicitudManual;
 
 public class TestRegresionCooperativasConsulta {
 

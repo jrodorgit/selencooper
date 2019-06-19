@@ -15,7 +15,8 @@ import org.junit.runners.Suite;
 	TestRegresionFirmarExpediente.class,
 	
 	// pedir prorroga
-	TestRegresionSolProrrogaDenomOnline.class
+	TestRegresionSolProrrogaDenomOnline.class,
+	TestRegresionCooperativasConsulta.class
 })
 
 public class SuiteTestRegresion {
