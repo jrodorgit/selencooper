@@ -11,4 +11,7 @@ public class OPMenu {
 	public static final String MENU_COOPERATIVAS = "Cooperativas";
 	public static final String MENU_COOPERATIVAS_LISTADO = "Listado de Cooperativas";
 	
+	public static final String MENU_ADMINISTRACION = "Administración";
+	public static final String MENU_ADMINISTRACION_USUARIOS = "Usuarios";
+	
 }
