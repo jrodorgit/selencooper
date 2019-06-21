@@ -22,7 +22,7 @@ public class OPListadoLegajo extends OPLegajosBase {
 		//establacemos campos de busqueda.
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
 		UtilDriver.setCampoById(driver, DESCRIPCION, vo.getDescripcion());
-		UtilDriver.setCampoById(driver, TEXTO_ASIENTO, "exercitation");
+		UtilDriver.setCampoById(driver, TEXTO_ASIENTO, "dfsad");
 		
 		UtilDriver.clickBoton(driver, null, BOTON_BUSCAR);
 

@@ -1,24 +1,25 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.test.regresion.legajos;
 
 import java.awt.AWTException;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.asientos.VOAsiento;
 import net.rodor.testfuncooper.legajos.OPAltaLegajo;
 import net.rodor.testfuncooper.legajos.OPAsociacionLegajoAsiento;
 import net.rodor.testfuncooper.legajos.OPDetalleLegajo;
 import net.rodor.testfuncooper.legajos.VODocumento;
 import net.rodor.testfuncooper.legajos.VOLegajo;
+import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
-public class TestRegresionLegajos {
+public class TestRegresionLegajos extends TestRegresionBase {
 
-	WebDriver driver = null;
+	
 	VOLegajo legajo = null;
 	VODocumento doc = null;
 	VOAsiento asiento = null;
@@ -29,18 +30,15 @@ public class TestRegresionLegajos {
 
 		System.out.println("Inicializando Test Legajos....\n");
 		
+		inicializaEntorno();
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_legajos_sp_config.xml");
+				"net/rodor/testfuncooper/test/regresion/legajos/data_set_legajos_sp_config.xml");
 		
 		legajo = (VOLegajo) context.getBean("legajo");
 		doc = (VODocumento) context.getBean("documento");
 		asiento = (VOAsiento) context.getBean("asiento");
-
 		
-		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
-		
-		Env env = (Env) contextEnv.getBean("env");
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
 		
 	}
@@ -75,8 +73,7 @@ public class TestRegresionLegajos {
 	
 	@After
 	public void finaliza(){
-		System.out.println("Fin Test Regresion Legajos");
-		driver.close();
+		//finalizaEntorno();
 	}
 	
 	

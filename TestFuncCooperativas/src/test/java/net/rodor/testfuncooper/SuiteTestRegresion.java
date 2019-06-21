@@ -3,6 +3,8 @@ package net.rodor.testfuncooper;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import net.rodor.testfuncooper.test.regresion.legajos.TestRegresionLegajos;
+
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	

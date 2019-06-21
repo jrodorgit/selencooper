@@ -13,7 +13,6 @@ import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.administracion.OPDetalleUsuario;
 import net.rodor.testfuncooper.administracion.OPListadoUsuarios;
 import net.rodor.testfuncooper.administracion.VOUsuario;
-import net.rodor.testfuncooper.cooperativas.VOCooperativa;
 import net.rodor.testfuncooper.menu.OPMenu;
 import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
@@ -42,7 +41,7 @@ public class TestCrearUsuario extends TestRegresionBase {
 		// modificar
 		usuario.setRoles(new String[]{"7"});
 		detalle.clickCheckBox("7");
-		
+		//Aceptar
 		detalle.runEvtByName(OPDetalleUsuario.EVT_ACEPTAR);
 		
 		
@@ -67,7 +66,7 @@ public class TestCrearUsuario extends TestRegresionBase {
 	}
 	@After
 	public void finaliza(){
-		//finalizaEntorno();
+		finalizaEntorno();
 	}
 	
 	
