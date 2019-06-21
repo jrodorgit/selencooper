@@ -72,6 +72,42 @@ public class OPAccesoChrome extends OPAccesoBase {
 		
 		return driver;
 	}
+	
+	public static WebDriver 
+	autenticacionClaveFirma(String entorno) throws InterruptedException, AWTException {
+		
+		System.out.println("Test en entorno: " +entorno);
+		
+		
+		// driver navegador
+		System.setProperty("webdriver.chrome.driver", "C:\\Java\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		// url cooperativas
+		driver.get(entorno);
+		Thread.sleep(3000);
+		driver.manage().window().maximize();
+		Thread.sleep(1000);
+		
+		WebElement searchBox = driver.findElement(By.id("botonEntrarClave"));
+		searchBox.click();
+		Thread.sleep(5000);
+				
+		// click acceso mediante certificado
+		UtilDriver.clickAnchorByText(driver,"Acceder");
+		
+		Robot robot = new Robot();
+		robot.delay(2000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(4000);
+		robot.keyPress(KeyEvent.VK_LEFT);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		
+		Thread.sleep(3000);
+		
+		
+		
+		return driver;
+	}
 	public static WebDriver accesoPublico(String entorno) throws InterruptedException, AWTException {
 		
 		System.out.println("Test en entorno: " +entorno);

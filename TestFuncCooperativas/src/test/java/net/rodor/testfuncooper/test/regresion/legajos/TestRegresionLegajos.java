@@ -73,7 +73,7 @@ public class TestRegresionLegajos extends TestRegresionBase {
 	
 	@After
 	public void finaliza(){
-		//finalizaEntorno();
+		finalizaEntorno();
 	}
 	
 	
