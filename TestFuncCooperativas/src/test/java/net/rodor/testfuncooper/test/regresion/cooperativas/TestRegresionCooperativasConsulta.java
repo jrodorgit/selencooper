@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.test.regresion.cooperativas;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -7,19 +7,20 @@ import java.awt.AWTException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.OPAccesoChrome;
+import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.cooperativas.OPDetalleCooperativa;
 import net.rodor.testfuncooper.cooperativas.OPListadoCooperativas;
 import net.rodor.testfuncooper.cooperativas.VOCooperativa;
 import net.rodor.testfuncooper.menu.OPMenu;
-import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
+import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
-public class TestRegresionCooperativasConsulta {
+public class TestRegresionCooperativasConsulta extends TestRegresionBase {
 
-	WebDriver driver = null;
+	
 	VOCooperativa cooper = null;
 	
 	@Before
@@ -27,12 +28,10 @@ public class TestRegresionCooperativasConsulta {
 
 		System.out.println("Inicializando TestRegresionCooperativasConsulta....\n");
 		
-		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
-		Env env = (Env) contextEnv.getBean("env");
+		inicializaEntorno();
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_cooperativa_sp_config.xml");
+				"net/rodor/testfuncooper/test/regresion/cooperativas/data_set_cooperativa_sp_config.xml");
 		cooper = (VOCooperativa) context.getBean("cooperativa");
 		
 		
@@ -42,8 +41,7 @@ public class TestRegresionCooperativasConsulta {
 	}
 	@After
 	public void finaliza(){
-		System.out.println("finaliza\n");
-		driver.close();
+		finalizaEntorno();
 	}
 	@Test
 	public void testRegresion() throws InterruptedException, AWTException{
@@ -56,7 +54,7 @@ public class TestRegresionCooperativasConsulta {
 		OPListadoCooperativas listado = new OPListadoCooperativas(driver);
 		listado.setCampo(OPListadoCooperativas.CAMPO_NUMERO_INSCRIPCION, cooper.getNumIns());
 		listado.runEvt(OPListadoCooperativas.EVT_BUSCAR);
-		listado.goEnlace("idCooperativa");
+		listado.goEnlace(OPListadoCooperativas.EVT_CONSULTAR);
 		
 		// vemos que en el detalle esta bien la razon social
 		OPDetalleCooperativa detalle = new OPDetalleCooperativa(driver);

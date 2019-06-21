@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import net.rodor.testfuncooper.test.regresion.acceso.TestRegresionAuthFirmaCentralizada;
+import net.rodor.testfuncooper.test.regresion.cooperativas.TestRegresionCooperativasConsulta;
 import net.rodor.testfuncooper.test.regresion.legajos.TestRegresionLegajos;
 
 @RunWith(Suite.class)

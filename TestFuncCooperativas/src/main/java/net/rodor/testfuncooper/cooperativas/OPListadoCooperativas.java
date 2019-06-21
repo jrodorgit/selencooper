@@ -17,6 +17,6 @@ public class OPListadoCooperativas extends OPBasica {
 
 	public static final String EVT_LIMPIAR_FILTRO = "idBotonLimpiarFiltro";
 	public static final String EVT_BUSCAR = "idBotonBuscar";
-	public static final String EVT_CONSULTAR = "XXXXXXXXXXX";
+	public static final String EVT_CONSULTAR = "idCooperativa";
 
 }
