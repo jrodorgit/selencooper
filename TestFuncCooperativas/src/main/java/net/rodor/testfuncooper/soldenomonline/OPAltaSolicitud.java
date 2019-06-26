@@ -73,7 +73,10 @@ public class OPAltaSolicitud extends OPBase{
 		UtilDriver.clickBoton(driver, null, null, " Finalizar");
 		
 		// firmar solicitud
-		UtilDriver.clickBoton(driver, "botonSignDocumento", null, null);
+		//UtilDriver.clickBoton(driver, "botonSignDocumento", null, null);
+		UtilDriver.clickByTextoBoton(driver, "Firmar","button");
+		UtilDriver.clickAnchorByText(driver,"con certificado digital");
+		//con certificado digital
 		OPAccesoChrome.firmarConCertificado(driver);
 		UtilDriver.clickBoton(driver, "descargarJustificanteGEISER", null, null);
 		UtilDriver.clickBoton(driver, "descargarSolicitud", null, null);

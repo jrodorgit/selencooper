@@ -21,7 +21,6 @@ public class TestRegresionBase {
 				"net/rodor/testfuncooper/test/regresion/data_set_env_sp_config.xml");
 		env = (Env) contextEnv.getBean("env");
 		
-		//driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
 		
 	}
 	public void finalizaEntorno(){

@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.soldenom;
 
 import java.awt.AWTException;
 
@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.Env;
+import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
 import net.rodor.testfuncooper.soldenommanual.OPAltaSolicitudManual;
 

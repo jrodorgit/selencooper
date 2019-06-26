@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.soldenom;
 
 import java.awt.AWTException;
 
@@ -9,12 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.Env;
+import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
 import net.rodor.testfuncooper.soldenomonline.OPAltaSolicitud;
 
-
-
-public class TestRegresionSolDenomOnline {
+public class TestRegresionSolProrrogaDenomOnline {
 
 	WebDriver driver = null;
 	VOSolDenomOnline soldenom = null;
@@ -38,21 +38,12 @@ public class TestRegresionSolDenomOnline {
 	
 	@After
 	public void finaliza(){
-		System.out.println("finaliza \n");
+		System.out.println("Fin Alta Prorroga On line. \n");
 		driver.close();
 	}
+	
 	@Test
 	public void testRegresion() throws InterruptedException, AWTException{
-		
-		System.out.println("Lanzando Test Regresion Solicitud Denominacion On-Line....\n");
-		
-		OPAltaSolicitud.alta(driver,soldenom);
-		
-		System.out.println("Fin Solicitud Denominacion On-Line....\n");
-	}
-	/****
-	@Test
-	public void testRegresionProrroga() throws InterruptedException, AWTException{
 		
 		System.out.println("Lanzando Test Regresion Solicitud Prorroga de Denominacion On-Line....\n");
 		
@@ -60,6 +51,5 @@ public class TestRegresionSolDenomOnline {
 		
 		System.out.println("Fin Solicitud Prorroga de Denominacion On-Line....\n");
 	}
-	***/
 	
 }

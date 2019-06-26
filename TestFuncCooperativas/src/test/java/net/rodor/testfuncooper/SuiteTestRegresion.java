@@ -3,6 +3,9 @@ package net.rodor.testfuncooper;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import net.rodor.testfuncooper.soldenom.TestRegresionSolDenomManual;
+import net.rodor.testfuncooper.soldenom.TestRegresionSolDenomOnline;
+import net.rodor.testfuncooper.soldenom.TestRegresionSolProrrogaDenomOnline;
 import net.rodor.testfuncooper.test.regresion.acceso.TestRegresionAuthFirmaCentralizada;
 import net.rodor.testfuncooper.test.regresion.cooperativas.TestRegresionCooperativasConsulta;
 import net.rodor.testfuncooper.test.regresion.legajos.TestRegresionLegajos;
