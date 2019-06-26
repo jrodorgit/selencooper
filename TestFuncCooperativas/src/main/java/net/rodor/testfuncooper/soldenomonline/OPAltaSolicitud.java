@@ -63,7 +63,7 @@ public class OPAltaSolicitud extends OPBase{
 		UtilDriver.clickBoton(driver, null, null, " Siguiente");
 		
 		
-		/***/
+		
 		// denominaciones
 		UtilDriver.setCampoById(driver, "solicitudCreacionCertDenominacionPubFillFormDatosDenominacionCommand.datosDenominacionDenominaciones0", vo.getDenominacionUno());
 		UtilDriver.clickBoton(driver, null, null, "");
@@ -72,15 +72,14 @@ public class OPAltaSolicitud extends OPBase{
 		// finalizar
 		UtilDriver.clickBoton(driver, null, null, " Finalizar");
 		
-		// firmar solicitud
-		//UtilDriver.clickBoton(driver, "botonSignDocumento", null, null);
+		// firmar solicitud 		//con certificado digital
 		UtilDriver.clickByTextoBoton(driver, "Firmar","button");
 		UtilDriver.clickAnchorByText(driver,"con certificado digital");
-		//con certificado digital
 		OPAccesoChrome.firmarConCertificado(driver);
+		// descargar justificantes
 		UtilDriver.clickBoton(driver, "descargarJustificanteGEISER", null, null);
 		UtilDriver.clickBoton(driver, "descargarSolicitud", null, null);
-		/***/
+		
 		
 		
 	}
@@ -140,8 +139,10 @@ public class OPAltaSolicitud extends OPBase{
 		UtilDriver.clickBoton(driver, null, null, " Finalizar");
 		
 		// firmar solicitud
-		UtilDriver.clickBoton(driver, "botonSignDocumento", null, null);
+		UtilDriver.clickByTextoBoton(driver, "Firmar","button");
+		UtilDriver.clickAnchorByText(driver,"con certificado digital");
 		OPAccesoChrome.firmarConCertificado(driver);
+		
 		UtilDriver.clickBoton(driver, "descargarJustificanteGEISER", null, null);
 		UtilDriver.clickBoton(driver, "descargarSolicitud", null, null);
 		/***/
