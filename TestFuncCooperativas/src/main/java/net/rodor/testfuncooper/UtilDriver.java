@@ -35,6 +35,7 @@ public class UtilDriver {
 		for(int i = 0; i< weDivs.size(); i++ ){
 			weDiv = weDivs.get(i);
 			weInput = weDiv.findElement(By.xpath("//input[@value='"+texto+"']"));
+			System.out.println("-------->"+weInput.getTagName());
 			if( weInput != null){
 				weDiv =  weDivs.get(i);
 				break;

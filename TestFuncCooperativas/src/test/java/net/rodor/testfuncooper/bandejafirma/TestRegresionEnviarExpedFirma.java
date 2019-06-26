@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.bandejafirma;
 
 import java.awt.AWTException;
 
@@ -9,16 +9,18 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.Env;
+import net.rodor.testfuncooper.OPAccesoChrome;
+import net.rodor.testfuncooper.UtilDriver;
+import net.rodor.testfuncooper.UtilServiceImpl;
 import net.rodor.testfuncooper.expediente.VOExpediente;
 import net.rodor.testfuncooper.menu.OPMenu;
 import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
+import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
-public class TestRegresionEnviarExpedFirma {
+public class TestRegresionEnviarExpedFirma extends TestRegresionBase {
 
-	
-	private  UtilServiceImpl serv;
 	VOSolDenomOnline soldenom = null;
-	WebDriver driver = null;
 	VOExpediente expediente = null;
 	
 	@Before
@@ -26,14 +28,10 @@ public class TestRegresionEnviarExpedFirma {
 
 		System.out.println("Inicializando TestRegresionEnviarExpedFirma....\n");
 		
-		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
-
-		serv = contextEnv.getBean(UtilServiceImpl.class);
-		Env env = (Env) contextEnv.getBean("env");
+		inicializaEntorno();
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_soldenomonline_sp_config.xml");
+				"net/rodor/testfuncooper/bandejafirma/data_set_bandejafirma_sp_config.xml");
 		soldenom = (VOSolDenomOnline) context.getBean("soldenom");
 		
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
@@ -42,8 +40,7 @@ public class TestRegresionEnviarExpedFirma {
 	}
 	@After
 	public void finaliza(){
-		driver.close();
-		System.out.println("Finalizacion \n");
+		finalizaEntorno();
 	}
 	
 	@Test
@@ -62,10 +59,13 @@ public class TestRegresionEnviarExpedFirma {
 		UtilDriver.clickSeleccionCombo(driver, "1", "idEstadoGrupoFirma");
 		UtilDriver.clickBoton(driver, "botonSearch", null, null);
 		
-		//seleccionar expediente a enviar a firma
+		// seleccionar expediente a enviar a firma
+		UtilDriver.clickCheckBox(driver, "checkbox", expediente.getIdGrupoFirma());
+
+		/***
 		UtilDriver.clickAnchor(driver, "onclick", "navegarReordenacionGrupoFirma("+expediente.getIdGrupoFirma());
-		
-		// enviar firma
+		***/
+		// enviar a firma
 		UtilDriver.clickBoton(driver, "idBotonEnviarAFirma", null, null);
 			
 		System.out.println("Fin TestRegresionEnviarExpedFirma\n");
