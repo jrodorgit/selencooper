@@ -3,6 +3,7 @@ package net.rodor.testfuncooper;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import net.rodor.testfuncooper.soldenom.TestRegresionGestionCertDenom;
 import net.rodor.testfuncooper.soldenom.TestRegresionSolDenomManual;
 import net.rodor.testfuncooper.soldenom.TestRegresionSolDenomOnline;
 import net.rodor.testfuncooper.soldenom.TestRegresionSolProrrogaDenomOnline;

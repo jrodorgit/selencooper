@@ -19,4 +19,7 @@
 	
 	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
 		name="soldenomonlinemanual" p:denominacionUno="DENOMINACIÓN SELENIUM MANUAL 2001" p:denominacionDos="DENOMINACIÓN SELENIUM MANUAL 2002"  />	
+		
+	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
+		name="soldenomgest" p:denominacionUno="DENOMINACIÓN SELENIUM MANUAL 2001"   />		
 </beans>

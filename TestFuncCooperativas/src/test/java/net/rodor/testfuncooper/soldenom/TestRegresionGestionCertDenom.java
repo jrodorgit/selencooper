@@ -1,48 +1,42 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.soldenom;
 
 import java.awt.AWTException;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.OPAccesoChrome;
+import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.menu.OPMenu;
 import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
+import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
-public class TestRegresionGestionCertDenom {
+public class TestRegresionGestionCertDenom extends TestRegresionBase {
 
 	
-	private  UtilServiceImpl serv;
+	
 	VOSolDenomOnline soldenom = null;
-	WebDriver driver = null;
+	
 	
 	@Before
 	public void inicializaTest() throws InterruptedException, AWTException{
 
 		System.out.println("Inicializando TestRegresionGestionCertDenom....\n");
 		
-		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
-
-		serv = contextEnv.getBean(UtilServiceImpl.class);
-		Env env = (Env) contextEnv.getBean("env");
+		inicializaEntorno();
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_soldenomonline_sp_config.xml");
-		soldenom = (VOSolDenomOnline) context.getBean("soldenom");
+				"net/rodor/testfuncooper/soldenom/data_set_soldenomonline_sp_config.xml");
+		soldenom = (VOSolDenomOnline) context.getBean("soldenomgest");
 		
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
-
-		
-
 	}
 	@After
 	public void finaliza(){
-		driver.close();
-		System.out.println("finaliza \n");
+		finalizaEntorno();
 	}
 	
 	@Test
