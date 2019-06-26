@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper.soldenom;
+package net.rodor.testfuncooper.test.regresion.soldenom;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

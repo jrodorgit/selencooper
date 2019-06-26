@@ -1,18 +1,15 @@
-package net.rodor.testfuncooper.bandejafirma;
+package net.rodor.testfuncooper.test.regresion.bandejafirma;
 
 import java.awt.AWTException;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import net.rodor.testfuncooper.Env;
 import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.UtilDriver;
-import net.rodor.testfuncooper.UtilServiceImpl;
 import net.rodor.testfuncooper.expediente.VOExpediente;
 import net.rodor.testfuncooper.menu.OPMenu;
 import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
@@ -31,7 +28,7 @@ public class TestRegresionEnviarExpedFirma extends TestRegresionBase {
 		inicializaEntorno();
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/bandejafirma/data_set_bandejafirma_sp_config.xml");
+				"net/rodor/testfuncooper/test/regresion/bandejafirma/data_set_bandejafirma_sp_config.xml");
 		soldenom = (VOSolDenomOnline) context.getBean("soldenom");
 		
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));

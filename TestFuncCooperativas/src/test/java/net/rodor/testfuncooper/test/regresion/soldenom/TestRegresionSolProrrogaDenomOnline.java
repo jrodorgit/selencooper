@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper.soldenom;
+package net.rodor.testfuncooper.test.regresion.soldenom;
 
 import java.awt.AWTException;
 
@@ -13,9 +13,7 @@ import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
 import net.rodor.testfuncooper.soldenomonline.OPAltaSolicitud;
 import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
-
-
-public class TestRegresionSolDenomOnline extends TestRegresionBase {
+public class TestRegresionSolProrrogaDenomOnline extends TestRegresionBase {
 
 	
 	VOSolDenomOnline soldenom = null;
@@ -23,15 +21,12 @@ public class TestRegresionSolDenomOnline extends TestRegresionBase {
 	@Before
 	public void inicializaTest() throws InterruptedException, AWTException{
 
-		System.out.println("Inicializando TestRegresionSolDenomOnline....\n");
-		
+		System.out.println("Inicializando TestRegresionSolProrrogaDenomOnline....\n");
 		inicializaEntorno();
-
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/soldenom/data_set_soldenomonline_sp_config.xml");
-		
-		soldenom = (VOSolDenomOnline) context.getBean("soldenomonline");
-		
+				"net/rodor/testfuncooper/test/regresion/soldenom/data_set_soldenomonline_sp_config.xml");
+		soldenom = (VOSolDenomOnline) context.getBean("soldenomonlineprorroga");
 
 		driver = OPAccesoChrome.accesoPublico(env.getProps().get("URL_PUB"));
 
@@ -45,12 +40,11 @@ public class TestRegresionSolDenomOnline extends TestRegresionBase {
 	@Test
 	public void testRegresion() throws InterruptedException, AWTException{
 		
-		System.out.println("Lanzando TestRegresionSolDenomOnline....\n");
+		System.out.println("Lanzando Test Regresion Solicitud Prorroga de Denominacion On-Line....\n");
 		
-		OPAltaSolicitud.alta(driver,soldenom);
+		OPAltaSolicitud.altaProrroga(driver,soldenom);
 		
-		System.out.println("Fin TestRegresionSolDenomOnline....\n");
+		System.out.println("Fin Solicitud Prorroga de Denominacion On-Line....\n");
 	}
-	
 	
 }

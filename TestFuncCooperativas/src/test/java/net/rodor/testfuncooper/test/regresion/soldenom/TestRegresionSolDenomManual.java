@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper.soldenom;
+package net.rodor.testfuncooper.test.regresion.soldenom;
 
 import java.awt.AWTException;
 
@@ -25,7 +25,7 @@ public class TestRegresionSolDenomManual extends TestRegresionBase {
 		inicializaEntorno();
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/soldenom/data_set_soldenomonline_sp_config.xml");
+				"net/rodor/testfuncooper/test/regresion/soldenom/data_set_soldenomonline_sp_config.xml");
 		soldenom = (VOSolDenomOnline) context.getBean("soldenomonlinemanual");
 		
 		
