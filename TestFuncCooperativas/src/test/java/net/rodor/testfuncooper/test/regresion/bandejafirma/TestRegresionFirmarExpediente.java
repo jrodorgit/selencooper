@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.test.regresion.bandejafirma;
 
 import java.awt.AWTException;
 
@@ -9,31 +9,30 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.Env;
+import net.rodor.testfuncooper.OPAccesoChrome;
+import net.rodor.testfuncooper.UtilDriver;
+import net.rodor.testfuncooper.UtilServiceImpl;
 import net.rodor.testfuncooper.expediente.VOExpediente;
 import net.rodor.testfuncooper.menu.OPMenu;
 import net.rodor.testfuncooper.soldeno.VOSolDenomOnline;
+import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
-public class TestRegresionFirmarExpediente {
+public class TestRegresionFirmarExpediente  extends TestRegresionBase {
 
-	
-	private  UtilServiceImpl serv;
 	VOExpediente expediente = null;
 	VOSolDenomOnline soldenom = null;
-	WebDriver driver = null;
+
 	
 	@Before
 	public void inicializaTest() throws InterruptedException, AWTException{
 
 		System.out.println("Inicializando TestRegresionFirmarExpediente....\n");
 		
-		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_env_sp_config.xml");
-
-		serv = contextEnv.getBean(UtilServiceImpl.class);
-		Env env = (Env) contextEnv.getBean("env");
+		inicializaEntorno();
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
-				"net/rodor/testfuncooper/data_set_soldenomonline_sp_config.xml");
+				"net/rodor/testfuncooper/test/regresion/bandejafirma/data_set_bandejafirma_sp_config.xml");
 		soldenom = (VOSolDenomOnline) context.getBean("soldenom");
 		
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
@@ -42,8 +41,7 @@ public class TestRegresionFirmarExpediente {
 	}
 	@After
 	public void finaliza(){
-		driver.close();
-		System.out.println("Finalizacion \n");
+		finalizaEntorno();
 	}
 	
 	@Test
@@ -58,17 +56,17 @@ public class TestRegresionFirmarExpediente {
 		// acceso a intranet - menu busqueda expedientes
 		UtilDriver.goMenu(driver, OPMenu.MENU_DOCFIRMA, OPMenu.MENU_DOCFIRMA_BANDEJAFIRMA);
 		
-		// seleccionar en elaboracion
+		// seleccionar pdte de firma
 		UtilDriver.clickSeleccionCombo(driver, "2", "idEstadoGrupoFirma");
 		UtilDriver.clickBoton(driver, "botonSearch", null, null);
 		
-		//seleccionar expediente a firma
-		UtilDriver.clickCheckBox(driver, "checkbox",expediente.getNumeroExpediente());
+		//seleccionar para firmar todos - cambiar
+		UtilDriver.clickById(driver, "seleccionarTodos");
 		
-		// firmar
+		// firmar - revisar que no parece que este bien.
 		UtilDriver.clickBoton(driver, "botonFirmarSeleccionados", null, null);
+		UtilDriver.clickAnchorByText(driver,"Con certificado digital");
 		OPAccesoChrome.firmarConCertificado(driver);
-		
 		
 		System.out.println("Fin TestRegresionFirmarExpediente\n");
 	}

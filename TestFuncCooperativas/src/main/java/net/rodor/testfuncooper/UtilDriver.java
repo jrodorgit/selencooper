@@ -34,12 +34,18 @@ public class UtilDriver {
 		// cogemos el div que tiene el input que queremos.
 		for(int i = 0; i< weDivs.size(); i++ ){
 			weDiv = weDivs.get(i);
+			break;
+			//System.out.println(" --->"+weDiv.toString());
+			/***
 			weInput = weDiv.findElement(By.xpath("//input[@value='"+texto+"']"));
-			System.out.println("-------->"+weInput.getTagName());
+			
+			System.out.println(" value es:"+weInput.getAttribute("value"));
+			
 			if( weInput != null){
 				weDiv =  weDivs.get(i);
 				break;
 			}
+			**/
 			
 		}
 		weDiv.click();
