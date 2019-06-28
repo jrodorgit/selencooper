@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.test.regresion.asientos;
 
 import java.awt.AWTException;
 
@@ -9,11 +9,13 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.asientos.OPAltaAsiento;
 import net.rodor.testfuncooper.asientos.OPDetalleAsiento;
 import net.rodor.testfuncooper.asientos.OPListadoAsiento;
 import net.rodor.testfuncooper.asientos.OPRelacionAsientos;
 import net.rodor.testfuncooper.asientos.VOAsiento;
+import net.rodor.testfuncooper.test.regresion.Env;
 
 public class TestRegresionAsientos {
 

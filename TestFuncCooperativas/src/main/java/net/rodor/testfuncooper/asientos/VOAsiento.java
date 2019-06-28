@@ -10,7 +10,16 @@ public class VOAsiento {
 	public String notaMarginal;
 	public String fecha;
 	public String procedimiento;
+	public String relacionadoCon = "";
 	
+	public String getRelacionadoCon() {
+		return relacionadoCon;
+	}
+
+	public void setRelacionadoCon(String relacionadoCon) {
+		this.relacionadoCon = relacionadoCon;
+	}
+
 	public String getProcedimiento() {
 		return procedimiento;
 	}
@@ -102,8 +111,10 @@ public class VOAsiento {
 	public String toString() {
 		return "VOAsiento [numeroAsiento=" + numeroAsiento + ", numeroInscripcionCooper=" + numeroInscripcionCooper
 				+ ", tomo=" + tomo + ", folio=" + folio + ", asiento=" + asiento + ", notaMarginal=" + notaMarginal
-				+ ", fecha=" + fecha + ", procedimiento=" + procedimiento + "]";
+				+ ", fecha=" + fecha + ", procedimiento=" + procedimiento + ", relacionadoCon=" + relacionadoCon + "]";
 	}
+
+	
 	
 	
 }

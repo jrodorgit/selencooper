@@ -18,6 +18,12 @@ public class UtilDriver {
 	}
 	
 	public static void setCampoById(WebDriver driver, String id, String valor) throws InterruptedException{
+		//driver.findElement(By.id(id)).clear();
+		driver.findElement(By.id(id)).sendKeys(valor);
+		Thread.sleep(100);
+	}
+	public static void cleanAndSetCampoById(WebDriver driver, String id, String valor) throws InterruptedException{
+		driver.findElement(By.id(id)).clear();
 		driver.findElement(By.id(id)).sendKeys(valor);
 		Thread.sleep(100);
 	}

@@ -1,4 +1,4 @@
-package net.rodor.testfuncooper;
+package net.rodor.testfuncooper.test.regresion;
 
 import java.util.Map;
 

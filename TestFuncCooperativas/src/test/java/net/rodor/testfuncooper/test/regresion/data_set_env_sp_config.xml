@@ -16,7 +16,7 @@
 	<tx:annotation-driven />
 	<context:component-scan base-package="net.rodor.testfuncooper"/> 
 	
-	<bean name="env" class="net.rodor.testfuncooper.Env">
+	<bean name="env" class="net.rodor.testfuncooper.test.regresion.Env">
 		
 		<property name="props">
 			<map>

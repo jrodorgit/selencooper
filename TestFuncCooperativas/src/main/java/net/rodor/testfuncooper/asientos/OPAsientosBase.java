@@ -8,8 +8,8 @@ public class OPAsientosBase extends OPBase {
 	public static final String MENU = "Asientos";
 	public static final String SUB_MENU_ALTA = "Alta de Asientos";
 	public static final String SUB_MENU_LISTADO = "Listado de Asientos";
-	public static final String ASIENTO = "asiento";
-	public static final String NOTA_MARGINAL = "notaMarginal";
+	public static final String ASIENTO = "asiento.texto";
+	public static final String NOTA_MARGINAL = "asiento.notaMarginal";
 	public static final String MOTIVO_RECHAZO = "nuevoMotivoRechazo";
 	public static final String BOTON_ACEPTAR = "boton_registrar";
 	public static final String BOTON_ENVIAR_REVISION = "boton_enviar_a_revision";

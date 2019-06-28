@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import net.rodor.testfuncooper.Env;
 import net.rodor.testfuncooper.UtilServiceImpl;
 
 public class TestRegresionBase {
