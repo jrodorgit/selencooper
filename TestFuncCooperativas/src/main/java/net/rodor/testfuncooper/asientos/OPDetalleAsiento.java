@@ -109,4 +109,19 @@ public class OPDetalleAsiento extends OPAsientosBase {
 		
 		System.out.println("Asiento marcado como revisado Correcto");
 	}
+	public static void anular(WebDriver driver,VOAsiento vo) throws InterruptedException{
+
+		System.out.println("Anular Asiento"+vo.toString());
+		
+		// rechazar
+		UtilDriver.clickBoton(driver, null, BOTON_ANULAR);
+		
+		
+		// buscar mensaje de rechazo  correcto
+		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
+		
+		
+		System.out.println("Asiento ANULADO");
+	}
+	
 }

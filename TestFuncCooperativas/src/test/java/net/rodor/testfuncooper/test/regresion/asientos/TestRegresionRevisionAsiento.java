@@ -10,13 +10,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.UtilDriver;
-import net.rodor.testfuncooper.asientos.OPAltaAsiento;
 import net.rodor.testfuncooper.asientos.OPAsientosBase;
+import net.rodor.testfuncooper.asientos.OPDetalleAsiento;
+import net.rodor.testfuncooper.asientos.OPListadoAsiento;
 import net.rodor.testfuncooper.asientos.VOAsiento;
 import net.rodor.testfuncooper.legajos.VODocumento;
 import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
-public class TestRegresionRegistroAsiento extends TestRegresionBase {
+public class TestRegresionRevisionAsiento extends TestRegresionBase {
 
 	
 	VODocumento doc = null;
@@ -28,7 +29,7 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 	@Before
 	public void inicializaTest() throws InterruptedException, AWTException{
 
-		System.out.println("Inicializando TestRegresionRegistroAsiento....\n");
+		System.out.println("Inicializando TestRegresionRevisionAsiento....\n");
 		
 		inicializaEntorno();
 		
@@ -51,21 +52,27 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 	@Test
 	public void testRegresion() throws InterruptedException{
 		
-		System.out.println("Lanzando TestRegresionRegistroAsiento....\n");
+		System.out.println("Lanzando TestRegresionRevisionAsiento....\n");
+
+		// marcamos como revisado el asiento2
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		OPListadoAsiento.consultarAsiento(driver, asiento2);
+		OPDetalleAsiento.marcarRevisado(driver, asiento2);
 		
-		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
-		OPAltaAsiento.altaAsientoOK(driver,asiento1);
+		// rechazamos el asiento A.
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		OPListadoAsiento.consultarAsiento(driver, asientoA);
+		OPDetalleAsiento.rechazar(driver, asientoA);
 		
-		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
-		OPAltaAsiento.envioARevisionAsiento(driver,asiento2);
+		// anulamos el asiento B.
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		OPListadoAsiento.consultarAsiento(driver, asientoB);
+		OPDetalleAsiento.anular(driver, asientoB);
 		
-		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
-		OPAltaAsiento.envioARevisionAsiento(driver,asientoA);
-	
-		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
-		OPAltaAsiento.envioARevisionAsiento(driver,asientoB);
+
 
 		
-		System.out.println("Fin TestRegresionRegistroAsiento\n");
+		System.out.println("Fin TestRegresionRevisionAsiento\n");
 	}
+
 }
