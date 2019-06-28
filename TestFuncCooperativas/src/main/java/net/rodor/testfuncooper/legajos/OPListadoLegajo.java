@@ -3,6 +3,7 @@ package net.rodor.testfuncooper.legajos;
 import org.openqa.selenium.WebDriver;
 
 import net.rodor.testfuncooper.UtilDriver;
+import net.rodor.testfuncooper.asientos.VOAsiento;
 
 public class OPListadoLegajo extends OPLegajosBase {
 
@@ -13,7 +14,7 @@ public class OPListadoLegajo extends OPLegajosBase {
 	public static final String URL = "/busqueda/legajoSearchReload.htm";
 	private static final String DESCRIPCION = "descripcion";
 	
-	public static void consultarLegajo(WebDriver driver,VOLegajo vo) throws InterruptedException{
+	public static void consultarLegajo(WebDriver driver,VOLegajo vo,VOAsiento asiento) throws InterruptedException{
 		
 		System.out.println("Busqueda de legajo-"+vo.toString());
 		
@@ -22,7 +23,7 @@ public class OPListadoLegajo extends OPLegajosBase {
 		//establacemos campos de busqueda.
 		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION, vo.getNumeroInscripcion());
 		UtilDriver.setCampoById(driver, DESCRIPCION, vo.getDescripcion());
-		UtilDriver.setCampoById(driver, TEXTO_ASIENTO, "dfsad");
+		UtilDriver.setCampoById(driver, TEXTO_ASIENTO, asiento.getAsiento().substring(7,9));
 		
 		UtilDriver.clickBoton(driver, null, BOTON_BUSCAR);
 

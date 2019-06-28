@@ -17,7 +17,7 @@ import net.rodor.testfuncooper.legajos.VODocumento;
 import net.rodor.testfuncooper.legajos.VOLegajo;
 import net.rodor.testfuncooper.test.regresion.TestRegresionBase;
 
-public class TestRegresionLegajos extends TestRegresionBase {
+public class TestRegresionGrabarLegajo extends TestRegresionBase {
 
 	
 	VOLegajo legajo = null;
@@ -28,7 +28,7 @@ public class TestRegresionLegajos extends TestRegresionBase {
 	@Before
 	public void inicializaTest() throws InterruptedException, AWTException{
 
-		System.out.println("Inicializando Test Legajos....\n");
+		System.out.println("Inicializando TestRegresionGrabarLegajo....\n");
 		
 		inicializaEntorno();
 		
@@ -46,7 +46,7 @@ public class TestRegresionLegajos extends TestRegresionBase {
 	@Test
 	public void testRegresion() throws InterruptedException{
 		
-		System.out.println("Lanzando Test Regresion Legajos....\n");
+		System.out.println("Lanzando TestRegresionGrabarLegajo....\n");
 		
 		OPAltaLegajo.alta(driver,legajo);
 		
@@ -58,22 +58,13 @@ public class TestRegresionLegajos extends TestRegresionBase {
 		
 		OPDetalleLegajo.modificaDescripcionDocLegajo(driver,legajo, doc);
 		
-		OPDetalleLegajo.delDocLegajo(driver,legajo);
-		/**/
-		OPAsociacionLegajoAsiento.addAsientoALegajo(driver, legajo,asiento);
-		
-		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
-		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
-		
-		OPDetalleLegajo.deleteLegajo(driver, legajo);
-		
-		
+		OPAsociacionLegajoAsiento.addAsientoALegajo(driver, legajo, asiento);
 		
 	}
 	
 	@After
 	public void finaliza(){
-		finalizaEntorno();
+		//finalizaEntorno();
 	}
 	
 	

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import net.rodor.testfuncooper.UtilDriver;
 import net.rodor.testfuncooper.UtilWE;
+import net.rodor.testfuncooper.asientos.VOAsiento;
 
 public class OPDetalleLegajo extends OPLegajosBase {
 
@@ -37,11 +38,11 @@ public class OPDetalleLegajo extends OPLegajosBase {
 	 * @throws InterruptedException
 	 */
 	@Test
-	public static void modificarLegajo(WebDriver driver, VOLegajo vo) throws InterruptedException {
+	public static void modificarLegajo(WebDriver driver, VOLegajo vo, VOAsiento asiento) throws InterruptedException {
 
 		System.out.println("Modificar Legajo -" + vo.toString());
 
-		OPListadoLegajo.consultarLegajo(driver, vo);
+		OPListadoLegajo.consultarLegajo(driver, vo, asiento);
 
 		
 		UtilDriver.setCampoById(driver, DESCRIPCION, vo.getDescripcion()+" - UPDATED");
