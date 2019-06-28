@@ -113,11 +113,13 @@ public class OPDetalleAsiento extends OPAsientosBase {
 
 		System.out.println("Anular Asiento"+vo.toString());
 		
-		// rechazar
+		// anular
 		UtilDriver.clickBoton(driver, null, BOTON_ANULAR);
+		//confirmar anulacion.
+		UtilDriver.clickAnchorByText(driver, BOTON_CONFIRMAR_ANULACION);
 		
 		
-		// buscar mensaje de rechazo  correcto
+		// buscar mensaje correcto
 		assertNotNull( UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));
 		
 		

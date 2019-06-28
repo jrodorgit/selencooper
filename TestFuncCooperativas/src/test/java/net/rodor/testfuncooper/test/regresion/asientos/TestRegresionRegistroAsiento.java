@@ -22,6 +22,7 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 	VODocumento doc = null;
 	VOAsiento asiento1 = null;
 	VOAsiento asiento2 = null;
+	VOAsiento asiento3 = null;
 	VOAsiento asientoA = null;
 	VOAsiento asientoB = null;
 	
@@ -37,6 +38,7 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 		
 		asiento1 = (VOAsiento) context.getBean("asiento1");
 		asiento2 = (VOAsiento) context.getBean("asiento2");
+		asiento3 = (VOAsiento) context.getBean("asiento3");
 		asientoA = (VOAsiento) context.getBean("asientoA");
 		asientoB = (VOAsiento) context.getBean("asientoB");
 		
@@ -64,6 +66,9 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 	
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
 		OPAltaAsiento.envioARevisionAsiento(driver,asientoB);
+		
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
+		OPAltaAsiento.envioARevisionAsiento(driver,asiento3);
 
 		
 		System.out.println("Fin TestRegresionRegistroAsiento\n");

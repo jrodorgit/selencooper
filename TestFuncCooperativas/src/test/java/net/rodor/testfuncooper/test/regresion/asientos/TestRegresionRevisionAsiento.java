@@ -23,6 +23,7 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 	VODocumento doc = null;
 	VOAsiento asiento1 = null;
 	VOAsiento asiento2 = null;
+	VOAsiento asiento3 = null;
 	VOAsiento asientoA = null;
 	VOAsiento asientoB = null;
 	
@@ -38,6 +39,7 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 		
 		asiento1 = (VOAsiento) context.getBean("asiento1");
 		asiento2 = (VOAsiento) context.getBean("asiento2");
+		asiento3 = (VOAsiento) context.getBean("asiento3");
 		asientoA = (VOAsiento) context.getBean("asientoA");
 		asientoB = (VOAsiento) context.getBean("asientoB");
 		
@@ -69,7 +71,10 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 		OPListadoAsiento.consultarAsiento(driver, asientoB);
 		OPDetalleAsiento.anular(driver, asientoB);
 		
-
+		// recuperamos el asiento 3
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		OPListadoAsiento.consultarAsiento(driver, asiento3);
+		OPDetalleAsiento.recuperar(driver, asiento3);
 
 		
 		System.out.println("Fin TestRegresionRevisionAsiento\n");

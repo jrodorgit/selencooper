@@ -11,7 +11,7 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
-		name="asiento1" p:numeroAsiento="1" p:numeroInscripcionCooper="1024-SMT" p:tomo="I"  
+		name="asiento1" p:numeroAsiento="1" p:numeroInscripcionCooper="1030-SMT" p:tomo="I"  
 		p:folio="1"  
 		p:asiento=" Ut enÍÁÉÓÚÜm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
 		p:notaMarginal="rehenderit in voluptate velit esse cillum dolore eu fugiat nulla "  
@@ -19,7 +19,7 @@
 		p:procedimiento="Otorgamiento de Poderes" />
 		
 	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
-		name="asiento2" p:numeroAsiento="2" p:numeroInscripcionCooper="1024-SMT" p:tomo=""  
+		name="asiento2" p:numeroAsiento="2" p:numeroInscripcionCooper="1030-SMT" p:tomo=""  
 		p:folio=""  
 		p:asiento=" Ut enÍÁÉÓÚÜm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
 		p:notaMarginal="rehenderit in voluptate velit esse cillum dolore eu fugiat nulla "  
@@ -27,7 +27,7 @@
 		p:procedimiento="Otorgamiento de Poderes" />		
 
 	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
-		name="asientoA" p:numeroAsiento="A" p:numeroInscripcionCooper="1024-SMT" p:tomo=""  
+		name="asientoA" p:numeroAsiento="A" p:numeroInscripcionCooper="1030-SMT" p:tomo=""  
 		p:folio=""  
 		p:asiento=" Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
 		p:notaMarginal="rehenderit in vÓluptate velit esse cillum dolore eu fugiat nulla "  
@@ -35,7 +35,7 @@
 		p:procedimiento="Actas del Consejo Rector"
 		 />
 	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
-		name="asientoB" p:numeroAsiento="B" p:numeroInscripcionCooper="1024-SMT" p:tomo=""  
+		name="asientoB" p:numeroAsiento="B" p:numeroInscripcionCooper="1030-SMT" p:tomo=""  
 		p:folio=""  
 		p:asiento=" Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
 		p:notaMarginal="rehenderit in vÓluptate velit esse cillum dolore eu fugiat nulla "  
@@ -44,4 +44,11 @@
 		p:relacionadoCon="1,2,A"
 		 />
 		 		
+	<bean class="net.rodor.testfuncooper.asientos.VOAsiento" 
+		name="asiento3" p:numeroAsiento="3" p:numeroInscripcionCooper="1030-SMT" p:tomo=""  
+		p:folio=""  
+		p:asiento=" Ut enÍÁÉÓÚÜm ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."   
+		p:notaMarginal="rehenderit in voluptate velit esse cillum dolore eu fugiat nulla "  
+		p:fecha="12/06/2019" 
+		p:procedimiento="Otorgamiento de Poderes" />	
 </beans>

@@ -16,6 +16,7 @@ public class OPAsientosBase extends OPBase {
 	public static final String BOTON_RECUPERAR = "boton_recuperar";
 	public static final String BOTON_RECHAZAR = "boton_rechazar";
 	public static final String BOTON_OK_MOTIVO = "botonOK";
+	public static final String BOTON_CONFIRMAR_ANULACION = "Anular";
 	public static final String BOTON_MARCAR_REVISADO = "boton_marcar_como_revisado";
 	public static final String BOTON_ANULAR = "boton_anular";
 	
