@@ -13,7 +13,11 @@
 	<bean class="net.rodor.testfuncooper.legajos.VOLegajo"
 		name="legajo" p:numeroInscripcion="1030-SMT" p:asientosRel="2"
 		p:descripcion="1030-SMT - VII"/>
-	
+
+	<bean class="net.rodor.testfuncooper.legajos.VOLegajo"
+		name="legajoEliminar" p:numeroInscripcion="1030-SMT" p:asientosRel="2"
+		p:descripcion="1030-SMT - E"/>
+			
 	<bean class="net.rodor.testfuncooper.legajos.VODocumento"
 		name="documento" p:ruta="C:\Java\" p:nombreFichero="AngularJSCheatSheet.pdf" p:descFichero="acta reunion consejo administracion 28/02/2010"/>
 		
