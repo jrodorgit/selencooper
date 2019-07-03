@@ -49,11 +49,13 @@ public class TestRegresionEliminarLegajo extends TestRegresionBase {
 		
 		OPListadoLegajo.consultarLegajo(driver, legajo, asiento);
 		
+		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
+		
 		OPDetalleLegajo.deleteLegajo(driver, legajo);
 	}
 	
 	@After
 	public void finaliza(){
-		//finalizaEntorno();
+		finalizaEntorno();
 	}
 }

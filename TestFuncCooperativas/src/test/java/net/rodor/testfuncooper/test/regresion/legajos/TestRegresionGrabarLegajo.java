@@ -60,6 +60,11 @@ public class TestRegresionGrabarLegajo extends TestRegresionBase {
 		
 		OPAsociacionLegajoAsiento.addAsientoALegajo(driver, legajo, asiento);
 		
+		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
+		
+		OPAsociacionLegajoAsiento.addAsientoALegajo(driver, legajo, asiento);
+		
+		
 	}
 	
 	@After

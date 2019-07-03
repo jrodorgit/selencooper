@@ -63,6 +63,11 @@ public class TestRegresionCooperativasConsulta extends TestRegresionBase {
 		// volvemos del detalle
 		detalle.runEvt(OPDetalleCooperativa.EVT_VOLVER);
 		
+		// la marcamos como digitalizada
+		listado.runEvt(OPListadoCooperativas.EVT_BUSCAR);
+		listado.goEnlace(OPListadoCooperativas.EVT_CONSULTAR);
+		detalle.runEvt(OPDetalleCooperativa.EVT_FINALIZA_GRABACION);
+		
 		System.out.println("Fin TestRegresionCooperativasConsulta\n");
 		
 		

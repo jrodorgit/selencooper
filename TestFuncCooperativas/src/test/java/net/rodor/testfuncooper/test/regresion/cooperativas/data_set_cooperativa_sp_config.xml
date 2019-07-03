@@ -12,7 +12,7 @@
 
 
 	<bean class="net.rodor.testfuncooper.cooperativas.VOCooperativa" 
-		name="cooperativa" p:razonSocial="SAN CLEOFAS S COOP LTDA" p:numInfor="34609"
-		p:numIns="AL-110"  />
+		name="cooperativa" p:razonSocial="COROA S COOP" p:numInfor="14039"
+		p:numIns="1061-SMT"  />
 		
 </beans>

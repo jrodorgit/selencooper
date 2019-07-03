@@ -49,7 +49,7 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 	}
 	@After
 	public void finaliza(){
-		//finalizaEntorno();
+		finalizaEntorno();
 	}
 	
 	@Test

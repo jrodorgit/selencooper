@@ -49,7 +49,7 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 	}
 	@After
 	public void finaliza(){
-		//finalizaEntorno();
+		finalizaEntorno();
 	}
 	
 	@Test
@@ -57,6 +57,11 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 		
 		System.out.println("Lanzando TestRegresionRevisionAsiento....\n");
 
+		// modificamos el asiento1
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		OPListadoAsiento.consultarAsiento(driver, asiento1);
+		OPDetalleAsiento.modificaAsiento(driver, asiento1);
+		
 		// marcamos como revisado el asiento2
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		OPListadoAsiento.consultarAsiento(driver, asiento2);
