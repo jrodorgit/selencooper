@@ -21,7 +21,7 @@ public class OPAltaAsiento extends OPAsientosBase {
 	private static final String FECHA_ASIENTO = "asiento.fechaAsiento";
 	
 
-	private static final String MSG_ALERT_ERROR = "alert-danger-global";
+	private static final String MSG_ALERT_ERROR = "alert-danger";
 
 	
 	

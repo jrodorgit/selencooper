@@ -10,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.UtilDriver;
+import net.rodor.testfuncooper.asientos.OPAltaAsiento;
 import net.rodor.testfuncooper.asientos.OPAsientosBase;
 import net.rodor.testfuncooper.asientos.OPDetalleAsiento;
 import net.rodor.testfuncooper.asientos.OPListadoAsiento;
@@ -48,7 +49,7 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 	}
 	@After
 	public void finaliza(){
-		finalizaEntorno();
+		//finalizaEntorno();
 	}
 	
 	@Test
@@ -70,6 +71,9 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		OPListadoAsiento.consultarAsiento(driver, asientoB);
 		OPDetalleAsiento.anular(driver, asientoB);
+		// y lo volvemos a dar de alta
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
+		OPAltaAsiento.envioARevisionAsiento(driver,asientoB);
 		
 		// recuperamos el asiento 3
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);

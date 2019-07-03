@@ -25,6 +25,7 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 	VOAsiento asiento3 = null;
 	VOAsiento asientoA = null;
 	VOAsiento asientoB = null;
+	VOAsiento asientoKO = null;
 	
 	@Before
 	public void inicializaTest() throws InterruptedException, AWTException{
@@ -41,13 +42,14 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 		asiento3 = (VOAsiento) context.getBean("asiento3");
 		asientoA = (VOAsiento) context.getBean("asientoA");
 		asientoB = (VOAsiento) context.getBean("asientoB");
+		asientoKO = (VOAsiento) context.getBean("asientoKO");
 		
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
 		
 	}
 	@After
 	public void finaliza(){
-		finalizaEntorno();
+		//finalizaEntorno();
 	}
 	
 	@Test
@@ -57,6 +59,7 @@ public class TestRegresionRegistroAsiento extends TestRegresionBase {
 		
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
 		OPAltaAsiento.altaAsientoOK(driver,asiento1);
+		OPAltaAsiento.altaAsientoKO(driver,asientoKO);
 		
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_ALTA);
 		OPAltaAsiento.envioARevisionAsiento(driver,asiento2);
