@@ -155,7 +155,7 @@ public class UtilDriver {
 			return;
 		}catch(Exception e){
 			//elemento no encontrado
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 		try{
 			we = driver.findElement(By.xpath("//button[@class='"+texto[0]+"']"));
@@ -262,6 +262,7 @@ public class UtilDriver {
 		}
 		
 	}
+	
 
 	public static void passByText(WebDriver driver,String texto){
 		WebElement we = null;

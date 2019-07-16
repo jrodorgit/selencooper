@@ -1,3 +1,6 @@
+	
+
+
 package net.rodor.testfuncooper.test.regresion.bandejafirma;
 
 import java.awt.AWTException;
