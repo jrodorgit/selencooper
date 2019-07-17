@@ -135,6 +135,30 @@ public class OPAltaSolicitud extends OPBase{
 		UtilDriver.setCampoById(driver, "datosDenominacionNumLocalizadorProrroga", vo.getNumLocalizador());
 		UtilDriver.setCampoById(driver, "datosDenominacionTextoLocalizadorProrroga", vo.getDescLocalizador());
 		
+		
+		// finalizar
+		UtilDriver.clickBoton(driver, null, null, " Finalizar");
+		/****
+		// firmar solicitud
+		UtilDriver.clickByTextoBoton(driver, "Firmar","button");
+		UtilDriver.clickAnchorByText(driver,"con certificado digital");
+		OPAccesoChrome.firmarConCertificado(driver);
+		
+		UtilDriver.clickBoton(driver, "descargarJustificanteGEISER", null, null);
+		UtilDriver.clickBoton(driver, "descargarSolicitud", null, null);
+		***/
+		
+		
+	}
+	
+	@Test
+	public static void altaProrrogaCont(WebDriver driver, VOSolDenomOnline vo) throws InterruptedException, AWTException {
+		
+		System.out.println("Alta de Solicitud Prorroga Denominacion on Line Continuacion-" + vo.toString());
+		UtilDriver.goMenuBis(driver, OPAltaSolicitud.MENU, OPAltaSolicitud.SUB_MENU_CERTIFICACION_DENOMINACION, OPAltaSolicitud.SUB_MENU_CERTIFICACION_DENOMINACION_ALTA);
+		OPAccesoChrome.autenticacionPublica(driver);
+		
+		
 		// finalizar
 		UtilDriver.clickBoton(driver, null, null, " Finalizar");
 		
