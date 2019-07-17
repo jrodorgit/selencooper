@@ -1,5 +1,7 @@
 package net.rodor.testfuncooper.test.regresion.denominacion.denoms;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.awt.AWTException;
 
 import org.junit.After;
@@ -10,7 +12,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import net.rodor.testfuncooper.OPAccesoChrome;
 import net.rodor.testfuncooper.UtilDriver;
-import net.rodor.testfuncooper.cooperativas.OPListadoCooperativas;
 import net.rodor.testfuncooper.denominaciones.OPListadoDenominaciones;
 import net.rodor.testfuncooper.denominaciones.VODenominacion;
 import net.rodor.testfuncooper.menu.OPMenu;
@@ -42,7 +43,7 @@ public class TestRegresionDenominaciones extends TestRegresionBase {
 	}
 	@After
 	public void finaliza(){
-		//finalizaEntorno();
+		finalizaEntorno();
 	}
 	@Test
 	public void testRegresion() throws InterruptedException, AWTException{
@@ -53,10 +54,16 @@ public class TestRegresionDenominaciones extends TestRegresionBase {
 		
 		// consultar denominacion reservada por nombre
 		OPListadoDenominaciones listado = new OPListadoDenominaciones(driver);
-		listado.setCampo(OPListadoDenominaciones.CAMPO_RAZON_SOCIAL, denominacionReservada.getRazonSocial());
+		listado.setCampo(OPListadoDenominaciones.CAMPO_RAZON_SOCIAL, "%"+denominacionReservada.getRazonSocial().substring(0, 10) + "%");
 		listado.runEvt(OPListadoDenominaciones.EVT_BUSCAR);
+		assertNotNull(UtilDriver.buscarTexto(driver,"td", denominacionReservada.getNumInfor()));
+		
+		// consultar denominacion inscrita por numero inscripcion
+		listado.setCampo(OPListadoDenominaciones.CAMPO_NUMERO_INSCRIPCION,denominacionInscrita.getNumIns());
+		listado.runEvt(OPListadoDenominaciones.EVT_BUSCAR);
+		assertNotNull(UtilDriver.buscarTexto(driver,"td", denominacionInscrita.getRazonSocial()));
 		listado.goEnlaceByOnClick(OPListadoDenominaciones.EVT_CONSULTAR);
-		listado.runEvtByTexto("Cerrar");
+		
 		
 		System.out.println("Fin TestRegresionDenominaciones\n");
 		

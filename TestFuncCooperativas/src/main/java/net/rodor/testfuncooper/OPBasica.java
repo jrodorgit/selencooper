@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class OPBasica {
 
 	public static final String HREF= "href";
+	public static final String DATA_HREF= "data-href";
 	public static final String TITLE= "title";
 	public static final String ONCLICK= "onclick";
 	
@@ -27,8 +28,15 @@ public class OPBasica {
 	public void setCampo(String idCampo, String valorCampo) throws InterruptedException {
 		UtilDriver.setCampoById(driver, idCampo, valorCampo);
 	}
+	public void cleanAndSetCampo(String idCampo, String valorCampo) throws InterruptedException {
+		UtilDriver.cleanAndSetCampoById(driver, idCampo, valorCampo);
+	}
+	
 	public void goEnlace(String idEnlace) throws InterruptedException {
 		UtilDriver.clickAnchor(driver, HREF, idEnlace);
+	}
+	public void goEnlaceDataHref(String idEnlace) throws InterruptedException {
+		UtilDriver.clickAnchor(driver, DATA_HREF, idEnlace);
 	}
 	public void goEnlaceByOnClick(String texto) throws InterruptedException {
 		UtilDriver.clickAnchor(driver, ONCLICK, texto);

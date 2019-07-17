@@ -11,7 +11,11 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
 
-	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
-		name="soldenom" p:denominacionUno="DENOMINACIÓN SELENIUM ON-LINE 7001"  />
+	<bean class="net.rodor.testfuncooper.denominaciones.VOCertificado" 
+		name="certificadoNegativo" p:razonSocial="DENOMINACIÓN SELENIUM MANUAL 7001" />
+
+	<bean class="net.rodor.testfuncooper.denominaciones.VOCertificado" 
+		name="certificadoRecuperar" p:razonSocial="DENOMINACIÓN SELENIUM ON-LINE 8001" />		
+	
 		
 </beans>
