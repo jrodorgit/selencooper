@@ -64,6 +64,7 @@ public class TestRegresionDenominaciones extends TestRegresionBase {
 		assertNotNull(UtilDriver.buscarTexto(driver,"td", denominacionInscrita.getRazonSocial()));
 		listado.goEnlaceByOnClick(OPListadoDenominaciones.EVT_CONSULTAR);
 		
+		listado.clickBotonVisibleByText(OPListadoDenominaciones.EVT_CERRAR);
 		
 		System.out.println("Fin TestRegresionDenominaciones\n");
 		

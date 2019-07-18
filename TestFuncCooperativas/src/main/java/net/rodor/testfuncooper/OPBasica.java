@@ -44,4 +44,7 @@ public class OPBasica {
 	public void clickCheckBox(String texto) throws InterruptedException{
 		UtilDriver.clickCheckBox(driver, "checkbox", texto);
 	}
+	public void clickBotonVisibleByText(String texto) throws InterruptedException{
+		UtilDriver.clickBotonVisibleByText(driver, texto);
+	}
 }

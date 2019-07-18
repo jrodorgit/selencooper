@@ -1,6 +1,7 @@
 package net.rodor.testfuncooper;
 
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -337,6 +338,30 @@ public class UtilDriver {
 		return we;
 	}
 	
+	public static void clickBotonVisibleByText(WebDriver driver,String texto ) throws InterruptedException{
+		
+		try{
+			
+			//List<WebElement> botones = driver.findElements(By.xpath("//button[text()='"+texto+"']"));
+			List<WebElement> botones = driver.findElements(By.xpath("//button[contains(.,'"+texto+"')]"));
+			Iterator<WebElement> iter = botones.iterator();
+			while(iter.hasNext()){
+				WebElement boton = iter.next();
+				if(boton.isDisplayed()){
+					boton.click();
+					break;
+				}
+			}
+			
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			e.printStackTrace();
+		}
+		
+		
+	}
 }
 
 
