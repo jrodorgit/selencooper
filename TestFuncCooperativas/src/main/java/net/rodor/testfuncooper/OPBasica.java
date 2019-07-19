@@ -8,6 +8,9 @@ public class OPBasica {
 	public static final String DATA_HREF= "data-href";
 	public static final String TITLE= "title";
 	public static final String ONCLICK= "onclick";
+	public static final String DIV = "div";
+	public static final String TD = "td";
+	
 	
 	public WebDriver driver = null;
 
