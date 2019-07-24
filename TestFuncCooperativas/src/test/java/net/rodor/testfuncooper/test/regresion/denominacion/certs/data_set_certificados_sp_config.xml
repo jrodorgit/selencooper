@@ -12,7 +12,7 @@
 
 
 	<bean class="net.rodor.testfuncooper.denominaciones.VOCertificado" 
-		name="certificadoNegativo" p:razonSocial="DENOMINACIÓN SELENIUM MANUAL 7001" />
+		name="certificadoNegativo" p:razonSocial="DENOMINACIÓN SELENIUM ON-LINE 9001" />
 
 	<bean class="net.rodor.testfuncooper.denominaciones.VOCertificado" 
 		name="certificadoRecuperar" p:razonSocial="DENOMINACIÓN SELENIUM ON-LINE 8001" />		

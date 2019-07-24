@@ -12,6 +12,6 @@
 
 
 	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
-		name="soldenom" p:denominacionUno="DENOMINACIÓN SELENIUM ON-LINE 7001"  />
+		name="soldenom" p:denominacionUno="DENOMINACIÓN SELENIUM ON-LINE 9001"  />
 		
 </beans>

@@ -49,7 +49,7 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 	}
 	@After
 	public void finaliza(){
-		finalizaEntorno();
+		//finalizaEntorno();
 	}
 	
 	@Test
@@ -71,7 +71,7 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		OPListadoAsiento.consultarAsiento(driver, asientoA);
 		OPDetalleAsiento.rechazar(driver, asientoA);
-		
+	
 		// anulamos el asiento B.
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		OPListadoAsiento.consultarAsiento(driver, asientoB);
@@ -84,7 +84,20 @@ public class TestRegresionRevisionAsiento extends TestRegresionBase {
 		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
 		OPListadoAsiento.consultarAsiento(driver, asiento3);
 		OPDetalleAsiento.recuperar(driver, asiento3);
-
+		
+		// mandamos a revision el asiento 3
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		OPListadoAsiento.consultarAsiento(driver, asiento3);
+		OPDetalleAsiento.enviarRevision(driver, asiento3);
+	
+		// buscamos los pendientes de resivion para marcarlos como revisados.
+		UtilDriver.goMenu(driver, OPAsientosBase.MENU,OPAsientosBase.SUB_MENU_LISTADO);
+		OPListadoAsiento.buscarAsientosPdteRevision(driver, asiento3);
+		// seleccionamos todos.
+		OPListadoAsiento.seleccionarTodos(driver);
+		// marcamos como revisados.
+		OPListadoAsiento.marcarComoRevisados(driver);
+		
 		
 		System.out.println("Fin TestRegresionRevisionAsiento\n");
 	}

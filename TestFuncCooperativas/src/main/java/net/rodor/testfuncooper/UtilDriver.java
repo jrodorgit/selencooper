@@ -192,6 +192,11 @@ public class UtilDriver {
 		
 		Thread.sleep(2000);
 	}
+	public static void clickSeleccionComboByText(WebDriver driver, String text) throws InterruptedException {
+		driver.findElement(By.xpath("//option[text()='"+text+"']")).click();
+		
+		Thread.sleep(2000);
+	}
 	public static void clickByTextoClassBoton(WebDriver driver,String texto, String classButton){
 		WebElement we = null;
 		

@@ -7,6 +7,9 @@ import static org.junit.Assert.*;
 
 public class OPListadoAsiento  extends OPAsientosBase {
 	
+	private static final String BOTON_MARCAR_COMO_REVISADO = " Marcar como revisado";
+	private static final String CHEKC_SELECCIONAR_TODOS = "seleccionarTodos";
+	private static final String PENDIENTE_REVISION = "PENDIENTE REVISION";
 	private static final String ENLACE_CONSULTAR_ASIENTO = "idRegistroAsiento";
 	private static final String ENLACE_BORRAR_ASIENTO = "RegistroAsientoDelete";
 	public static final String URL = "asientoSearchLoad.htm";
@@ -15,6 +18,7 @@ public class OPListadoAsiento  extends OPAsientosBase {
 	private static final String BOTON_BUSCAR = "buscar";
 	//private static final String TABLA_ASIENTOS = "tablaAsientoSearch";
 	private static final String BOTON_OK = "botonOK";
+
 	
 	/**
 	 * busca un asiento de cooperativa por numero asiento y lo consulta
@@ -78,5 +82,28 @@ public class OPListadoAsiento  extends OPAsientosBase {
 		assertNotNull(UtilDriver.buscarById(driver, MSG_ALERT_SUCCESS,null,null));		
 				
 		System.out.println("Delete asiento correcto");
+	}
+	
+	public static void buscarAsientosPdteRevision(WebDriver driver,VOAsiento vo) throws InterruptedException{
+		
+		UtilDriver.setCampoById(driver, NUMERO_INSCRIPCION,vo.getNumeroInscripcionCooper());
+		UtilDriver.clickSeleccionComboByText(driver, PENDIENTE_REVISION);
+		UtilDriver.clickBoton( driver,null,  BOTON_BUSCAR );
+		
+		
+	}
+	
+	
+	public static void seleccionarTodos(WebDriver driver) throws InterruptedException{
+		
+		UtilDriver.clickById(driver, CHEKC_SELECCIONAR_TODOS);
+		
+		
+	}
+	public static void marcarComoRevisados(WebDriver driver) throws InterruptedException{
+		
+		UtilDriver.clickBotonVisibleByText(driver, BOTON_MARCAR_COMO_REVISADO);
+		
+		
 	}
 }
