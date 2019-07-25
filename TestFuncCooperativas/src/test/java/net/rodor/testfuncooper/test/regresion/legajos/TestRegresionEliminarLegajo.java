@@ -52,6 +52,8 @@ public class TestRegresionEliminarLegajo extends TestRegresionBase {
 		OPDetalleLegajo.delAsientoLegajo(driver, legajo);
 		
 		OPDetalleLegajo.deleteLegajo(driver, legajo);
+		
+		System.out.println("Fin TestRegresionEliminarLegajo\n");
 	}
 	
 	@After

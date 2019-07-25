@@ -11,17 +11,17 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<bean class="net.rodor.testfuncooper.legajos.VOLegajo"
-		name="legajo" p:numeroInscripcion="1061-SMT" p:asientosRel="2"
-		p:descripcion="1061-SMT - I"/>
+		name="legajo" p:numeroInscripcion="828-SMT" p:asientosRel="2"
+		p:descripcion="828-SMT - I"/>
 
 	<bean class="net.rodor.testfuncooper.legajos.VOLegajo"
-		name="legajoEliminar" p:numeroInscripcion="1061-SMT" p:asientosRel="2"
-		p:descripcion="1061-SMT - J"/>
+		name="legajoEliminar" p:numeroInscripcion="828-SMT" p:asientosRel="2"
+		p:descripcion="828-SMT - J"/>
 			
 	<bean class="net.rodor.testfuncooper.legajos.VODocumento"
 		name="documento" p:ruta="C:\Java\" p:nombreFichero="AngularJSCheatSheet.pdf" p:descFichero="acta reunion consejo administracion 28/02/2010"/>
 		
 	<bean class="net.rodor.testfuncooper.asientos.VOAsiento"
-		name="asiento" p:numeroAsiento="A" p:numeroInscripcionCooper="1061-SMT" p:asiento="Ut enÍÁÉÓÚÜm ad minim veniam, quis nostrud exercitation ullamco" />
+		name="asiento" p:numeroAsiento="A" p:numeroInscripcionCooper="828-SMT" p:asiento="Ut enÍÁÉÓÚÜm ad minim veniam, quis nostrud exercitation ullamco" />
 		
 </beans>
