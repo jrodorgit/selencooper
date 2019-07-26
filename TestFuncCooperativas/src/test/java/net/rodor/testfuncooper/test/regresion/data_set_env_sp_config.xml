@@ -21,27 +21,27 @@
 		<property name="props">
 			<map>
 			
-				<!-- <entry key="URL_PRIV" value="https://localhost/cooperativas/priv/login.htm" />
-				<entry key="URL_PUB" value="https://localhost/cooperativas/pub/home.htm" /> -->
+				<entry key="URL_PRIV" value="https://localhost/cooperativas/priv/login.htm" />
+				<entry key="URL_PUB" value="https://localhost/cooperativas/pub/home.htm" />
 				
-				 
+				<!--  
 				<entry key="URL_PRIV" value="https://preinterweb.empleo.gob.es/cooperativas/priv/login.htm" />
-				<entry key="URL_PUB" value="https://preinterweb.empleo.gob.es/cooperativas/pub/home.htm" /> 
+				<entry key="URL_PUB" value="https://preinterweb.empleo.gob.es/cooperativas/pub/home.htm" />  -->
 				
 			</map>
 		</property>
 	</bean>
 	
 	<!--  CONFIGURACION DE ACCESO A BASE DE DATOS DESARROLLO-->
-	<!--  <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+	 <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		name="dataSource" p:driverClassName="oracle.jdbc.OracleDriver"
 		p:url="jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = orades2.trabajo.dom)(PORT = 1521)))(CONNECT_DATA =      (SERVICE_NAME = des2)    )  )"
-		p:username="COOPER" p:password="COOPER_OWN" />-->
+		p:username="COOPER" p:password="COOPER_OWN" />
 	<!--  CONFIGURACION DE ACCESO A BASE DE DATOS PRE-->
-	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+	<!-- <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		name="dataSource" p:driverClassName="oracle.jdbc.OracleDriver"
 		p:url="jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = racbtpre22-vip.trabajo.dom)(PORT = 1521)))(CONNECT_DATA =      (SERVICE_NAME = PRE2_N2A1)    )  )"
-		p:username="COOPER_APL" p:password="COOPAPL$(93" />
+		p:username="COOPER_APL" p:password="COOPAPL$(93" /> -->
 
 	<bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
 		name="sessionFactory" p:dataSource-ref="dataSource">

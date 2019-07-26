@@ -12,14 +12,7 @@
 
 
 	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
-		name="soldenomonline" p:denominacionUno="DENOMINACIÓN SELENIUM ON-LINE 3 V.0.1.10 -6" p:denominacionDos="DENOMINACIÓN SELENIUM ON-LINE 4 V.0.1.10 6"  />
+		name="soldenom" p:denominacionUno="DENOMINACIÓN SELENIUM V.0.1.10 - 6" p:denominacionDos="DENOMINACIÓN SELENIUM ON-LINE 5 V.0.1.10 6"  />
 		
-	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
-		name="soldenomonlineprorroga" p:numLocalizador="300001" p:descLocalizador="DENOMINACIÓN AUTOMATICA ONLINE 61" p:denominacionUno="DENOMINACIÓN AUTOMATICA ONLINE 61" />
-	
-	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
-		name="soldenomonlinemanual" p:denominacionUno="DENOMINACIÓN SELENIUM MANUAL 3 V.0.1.10 6" p:denominacionDos="DENOMINACIÓN SELENIUM MANUAL 4 V.0.1.10 6"  />	
 		
-	<bean class="net.rodor.testfuncooper.soldeno.VOSolDenomOnline" 
-		name="soldenomgest" p:denominacionUno="DENOMINACIÓN SELENIUM ON-LINE 3 V.0.1.10 -6"   />		
 </beans>

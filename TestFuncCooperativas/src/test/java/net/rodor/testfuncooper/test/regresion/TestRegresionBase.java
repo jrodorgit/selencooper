@@ -13,6 +13,7 @@ public class TestRegresionBase {
 	public WebDriver driver = null;
 	public Env env = null;
 	public  UtilServiceImpl serv;
+	//public ApplicationContext dataFile = null;
 
 	public void inicializaEntorno() throws InterruptedException, AWTException{
 
@@ -21,6 +22,9 @@ public class TestRegresionBase {
 		ApplicationContext contextEnv = new ClassPathXmlApplicationContext(
 				"net/rodor/testfuncooper/test/regresion/data_set_env_sp_config.xml");
 		env = (Env) contextEnv.getBean("env");
+		
+		//ApplicationContext dataFile = new ClassPathXmlApplicationContext(
+		//		"net/rodor/testfuncooper/test/regresion/data_test.xml");
 		
 		serv = contextEnv.getBean(UtilServiceImpl.class);
 	}

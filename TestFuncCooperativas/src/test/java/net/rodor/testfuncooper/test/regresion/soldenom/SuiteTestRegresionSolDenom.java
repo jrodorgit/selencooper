@@ -9,6 +9,7 @@ import org.junit.runners.Suite;
 	TestRegresionSolDenomOnline.class,
 	TestRegresionSolProrrogaDenomOnline.class,
 	TestRegresionSolProrrogaDenomOnlineCont.class,
+	TestRegresionAddObservaciones.class,
 	TestRegresionSolDenomManual.class,
 	TestRegresionGestionCertDenom.class
 	

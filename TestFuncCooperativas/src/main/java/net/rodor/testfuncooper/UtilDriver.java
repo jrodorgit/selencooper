@@ -367,6 +367,20 @@ public class UtilDriver {
 		
 		
 	}
+	
+	public static void clickIcon(WebDriver driver,String atr, String valor){
+		WebElement we = null;
+		try{
+			we = driver.findElement(By.xpath(".//span[contains(@"+atr+",'"+valor+"')]"));
+			we.click();
+			Thread.sleep(3000);
+			return;
+		}catch(Exception e){
+			//elemento no encontrado
+			//e.printStackTrace();
+		}
+		
+	}
 }
 
 

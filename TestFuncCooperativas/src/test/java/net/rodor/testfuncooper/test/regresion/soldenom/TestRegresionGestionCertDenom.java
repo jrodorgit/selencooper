@@ -1,5 +1,7 @@
 package net.rodor.testfuncooper.test.regresion.soldenom;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.awt.AWTException;
 
 import org.junit.After;
@@ -64,6 +66,12 @@ public class TestRegresionGestionCertDenom extends TestRegresionBase {
 		// ir al denominacion para generar certificado negativo.
 		UtilDriver.clickAnchor(driver, "href", "idDenominacion");
 		
+		// anadimos observaciones la denominacion
+		UtilDriver.setCampoById(driver, "observacionDenominacion", "Obsevaciones automÁticas a la denominación-");
+		UtilDriver.clickByTextoBoton(driver, "dir", "button");
+		assertNotNull(UtilDriver.buscarTexto(driver,"td", "Obsevaciones automÁticas a la denominación-"));
+				
+				
 		// buscamos una denominacion para ver si exite
 		UtilDriver.clearCampoById(driver, "textoBuscar");
 		UtilDriver.setCampoById(driver, "textoBuscar", "BERGANTIÑOS");
