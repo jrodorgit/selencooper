@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<springframework.version>4.3.6.RELEASE</springframework.version>
+		<springframework.version>5.2.0.RELEASE</springframework.version>
 	</properties>
 
 
