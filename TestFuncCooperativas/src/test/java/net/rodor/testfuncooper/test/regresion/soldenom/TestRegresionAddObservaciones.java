@@ -33,7 +33,7 @@ public class TestRegresionAddObservaciones extends TestRegresionBase {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"net/rodor/testfuncooper/test/regresion/soldenom/data_set_soldenomonline_sp_config.xml");
-		soldenom = (VOSolDenomOnline) context.getBean("soldenomonlineprorroga");
+		soldenom = (VOSolDenomOnline) context.getBean("soldenomonline");
 		
 		driver = OPAccesoChrome.autenticacion(env.getProps().get("URL_PRIV"));
 	}

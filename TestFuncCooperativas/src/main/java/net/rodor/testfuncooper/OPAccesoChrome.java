@@ -34,8 +34,8 @@ public class OPAccesoChrome extends OPAccesoBase {
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.delay(1000);
-		robot.keyPress(KeyEvent.VK_TAB);
-		robot.delay(1000);
+		//robot.keyPress(KeyEvent.VK_TAB);
+		//robot.delay(1000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(4000);
 		robot.keyPress(KeyEvent.VK_ENTER);
@@ -134,8 +134,8 @@ public class OPAccesoChrome extends OPAccesoBase {
 	Robot robot = new Robot();
 	robot.keyPress(KeyEvent.VK_TAB);
 	robot.delay(1000);
-	robot.keyPress(KeyEvent.VK_TAB);
-	robot.delay(1000);
+//	robot.keyPress(KeyEvent.VK_TAB);
+	//robot.delay(1000);
 	robot.keyPress(KeyEvent.VK_ENTER);
 	Thread.sleep(4000);
 	robot.keyPress(KeyEvent.VK_ENTER);
@@ -151,8 +151,8 @@ public class OPAccesoChrome extends OPAccesoBase {
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.delay(1000);
-		robot.keyPress(KeyEvent.VK_TAB);
-		robot.delay(1000);
+		//robot.keyPress(KeyEvent.VK_TAB);
+		//robot.delay(1000);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(4000);
 		robot.keyPress(KeyEvent.VK_ENTER);

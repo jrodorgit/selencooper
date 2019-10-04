@@ -9,7 +9,8 @@ import org.junit.runners.Suite;
 	TestRegresionSolDenomOnline.class,
 	TestRegresionSolProrrogaDenomOnline.class,
 	TestRegresionSolProrrogaDenomOnlineCont.class,
-	TestRegresionAddObservaciones.class,
+	// obsoleto ya no tiene sentido en esta version
+	//TestRegresionAddObservaciones.class,
 	TestRegresionSolDenomManual.class,
 	TestRegresionGestionCertDenom.class
 	
